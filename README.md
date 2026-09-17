@@ -2942,3 +2942,6380 @@ Wenn du eine **spezifische Indexstruktur** aufbauen möchtest (z.B. RZ-GPU-CPU-R
 4. **APIs kombinieren** mit Python/Node.js für ein **einheitliches Index-System**
 
 Benötigst du Hilfe beim Aufbau eines solchen Systems oder bei spezifischen API-Queries? 🚀
+# STOE-1.0
+
+## Conceptual Architecture Paper
+
+### Room · Room-Access · Multi-Loop · BackLink · State · Event · Trace · Normative Definitions
+
+**Dokumenttyp:** Konzeptuelle Architektur- und Systembeschreibung
+**Status:** Concept / Architectural Draft
+**Ausführung:** bewusst ohne Quellcode und ohne Implementierungsdetails
+**Zweck:** Definition eines zustands-, ereignis-, zugriffs-, workflow- und graphorientierten Systemmodells einschließlich eines normativen Begriffs- und Anforderungsrahmens.
+
+---
+
+# 1. Zweck und Geltungsbereich
+
+STOE ist konzeptionell als **State-/Transformation-Oriented Engine** definiert.
+
+STOE beschreibt eine Architektur, in der digitale Vorgänge nicht ausschließlich als lineare Verarbeitungsketten verstanden werden, sondern als kontrollierte Beziehungen zwischen:
+
+* Kontexten,
+* Identitäten,
+* Ressourcen,
+* Zuständen,
+* Ereignissen,
+* Policies,
+* Capabilities,
+* Loops,
+* Transformationen,
+* Beziehungen,
+* Traces,
+* Evidenzen,
+* und Auditinformationen.
+
+Der normative Teil dieser Spezifikation definiert, welche Bedeutung zentrale STOE-Begriffe besitzen und welche grundlegenden Anforderungen eine konforme STOE-Implementierung erfüllen soll.
+
+Dieses Dokument beschreibt **Architektursemantik**, nicht die konkrete technische Implementierung.
+
+---
+
+# 2. Normatives Vokabular
+
+Für diese Spezifikation gelten folgende Anforderungsstufen.
+
+## 2.1 MUST
+
+**MUST** bedeutet:
+
+> Eine konforme Implementierung muss die betreffende Anforderung erfüllen.
+
+Eine Implementierung, die eine MUST-Anforderung verletzt, ist nicht konform zu der betreffenden STOE-Spezifikationsebene.
+
+---
+
+## 2.2 MUST NOT
+
+**MUST NOT** bedeutet:
+
+> Eine konforme Implementierung darf die betreffende Eigenschaft oder Operation nicht zulassen.
+
+Dies betrifft insbesondere sicherheitskritische oder semantisch widersprüchliche Zustandsänderungen.
+
+---
+
+## 2.3 SHOULD
+
+**SHOULD** bedeutet:
+
+> Eine konforme Implementierung soll die Anforderung erfüllen, sofern kein dokumentierter technischer oder betrieblicher Grund dagegenspricht.
+
+Eine Abweichung von SHOULD sollte begründet oder dokumentiert werden.
+
+---
+
+## 2.4 SHOULD NOT
+
+**SHOULD NOT** bedeutet:
+
+> Eine konforme Implementierung sollte die betreffende Eigenschaft oder Operation vermeiden.
+
+Eine Abweichung ist möglich, soll jedoch nachvollziehbar begründet sein.
+
+---
+
+## 2.5 MAY
+
+**MAY** bedeutet:
+
+> Eine Implementierung darf die betreffende Funktionalität optional bereitstellen.
+
+Das Fehlen einer MAY-Funktion stellt allein keine Nichtkonformität dar.
+
+---
+
+# 3. Normative Definition
+
+Eine **normative Definition** ist innerhalb STOE eine verbindliche semantische Festlegung.
+
+Sie bestimmt nicht nur, wie ein Begriff sprachlich verstanden wird, sondern:
+
+1. welche Eigenschaften zu diesem Begriff gehören,
+2. welche Beziehungen zulässig sind,
+3. welche Zustände möglich sind,
+4. welche Übergänge erlaubt sind,
+5. welche Mindestanforderungen für Konformität gelten.
+
+Dadurch wird verhindert, dass zentrale Begriffe wie „Room“, „State“ oder „Capability“ von verschiedenen Implementierungen vollständig unterschiedlich interpretiert werden.
+
+---
+
+# 4. Konformität
+
+Eine STOE-Implementierung ist **konform** zu einer bestimmten STOE-Ebene, wenn sie die für diese Ebene festgelegten normativen Anforderungen erfüllt.
+
+Konformität ist dabei immer:
+
+**versionsbezogen + scopebezogen + funktionsbezogen**
+
+Eine Implementierung kann daher beispielsweise:
+
+* zum Room-Modell konform,
+* zum Multi-Loop-Modell teilweise konform,
+* zum temporalen BackLink-Modell nicht konform
+
+sein.
+
+Eine pauschale Aussage „STOE-kompatibel“ sollte deshalb vermieden werden, sofern kein definierter Konformitätsumfang angegeben wird.
+
+---
+
+# 5. Normative Kernbegriffe
+
+STOE definiert folgende Kernbegriffe:
+
+1. **Actor**
+2. **Identity**
+3. **Device Context**
+4. **Consent**
+5. **Policy**
+6. **Session**
+7. **Capability**
+8. **Room**
+9. **Resource**
+10. **State**
+11. **Transition**
+12. **Event**
+13. **Loop**
+14. **Multi-Loop**
+15. **Transformation**
+16. **BackLink**
+17. **Trace**
+18. **Evidence**
+19. **Conflict**
+20. **Bridge**
+21. **Audit Record**
+22. **Result**
+23. **Quarantine**
+24. **Approval**
+
+Diese Begriffe bilden das normative Vokabular des Architekturmodells.
+
+---
+
+# 6. Actor – normative Definition
+
+Ein **Actor** ist ein Subjekt oder Systemelement, das eine Aktion auslösen, durchführen, bestätigen, ablehnen oder beobachten kann.
+
+Ein Actor kann beispielsweise sein:
+
+* ein Mensch,
+* ein KI-Agent,
+* ein Dienst,
+* ein Worker,
+* eine Anwendung,
+* ein automatisierter Prozess,
+* ein Systemadministrator,
+* ein externer Dienst.
+
+### Normative Anforderungen
+
+Ein Actor:
+
+* **MUST** innerhalb des jeweiligen Vorgangskontextes eindeutig referenzierbar sein.
+* **MUST** über den Trace einer relevanten Aktion zugeordnet werden können.
+* **MUST NOT** automatisch als vertrauenswürdig gelten, nur weil seine Identität bekannt ist.
+
+---
+
+# 7. Identity – normative Definition
+
+Eine **Identity** beschreibt die identifizierbare Zuordnung eines Actors zu einer bestimmten digitalen oder organisatorischen Identität.
+
+Identity beantwortet:
+
+> **Wer oder was handelt?**
+
+Identity ist nicht gleichbedeutend mit Berechtigung.
+
+### Normative Anforderungen
+
+Eine Identity:
+
+* **MUST** eindeutig referenzierbar sein.
+* **MUST NOT** allein durch ihre Existenz Zugriff auf einen beliebigen Room oder eine beliebige Ressource erhalten.
+* **SHOULD** über eine überprüfbare Herkunft oder Authentifizierungsgrundlage verfügen.
+
+---
+
+# 8. Device Context – normative Definition
+
+Der **Device Context** beschreibt den für eine Aktion relevanten technischen Ausführungskontext.
+
+Er kann unter anderem umfassen:
+
+* Gerät,
+* Laufzeitumgebung,
+* Plattform,
+* Netzwerk-Kontext,
+* Sicherheitszustand.
+
+Device Context ist eine Kontextinformation und keine automatische Vertrauensgarantie.
+
+---
+
+# 9. Consent – normative Definition
+
+**Consent** bezeichnet eine explizite Zustimmung, sofern für einen Vorgang eine solche Zustimmung erforderlich ist.
+
+Consent ist von:
+
+* Identity,
+* Policy,
+* Capability
+
+zu unterscheiden.
+
+Eine Zustimmung ersetzt nicht automatisch eine Policy-Prüfung.
+
+---
+
+# 10. Policy – normative Definition
+
+Eine **Policy** ist eine formal oder semantisch definierte Regelmenge, die festlegt, welche Aktionen unter bestimmten Bedingungen zulässig, unzulässig oder freigabepflichtig sind.
+
+Eine Policy kann sich beziehen auf:
+
+* Actor,
+* Identity,
+* Room,
+* Resource,
+* Action,
+* Zeit,
+* Umgebung,
+* Datenklasse,
+* Risiko,
+* Capability.
+
+### Normative Anforderungen
+
+Eine Policy:
+
+* **MUST** eindeutig referenzierbar sein, wenn sie eine sicherheits- oder zugriffsrelevante Entscheidung bestimmt.
+* **MUST NOT** als bloße Freitextnotiz behandelt werden, wenn sie eine normative Zugriffsentscheidung begründet.
+* **SHOULD** eine Version oder einen Gültigkeitskontext besitzen.
+
+---
+
+# 11. Session – normative Definition
+
+Eine **Session** ist ein zeitlich begrenzter Interaktionskontext zwischen einem Actor und STOE.
+
+Eine Session verbindet beispielsweise:
+
+**Identity + Context + Capability**
+
+Eine Session:
+
+* **MUST** einen definierten Beginn besitzen.
+* **MUST** einen überprüfbaren Status besitzen.
+* **SHOULD** ein definiertes Ablauf- oder Beendigungsereignis besitzen.
+
+---
+
+# 12. Capability – normative Definition
+
+Eine **Capability** ist eine kontrollierte und begrenzte Handlungsmöglichkeit.
+
+Sie beschreibt:
+
+> **Welche konkrete Handlung darf ein bestimmtes Subjekt in welchem Kontext und unter welchen Bedingungen ausführen?**
+
+Eine Capability kann mindestens auf folgende Dimensionen beschränkt sein:
+
+* Actor,
+* Room,
+* Resource,
+* Action,
+* Zeit,
+* Policy.
+
+### Normative Anforderungen
+
+Eine Capability:
+
+* **MUST** einen definierten Geltungsbereich besitzen.
+* **MUST NOT** implizit einen unbegrenzten globalen Zugriff darstellen.
+* **SHOULD** zeitlich begrenzt werden.
+* **MUST** widerrufbar oder anderweitig invalidierbar sein, sofern sie länger als einen atomaren Vorgang gilt.
+
+---
+
+# 13. Room – normative Definition
+
+Ein **Room** ist ein logisch abgegrenzter Kontext für Zustände, Ressourcen, Policies, Sessions, Capabilities, Events und Prozesse.
+
+Der Room ist die zentrale **Context Boundary**.
+
+### Normative Anforderungen
+
+Ein Room:
+
+* **MUST** eine eindeutige Identität besitzen.
+* **MUST** einen definierten Zustand besitzen.
+* **MUST** einen definierten Zugriffskontext besitzen.
+* **MUST** eindeutig bestimmen können, welche Ressourcen in seinem Scope liegen.
+* **MUST NOT** implizit mit beliebigen anderen Rooms gleichgesetzt werden.
+* **MUST NOT** implizit einen vollständigen Cross-Room-Zugriff zulassen.
+
+---
+
+# 14. Room Boundary – normative Definition
+
+Eine **Room Boundary** ist die logische Grenze zwischen einem Room und einem anderen Kontext.
+
+Die Boundary bestimmt:
+
+* Sichtbarkeit,
+* Zugriff,
+* Ressourcennutzung,
+* Kommunikation,
+* Transformationen,
+* Datenübertragung.
+
+Eine Room Boundary:
+
+* **MUST** bei Cross-Room-Aktionen explizit berücksichtigt werden.
+* **MUST NOT** allein durch technische Erreichbarkeit als überschritten gelten.
+* **SHOULD** durch eine definierte Bridge oder Capability kontrolliert werden.
+
+---
+
+# 15. Resource – normative Definition
+
+Eine **Resource** ist ein Objekt, Datenbestand, Dienst, Modell, Rechensystem oder sonstiger verwertbarer Systemgegenstand.
+
+Beispiele:
+
+* Datei,
+* Datenbank,
+* Datensatz,
+* Modell,
+* Container,
+* API,
+* VM,
+* Storage,
+* Knowledge Object.
+
+Eine Resource besitzt mindestens einen konzeptionellen Identitätsbezug.
+
+---
+
+# 16. State – normative Definition
+
+Ein **State** bezeichnet den bekannten, beobachteten oder systemisch gültigen Zustand eines STOE-Objekts oder eines definierten Systemkontextes.
+
+Ein State beantwortet:
+
+> **Wie ist etwas zu einem bestimmten Zeitpunkt bzw. unter einem bestimmten Beobachtungskontext?**
+
+### Normative Anforderungen
+
+Ein State:
+
+* **MUST** einem Scope oder Objekt zugeordnet sein.
+* **MUST** in einem definierten State-Kontext interpretierbar sein.
+* **MUST NOT** ohne definierte Transition stillschweigend ersetzt werden.
+* **SHOULD** einen zeitlichen Bezug besitzen.
+
+---
+
+# 17. State Identity
+
+Ein Zustand soll konzeptionell eindeutig unterscheidbar sein.
+
+Die Identität eines States muss mindestens ermöglichen:
+
+* Bezug zum betroffenen Objekt,
+* Bezug zur Zustandsversion,
+* zeitlichen Kontext,
+* Herkunft bzw. Entstehungskontext.
+
+Zwei unterschiedliche Zustände dürfen nicht ausschließlich über denselben allgemeinen Objektnamen unterschieden werden.
+
+---
+
+# 18. Transition – normative Definition
+
+Eine **Transition** ist ein kontrollierter Übergang von einem Zustand in einen anderen.
+
+Formal:
+
+**State A → Transition → State B**
+
+Eine Transition:
+
+* **MUST** einen Ausgangszustand oder definierten Anfangskontext besitzen.
+* **MUST** einen Zielzustand oder definierten Endzustand besitzen.
+* **MUST** durch einen zulässigen Auslöser oder Event-Kontext begründet sein.
+* **MUST NOT** unkontrolliert oder semantisch unsichtbar erfolgen.
+
+---
+
+# 19. Event – normative Definition
+
+Ein **Event** ist eine dokumentierbare Feststellung über ein relevantes Geschehen innerhalb des STOE-Kontextes.
+
+Ein Event beantwortet:
+
+> **Was ist geschehen?**
+
+Ein Event kann beispielsweise eine:
+
+* Zustandsänderung,
+* Access-Entscheidung,
+* Ressourcennutzung,
+* Loop-Aktion,
+* Freigabe,
+* Ablehnung,
+* Konflikterkennung
+
+beschreiben.
+
+Ein relevantes Event:
+
+* **MUST** zeitlich einordenbar sein.
+* **MUST** einem Kontext zuordenbar sein.
+* **SHOULD** einen Actor oder auslösenden Mechanismus referenzieren.
+
+---
+
+# 20. Loop – normative Definition
+
+Ein **Loop** ist ein kontrollierter, wiederkehrender oder zyklischer Verarbeitungskontext.
+
+Ein Loop besteht konzeptionell aus:
+
+**Observe → Evaluate → Transform → Validate → Commit → Repeat**
+
+Ein Loop:
+
+* **MUST** einen definierten Scope besitzen.
+* **MUST** einem Room oder einem vergleichbaren Kontext zugeordnet sein.
+* **MUST** einen Lebenszyklus besitzen.
+* **MUST NOT** einen Zustand außerhalb seines vorgesehenen Scopes verändern.
+
+---
+
+# 21. Multi-Loop – normative Definition
+
+**Multi-Loop** bezeichnet die gleichzeitige Existenz oder Koordination mehrerer Loops innerhalb eines gemeinsamen oder verbundenen STOE-Kontexts.
+
+Multi-Loop erlaubt:
+
+* Parallelität,
+* Verschachtelung,
+* Abhängigkeiten,
+* Synchronisierung,
+* Wiederaufnahme,
+* unabhängige Beendigung.
+
+### Normative Anforderungen
+
+Ein Multi-Loop-System:
+
+* **MUST** die Identität einzelner Loops erhalten.
+* **MUST** Parent-/Child-Beziehungen abbilden können, sofern Verschachtelung verwendet wird.
+* **MUST** konkurrierende Ressourcenänderungen erkennen oder durch geeignete Kontrollmechanismen verhindern.
+* **MUST NOT** einen parallelen Konflikt stillschweigend als konsistent behandeln.
+
+---
+
+# 22. Transformation – normative Definition
+
+Eine **Transformation** ist eine kontrollierte Veränderung eines bestehenden Zustands, einer Ressource oder eines anderen STOE-Objekts.
+
+Eine Transformation:
+
+* **MUST** innerhalb eines zulässigen Kontextes stattfinden.
+* **MUST** einen nachvollziehbaren Ursprung besitzen.
+* **MUST** den entstehenden Zustand eindeutig bestimmen oder beschreiben.
+* **SHOULD** einen Transformationstyp besitzen.
+
+---
+
+# 23. BackLink – normative Definition
+
+Ein **BackLink** ist eine semantisch definierte Rück- oder Querverbindung zwischen zwei STOE-Objekten.
+
+Ein BackLink unterscheidet sich von einer bloßen Referenz dadurch, dass er die **Bedeutung der Beziehung** ausdrückt.
+
+Beispiele:
+
+* DERIVED_FROM,
+* CAUSED_BY,
+* VERIFIED_BY,
+* REFERENCES,
+* DEPENDS_ON,
+* VERSION_OF,
+* CONFLICTS_WITH,
+* RESOLVES.
+
+### Normative Anforderungen
+
+Ein BackLink:
+
+* **MUST** eine Quelle besitzen.
+* **MUST** ein Ziel besitzen.
+* **MUST** eine definierte Relation besitzen.
+* **SHOULD** einen Entstehungszeitpunkt besitzen.
+* **SHOULD** eine Evidenz oder Begründungsreferenz besitzen, sofern die Relation nachweisrelevant ist.
+
+---
+
+# 24. BackLink Direction
+
+BackLinks besitzen eine definierte Richtung:
+
+**Source → Relation → Target**
+
+Die inverse Navigation:
+
+**Target ← Relation ← Source**
+
+MUSS logisch möglich sein.
+
+Ob die inverse Beziehung physisch gespeichert oder dynamisch abgeleitet wird, bleibt der Implementierung überlassen.
+
+---
+
+# 25. Temporal BackLink – normative Definition
+
+Ein **Temporal BackLink** ist ein BackLink mit zeitlichem Geltungskontext.
+
+Er kann mindestens unterscheiden zwischen:
+
+* Erstellung,
+* Beobachtung,
+* Gültigkeitsbeginn,
+* Gültigkeitsende.
+
+Eine zeitlich relevante Beziehung:
+
+* **SHOULD** einen beobachtbaren Zeitkontext besitzen.
+* **MUST** bei kritischen historischen Rekonstruktionsfällen zeitlich unterscheidbar sein.
+
+---
+
+# 26. Trace – normative Definition
+
+Ein **Trace** ist eine logisch zusammenhängende Folge von Events, States, Transitions, Actions oder anderen relevanten Objekten.
+
+Ein Trace beantwortet:
+
+> **Wie entwickelte sich dieser Vorgang von seinem Ausgangspunkt bis zum gegenwärtigen oder abgeschlossenen Ergebnis?**
+
+Ein Trace:
+
+* **MUST** eine zusammenhängende Identität besitzen.
+* **MUST** relevante Ereignisse in eine nachvollziehbare Beziehung setzen.
+* **SHOULD** Parent-/Child-Traces unterstützen.
+
+---
+
+# 27. Evidence – normative Definition
+
+**Evidence** bezeichnet eine überprüfbare Grundlage, die zur Begründung einer Aussage, Entscheidung, Transition oder Beziehung herangezogen wird.
+
+Evidence kann beispielsweise sein:
+
+* Event,
+* Dokument,
+* Ressource,
+* Messwert,
+* Signatur,
+* Hash,
+* Verifikationsergebnis,
+* Policy-Version,
+* externe Referenz.
+
+Evidence ist nicht automatisch gleichbedeutend mit „Wahrheit“.
+
+Sie bezeichnet die zugrunde liegende **nachvollziehbare Grundlage**.
+
+---
+
+# 28. Conflict – normative Definition
+
+Ein **Conflict** ist eine vom System erkannte Unvereinbarkeit mehrerer Zustände, Transformationen, Policies, Ressourcenversionen oder Entscheidungen.
+
+Ein Conflict:
+
+* **MUST** explizit erkennbar sein.
+* **MUST NOT** durch stilles Überschreiben verschwinden.
+* **SHOULD** einen eigenen Lebenszyklus besitzen.
+* **MUST** vor einer konfliktabhängigen endgültigen Commit-Entscheidung behandelt werden.
+
+---
+
+# 29. Bridge – normative Definition
+
+Eine **Bridge** ist eine explizite Kontrollverbindung zwischen zwei getrennten STOE-Kontexten.
+
+Eine Bridge kann beispielsweise zwei Rooms verbinden.
+
+Eine Bridge:
+
+* **MUST** einen definierten Zweck besitzen.
+* **MUST** einen definierten Scope besitzen.
+* **SHOULD** über Policy und Capability kontrolliert werden.
+* **MUST NOT** als pauschale Vertrauensbeziehung interpretiert werden.
+
+---
+
+# 30. Approval – normative Definition
+
+**Approval** bezeichnet eine explizit erteilte Freigabe für eine Aktion oder Transition, wenn eine entsprechende Policy eine solche Freigabe verlangt.
+
+Approval:
+
+* **MUST** einem konkreten Vorgang zuordenbar sein.
+* **SHOULD** einen Actor oder Approval-Mechanismus referenzieren.
+* **MUST NOT** automatisch auf beliebige Folgeaktionen übertragbar sein, sofern dies nicht ausdrücklich vom Scope der Approval umfasst ist.
+
+---
+
+# 31. Quarantine – normative Definition
+
+**Quarantine** bezeichnet einen kontrollierten isolierten Zustand für einen Actor, eine Resource, einen Prozess, einen Room oder eine andere STOE-Einheit.
+
+Quarantine dient dazu:
+
+* weitere unkontrollierte Verarbeitung zu verhindern,
+* Analyse zu ermöglichen,
+* Beweise zu erhalten,
+* eine spätere Freigabe oder Ablehnung vorzubereiten.
+
+---
+
+# 32. Audit Record – normative Definition
+
+Ein **Audit Record** ist eine nachvollziehbare Aufzeichnung über eine relevante Aktion, Entscheidung, Transition oder Systemveränderung.
+
+Ein Audit Record soll mindestens den Kontext abbilden, der für die Nachvollziehbarkeit erforderlich ist.
+
+Dazu können gehören:
+
+* Actor,
+* Zeitpunkt,
+* Room,
+* Ressource,
+* Aktion,
+* Policy,
+* Capability,
+* vorheriger Zustand,
+* neuer Zustand,
+* Ergebnis,
+* Trace.
+
+---
+
+# 33. Result – normative Definition
+
+Ein **Result** ist das Ergebnis eines definierten Transformations-, Analyse-, Prüf- oder Entscheidungsprozesses.
+
+Ein Result:
+
+* **MUST** einen Herkunftskontext besitzen.
+* **SHOULD** die zugrunde liegenden wesentlichen Inputs referenzieren.
+* **SHOULD** mit einem Trace verbunden sein.
+
+---
+
+# 34. Normative State Machine
+
+Für STOE gilt grundsätzlich:
+
+**Kein impliziter State Change.**
+
+Eine Zustandsänderung muss semantisch als Transition verstanden werden.
+
+Beispiel:
+
+**CREATED → INITIALIZING → READY → ACTIVE**
+
+Weitere Zustände:
+
+**PAUSED**
+
+**LOCKED**
+
+**DRAINING**
+
+**SEALED**
+
+**ARCHIVED**
+
+**QUARANTINED**
+
+**REVOKED**
+
+**ERROR**
+
+Nicht jede Transition ist in jedem Zustand zulässig.
+
+---
+
+# 35. Normative Transition Rule
+
+Eine zulässige Transition muss konzeptionell folgende Bedingungen erfüllen:
+
+**Known Context**
+
+↓
+
+**Valid Current State**
+
+↓
+
+**Permitted Transition**
+
+↓
+
+**Valid Trigger**
+
+↓
+
+**Policy Evaluation**
+
+↓
+
+**Capability / Authorization**
+
+↓
+
+**Transformation**
+
+↓
+
+**New State**
+
+↓
+
+**Event**
+
+↓
+
+**Trace / Audit**
+
+Fehlt eine für die jeweilige Transition notwendige Voraussetzung, darf der Zustand nicht stillschweigend verändert werden.
+
+---
+
+# 36. Normative Access Chain
+
+Der normative Zugriffspfad lautet:
+
+**Identity**
+
+↓
+
+**Device Context**
+
+↓
+
+**Consent**
+
+↓
+
+**Policy**
+
+↓
+
+**Session**
+
+↓
+
+**Capability**
+
+↓
+
+**Room**
+
+↓
+
+**Resource**
+
+Nicht jede Implementierung muss sämtliche Ebenen technisch separat realisieren.
+
+Semantisch muss jedoch klar bleiben:
+
+> **Authentifizierung, Autorisierung, Kontext und Ressourcenzugriff sind unterschiedliche Konzepte.**
+
+---
+
+# 37. Normative Cross-Room Rule
+
+Eine Aktion über eine Room Boundary hinweg:
+
+* **MUST** einen expliziten Cross-Room-Kontext besitzen.
+* **MUST** dem Source- und Target-Kontext zuordenbar sein.
+* **SHOULD** über Bridge oder Capability kontrolliert werden.
+* **MUST NOT** ausschließlich aufgrund physischer oder netzwerktechnischer Erreichbarkeit zulässig sein.
+
+---
+
+# 38. Normative Multi-Loop Rule
+
+Wenn mehrere Loops dieselbe Resource oder denselben State-Kontext betreffen:
+
+* **MUST** ihre Beteiligung erkennbar bleiben.
+* **MUST** ein möglicher Konflikt erkennbar sein.
+* **MUST NOT** eine konkurrierende Mutation still überschreiben.
+* **SHOULD** ein Synchronisations-, Versionierungs- oder Merge-Modell verwenden.
+
+---
+
+# 39. Normative BackLink Rule
+
+Jede für Provenance, Governance, Security oder Nachvollziehbarkeit relevante Transformation:
+
+* **SHOULD** mindestens einen Herkunftsbezug besitzen.
+* **MUST** bei entsprechend klassifizierten kritischen Vorgängen nachvollziehbar auf ihre Quelle oder ihren Trigger zurückführbar sein.
+
+Damit gilt:
+
+> **Critical transformation without provenance = non-conformant behavior.**
+
+---
+
+# 40. Normative No-Silent-Action Rule
+
+STOE definiert als übergreifendes Prinzip:
+
+**Keine stille relevante Aktion.**
+
+Eine Aktion ist relevant, wenn sie beispielsweise:
+
+* einen Zustand verändert,
+* eine Berechtigung verändert,
+* eine Ressource verändert,
+* eine Room Boundary überschreitet,
+* einen Loop startet oder beendet,
+* einen Konflikt erzeugt oder löst,
+* eine sicherheitsrelevante Entscheidung beeinflusst.
+
+Solche Aktionen müssen innerhalb der vorgesehenen Semantik nachvollziehbar sein.
+
+---
+
+# 41. Normative No-Implicit-Trust Rule
+
+STOE definiert:
+
+> **Bekanntheit ist nicht gleich Vertrauenswürdigkeit.**
+
+Daraus folgt:
+
+Eine bekannte Identity:
+
+≠
+
+automatische Capability.
+
+Eine vorhandene Session:
+
+≠
+
+automatische Vollberechtigung.
+
+Ein erreichbarer Room:
+
+≠
+
+automatischer Zugriff.
+
+Eine bekannte Resource:
+
+≠
+
+automatische Änderungsberechtigung.
+
+---
+
+# 42. Normative Fail-Closed Rule
+
+Für sicherheitskritische Entscheidungen gilt:
+
+Wenn eine notwendige Kontrollinformation nicht zuverlässig verfügbar oder nicht eindeutig interpretierbar ist, darf keine stillschweigende Freigabe erfolgen.
+
+Mögliche Zustände sind:
+
+**DENY**
+
+**CHALLENGE**
+
+**REQUIRE_APPROVAL**
+
+**QUARANTINE**
+
+Dies gilt insbesondere bei:
+
+* unklarer Capability,
+* fehlender Policy,
+* ungültiger Session,
+* unbekanntem Room-Kontext,
+* unauflösbarem Conflict,
+* ungültigem State.
+
+---
+
+# 43. Normative Provenance Rule
+
+Jeder relevante Resultatpfad soll grundsätzlich rekonstruktierbar sein.
+
+Konzeptionelle Beziehung:
+
+**Result**
+
+↓
+
+**Transformation**
+
+↓
+
+**Input State**
+
+↓
+
+**Resource**
+
+↓
+
+**Event**
+
+↓
+
+**Policy**
+
+↓
+
+**Capability**
+
+↓
+
+**Actor**
+
+Damit wird Provenance ein Bestandteil der Architektur und nicht lediglich eine optionale spätere Dokumentation.
+
+---
+
+# 44. Normative Temporal Rule
+
+Zeit ist ein semantischer Bestandteil des STOE-Modells.
+
+Bei zeitkritischen Objekten soll unterschieden werden zwischen:
+
+* erstellt,
+* beobachtet,
+* gültig,
+* beendet,
+* widerrufen,
+* ersetzt.
+
+Damit kann zwischen:
+
+**Current State**
+
+und
+
+**Historical State**
+
+unterschieden werden.
+
+---
+
+# 45. Normative Conflict Rule
+
+Ein erkannter Conflict:
+
+* **MUST** als eigener Zustand oder als explizite Konfliktbedingung erkennbar bleiben.
+* **MUST NOT** durch einen unsichtbaren Schreibvorgang verschwinden.
+* **MUST** eine definierte Resolution erhalten, bevor ein abhängiger Commit als abschließend gilt.
+
+---
+
+# 46. Normative Approval Rule
+
+Wenn eine Policy eine menschliche oder organisatorische Freigabe verlangt:
+
+**MUST NOT** die technische Ausführung die Approval-Anforderung umgehen.
+
+Die Approval gilt nur innerhalb ihres definierten Scope.
+
+---
+
+# 47. Normative Separation Rule
+
+Die folgenden Konzepte müssen semantisch getrennt bleiben:
+
+**Identity ≠ Authorization**
+
+**Authorization ≠ Capability**
+
+**Capability ≠ Session**
+
+**Session ≠ Room**
+
+**Room ≠ Resource**
+
+**State ≠ Event**
+
+**Event ≠ Audit**
+
+**Link ≠ Evidence**
+
+**Loop ≠ State**
+
+**Result ≠ Proof**
+
+**Visibility ≠ Permission**
+
+Diese Trennungen sind Teil der STOE-Architektursemantik.
+
+---
+
+# 48. Normative Object Relationship Model
+
+STOE verwendet folgende Grundbeziehung:
+
+**Actor**
+
+↓
+
+handelt innerhalb einer
+
+**Session**
+
+↓
+
+mit einer
+
+**Capability**
+
+↓
+
+innerhalb eines
+
+**Room**
+
+↓
+
+auf einer
+
+**Resource**
+
+↓
+
+unter einem
+
+**Policy Context**
+
+↓
+
+durch eine
+
+**Transformation**
+
+↓
+
+von einem
+
+**State**
+
+↓
+
+zu einem neuen
+
+**State**
+
+↓
+
+erzeugt ein
+
+**Event**
+
+↓
+
+wird durch einen
+
+**Trace**
+
+verbunden
+
+↓
+
+und erhält bei Bedarf
+
+**BackLinks / Evidence / Audit Records**
+
+---
+
+# 49. Normative Multi-Loop Relationship
+
+Ein Multi-Loop-Kontext soll strukturell unterscheiden zwischen:
+
+**Root Loop**
+
+**Child Loop**
+
+**Sibling Loop**
+
+**Nested Loop**
+
+**Dependent Loop**
+
+Dadurch können parallele Prozesse sowohl technisch als auch semantisch auseinandergehalten werden.
+
+---
+
+# 50. Loop Isolation
+
+Ein Loop darf nicht automatisch auf sämtliche Ressourcen oder Zustände seines Rooms zugreifen.
+
+Der Room definiert den Kontext.
+
+Die Capability definiert die konkrete Handlungsmöglichkeit.
+
+Damit gilt:
+
+**Room Scope ≠ Loop Permission**
+
+Diese Unterscheidung ist insbesondere für Multi-Agent-Systeme wichtig.
+
+---
+
+# 51. Agentic Execution Model
+
+Für einen KI-Agenten kann das normative Modell beispielsweise lauten:
+
+**Agent Identity**
+
+↓
+
+**Session**
+
+↓
+
+**Capability**
+
+↓
+
+**Room**
+
+↓
+
+**Loop**
+
+↓
+
+**Tool / Resource**
+
+↓
+
+**Transformation**
+
+↓
+
+**Event**
+
+↓
+
+**Result**
+
+↓
+
+**BackLink**
+
+Damit ist die Agentenaktion in einen nachvollziehbaren Kontext eingebettet.
+
+---
+
+# 52. MCP / API Semantik
+
+MCP, API oder andere Schnittstellen dürfen konzeptionell als Transport- und Interaktionsmechanismen betrachtet werden.
+
+Sie ersetzen nicht automatisch:
+
+* Policy,
+* Capability,
+* Room Boundary,
+* Trace,
+* Audit.
+
+Eine externe API-Verbindung ist daher nicht automatisch eine Autorisierung.
+
+---
+
+# 53. Graph Semantics
+
+STOE kann als semantisches Graphmodell betrachtet werden.
+
+### Nodes
+
+* Actor,
+* Identity,
+* Room,
+* Resource,
+* State,
+* Event,
+* Loop,
+* Capability,
+* Policy,
+* Result,
+* Evidence.
+
+### Relations
+
+* DERIVED_FROM,
+* CAUSED_BY,
+* VERIFIED_BY,
+* DEPENDS_ON,
+* REFERENCES,
+* VERSION_OF,
+* CHILD_OF,
+* PARENT_OF,
+* CONFLICTS_WITH,
+* RESOLVES.
+
+Die Beziehung besitzt dabei eine fachliche Bedeutung.
+
+---
+
+# 54. Evidence-before-Assertion Principle
+
+STOE definiert als übergreifendes Architekturprinzip:
+
+> **Evidence before Assertion.**
+
+Das bedeutet nicht, dass jede Systemoperation wissenschaftlich bewiesen sein muss.
+
+Es bedeutet:
+
+Eine Aussage, Entscheidung oder Zustandsannahme soll dort, wo Nachvollziehbarkeit erforderlich ist, auf eine explizite Grundlage zurückgeführt werden können.
+
+---
+
+# 55. Explainability
+
+STOE behandelt Explainability primär als Strukturproblem.
+
+Ein System ist erklärbarer, wenn es die Beziehungen zwischen:
+
+**Input → Context → Policy → Action → Transformation → Result**
+
+erhalten kann.
+
+Textuelle Erklärungen können darauf aufbauen.
+
+Sie ersetzen aber nicht die zugrunde liegende Provenance.
+
+---
+
+# 56. Historische Rekonstruktion
+
+Eine konforme Architektur soll bei entsprechendem Scope ermöglichen, einen früheren Systemzustand zu rekonstruieren.
+
+Dazu gehören insbesondere:
+
+* historische Events,
+* State-Versionen,
+* relevante Policies,
+* Capability-Kontext,
+* BackLinks,
+* relevante Ressourcenreferenzen.
+
+Der historische Zustand darf dabei nicht mit dem heutigen Zustand verwechselt werden.
+
+---
+
+# 57. Simulation und Replay
+
+STOE kann konzeptionell zwei unterschiedliche Betriebsmodi vorsehen:
+
+### Replay
+
+Nachvollziehen eines bereits stattgefundenen Vorgangs.
+
+### Simulation
+
+Durchspielen eines möglichen Vorgangs ohne produktive Zustandsübernahme.
+
+Diese beiden Modi sollen semantisch vom normalen Commit-Pfad unterscheidbar sein.
+
+---
+
+# 58. Quarantine Lifecycle
+
+Ein Quarantine-Zustand kann folgenden Prozess verwenden:
+
+**DETECT**
+
+↓
+
+**ISOLATE**
+
+↓
+
+**ANALYZE**
+
+↓
+
+**VERIFY**
+
+↓
+
+**DECIDE**
+
+↓
+
+**RELEASE / REJECT / RETAIN**
+
+Der Quarantine-Vorgang besitzt selbst:
+
+* States,
+* Events,
+* Loops,
+* Policies,
+* Trace.
+
+---
+
+# 59. Architekturprinzipien
+
+STOE basiert auf folgenden normativen Leitprinzipien:
+
+### 1. Context Before Action
+
+Eine relevante Aktion benötigt einen definierten Kontext.
+
+### 2. Authorization Before Transformation
+
+Eine kontrollierte Transformation setzt eine zulässige Handlungsmöglichkeit voraus.
+
+### 3. State Before State Change
+
+Ein neuer Zustand soll aus einem bekannten oder definierten Ausgangszustand entstehen.
+
+### 4. Event for Relevant Change
+
+Relevante Veränderungen sollen durch Ereignisse nachvollziehbar sein.
+
+### 5. Explicit Cross-Room
+
+Room-Grenzen dürfen nicht implizit überschritten werden.
+
+### 6. No Silent Mutation
+
+Keine relevante stille Zustandsänderung.
+
+### 7. No Silent Conflict Resolution
+
+Keine stille Auflösung konkurrierender Zustände.
+
+### 8. Provenance by Design
+
+Herkunft wird architektonisch berücksichtigt.
+
+### 9. Temporal Awareness
+
+Zeitliche Gültigkeit wird semantisch berücksichtigt.
+
+### 10. Evidence before Assertion
+
+Nachweise werden gegenüber bloßen Behauptungen priorisiert.
+
+---
+
+# 60. Normative Konformitätsklassen
+
+Für eine spätere formale Spezifikation können mindestens folgende Konformitätsklassen definiert werden:
+
+**STOE-ROOM**
+
+Konformität mit Room und Room Boundary.
+
+**STOE-ACCESS**
+
+Konformität mit Identity, Policy, Session und Capability.
+
+**STOE-STATE**
+
+Konformität mit State und Transition.
+
+**STOE-EVENT**
+
+Konformität mit Event und Trace.
+
+**STOE-LOOP**
+
+Konformität mit Loop und Multi-Loop.
+
+**STOE-LINK**
+
+Konformität mit BackLink und Relation Semantics.
+
+**STOE-PROVENANCE**
+
+Konformität mit Evidence und Herkunftsnachweis.
+
+**STOE-AUDIT**
+
+Konformität mit Audit- und Nachvollziehbarkeitsanforderungen.
+
+**STOE-FULL**
+
+Konformität über den definierten Gesamtumfang der STOE-Spezifikation.
+
+---
+
+# 61. Normative Mindestarchitektur
+
+Ein vollständiges STOE-System sollte konzeptionell mindestens folgende Funktionen unterscheiden:
+
+**Context Management**
+
+↓
+
+**Access Control**
+
+↓
+
+**State Management**
+
+↓
+
+**Transition Control**
+
+↓
+
+**Event Management**
+
+↓
+
+**Loop Orchestration**
+
+↓
+
+**Relation / BackLink Management**
+
+↓
+
+**Trace Management**
+
+↓
+
+**Evidence / Provenance**
+
+↓
+
+**Audit / Governance**
+
+Diese Funktionen dürfen technisch in einer oder mehreren Komponenten umgesetzt werden; ihre semantische Trennung bleibt jedoch erhalten.
+
+---
+
+# 62. Gesamtmodell
+
+Das vollständige Modell lautet:
+
+**Identity**
+
+→ **Context**
+
+→ **Policy**
+
+→ **Capability**
+
+→ **Room**
+
+→ **Resource**
+
+→ **State**
+
+→ **Loop**
+
+→ **Transformation**
+
+→ **New State**
+
+→ **Event**
+
+→ **BackLink**
+
+→ **Trace**
+
+→ **Evidence**
+
+→ **Audit**
+
+Der Ablauf ist nicht zwingend linear.
+
+Loops können parallel existieren.
+
+Rooms können kontrolliert verbunden werden.
+
+Events können mehrere Zustände beeinflussen.
+
+BackLinks können quer durch den gesamten Graphen reichen.
+
+Traces können mehrere Loops umfassen.
+
+---
+
+# 63. Gesamtformel
+
+Das konzeptionelle STOE-Modell kann zusammengefasst werden als:
+
+**STOE = Context + State + Policy + Capability + Event + Loop + Relation + Trace + Evidence + Audit**
+
+Oder als Transformationsprinzip:
+
+**Context**
+
+↓
+
+**Authorization**
+
+↓
+
+**Observation**
+
+↓
+
+**Evaluation**
+
+↓
+
+**Transformation**
+
+↓
+
+**Validation**
+
+↓
+
+**State Change**
+
+↓
+
+**Event**
+
+↓
+
+**Provenance**
+
+↓
+
+**Trace**
+
+---
+
+# 64. Abschließende normative Aussage
+
+STOE definiert einen digitalen Verarbeitungsvorgang nicht primär als Folge technischer Befehle.
+
+STOE definiert ihn als:
+
+> **kontrollierte Transformation eines Zustands innerhalb eines definierten Kontextes unter einer definierten Policy mit einer definierten Handlungsmöglichkeit und nachvollziehbarer Herkunft.**
+
+Daraus folgen die zentralen Beziehungen:
+
+**Room definiert den Kontext.**
+
+**Policy definiert die zulässigen Regeln.**
+
+**Capability definiert die konkrete Handlungsmöglichkeit.**
+
+**State definiert die Situation.**
+
+**Transition definiert den Zustandswechsel.**
+
+**Event dokumentiert das Geschehen.**
+
+**Loop beschreibt den Prozess.**
+
+**Multi-Loop beschreibt parallele oder verschachtelte Prozesse.**
+
+**BackLink beschreibt die semantische Beziehung.**
+
+**Evidence beschreibt die Grundlage.**
+
+**Trace verbindet die Vorgänge.**
+
+**Audit bewahrt die Nachvollziehbarkeit.**
+
+Damit entsteht eine gemeinsame normative Sprache für komplexe Systeme, ohne bereits eine bestimmte Programmiersprache, Datenbank, Cloud-Plattform, Containertechnologie oder konkrete Implementierung vorzuschreiben.
+
+Das Concept bildet damit die Grundlage für eine spätere formale **STOE-1.0 Architecture Specification**, ein **STOE State Model**, ein **STOE Event Model**, ein **STOE Policy Model**, ein **STOE Conformance Model** sowie darauf aufbauende API-, MCP-, Plugin- und Orchestrierungs-Spezifikationen.
+# STOE-1.0
+
+## Conceptual Architecture Paper
+
+### Room · Room-Access · Multi-Loop · BackLink · State · Event · Trace · Normative Definitions
+
+**Dokumenttyp:** Konzeptuelle Architektur- und Systembeschreibung
+**Status:** Concept / Architectural Draft
+**Ausführung:** bewusst ohne Quellcode und ohne Implementierungsdetails
+**Zweck:** Definition eines zustands-, ereignis-, zugriffs-, workflow- und graphorientierten Systemmodells einschließlich eines normativen Begriffs- und Anforderungsrahmens.
+
+---
+
+# 1. Zweck und Geltungsbereich
+
+STOE ist konzeptionell als **State-/Transformation-Oriented Engine** definiert.
+
+STOE beschreibt eine Architektur, in der digitale Vorgänge nicht ausschließlich als lineare Verarbeitungsketten verstanden werden, sondern als kontrollierte Beziehungen zwischen:
+
+* Kontexten,
+* Identitäten,
+* Ressourcen,
+* Zuständen,
+* Ereignissen,
+* Policies,
+* Capabilities,
+* Loops,
+* Transformationen,
+* Beziehungen,
+* Traces,
+* Evidenzen,
+* und Auditinformationen.
+
+Der normative Teil dieser Spezifikation definiert, welche Bedeutung zentrale STOE-Begriffe besitzen und welche grundlegenden Anforderungen eine konforme STOE-Implementierung erfüllen soll.
+
+Dieses Dokument beschreibt **Architektursemantik**, nicht die konkrete technische Implementierung.
+
+---
+
+# 2. Normatives Vokabular
+
+Für diese Spezifikation gelten folgende Anforderungsstufen.
+
+## 2.1 MUST
+
+**MUST** bedeutet:
+
+> Eine konforme Implementierung muss die betreffende Anforderung erfüllen.
+
+Eine Implementierung, die eine MUST-Anforderung verletzt, ist nicht konform zu der betreffenden STOE-Spezifikationsebene.
+
+---
+
+## 2.2 MUST NOT
+
+**MUST NOT** bedeutet:
+
+> Eine konforme Implementierung darf die betreffende Eigenschaft oder Operation nicht zulassen.
+
+Dies betrifft insbesondere sicherheitskritische oder semantisch widersprüchliche Zustandsänderungen.
+
+---
+
+## 2.3 SHOULD
+
+**SHOULD** bedeutet:
+
+> Eine konforme Implementierung soll die Anforderung erfüllen, sofern kein dokumentierter technischer oder betrieblicher Grund dagegenspricht.
+
+Eine Abweichung von SHOULD sollte begründet oder dokumentiert werden.
+
+---
+
+## 2.4 SHOULD NOT
+
+**SHOULD NOT** bedeutet:
+
+> Eine konforme Implementierung sollte die betreffende Eigenschaft oder Operation vermeiden.
+
+Eine Abweichung ist möglich, soll jedoch nachvollziehbar begründet sein.
+
+---
+
+## 2.5 MAY
+
+**MAY** bedeutet:
+
+> Eine Implementierung darf die betreffende Funktionalität optional bereitstellen.
+
+Das Fehlen einer MAY-Funktion stellt allein keine Nichtkonformität dar.
+
+---
+
+# 3. Normative Definition
+
+Eine **normative Definition** ist innerhalb STOE eine verbindliche semantische Festlegung.
+
+Sie bestimmt nicht nur, wie ein Begriff sprachlich verstanden wird, sondern:
+
+1. welche Eigenschaften zu diesem Begriff gehören,
+2. welche Beziehungen zulässig sind,
+3. welche Zustände möglich sind,
+4. welche Übergänge erlaubt sind,
+5. welche Mindestanforderungen für Konformität gelten.
+
+Dadurch wird verhindert, dass zentrale Begriffe wie „Room“, „State“ oder „Capability“ von verschiedenen Implementierungen vollständig unterschiedlich interpretiert werden.
+
+---
+
+# 4. Konformität
+
+Eine STOE-Implementierung ist **konform** zu einer bestimmten STOE-Ebene, wenn sie die für diese Ebene festgelegten normativen Anforderungen erfüllt.
+
+Konformität ist dabei immer:
+
+**versionsbezogen + scopebezogen + funktionsbezogen**
+
+Eine Implementierung kann daher beispielsweise:
+
+* zum Room-Modell konform,
+* zum Multi-Loop-Modell teilweise konform,
+* zum temporalen BackLink-Modell nicht konform
+
+sein.
+
+Eine pauschale Aussage „STOE-kompatibel“ sollte deshalb vermieden werden, sofern kein definierter Konformitätsumfang angegeben wird.
+
+---
+
+# 5. Normative Kernbegriffe
+
+STOE definiert folgende Kernbegriffe:
+
+1. **Actor**
+2. **Identity**
+3. **Device Context**
+4. **Consent**
+5. **Policy**
+6. **Session**
+7. **Capability**
+8. **Room**
+9. **Resource**
+10. **State**
+11. **Transition**
+12. **Event**
+13. **Loop**
+14. **Multi-Loop**
+15. **Transformation**
+16. **BackLink**
+17. **Trace**
+18. **Evidence**
+19. **Conflict**
+20. **Bridge**
+21. **Audit Record**
+22. **Result**
+23. **Quarantine**
+24. **Approval**
+
+Diese Begriffe bilden das normative Vokabular des Architekturmodells.
+
+---
+
+# 6. Actor – normative Definition
+
+Ein **Actor** ist ein Subjekt oder Systemelement, das eine Aktion auslösen, durchführen, bestätigen, ablehnen oder beobachten kann.
+
+Ein Actor kann beispielsweise sein:
+
+* ein Mensch,
+* ein KI-Agent,
+* ein Dienst,
+* ein Worker,
+* eine Anwendung,
+* ein automatisierter Prozess,
+* ein Systemadministrator,
+* ein externer Dienst.
+
+### Normative Anforderungen
+
+Ein Actor:
+
+* **MUST** innerhalb des jeweiligen Vorgangskontextes eindeutig referenzierbar sein.
+* **MUST** über den Trace einer relevanten Aktion zugeordnet werden können.
+* **MUST NOT** automatisch als vertrauenswürdig gelten, nur weil seine Identität bekannt ist.
+
+---
+
+# 7. Identity – normative Definition
+
+Eine **Identity** beschreibt die identifizierbare Zuordnung eines Actors zu einer bestimmten digitalen oder organisatorischen Identität.
+
+Identity beantwortet:
+
+> **Wer oder was handelt?**
+
+Identity ist nicht gleichbedeutend mit Berechtigung.
+
+### Normative Anforderungen
+
+Eine Identity:
+
+* **MUST** eindeutig referenzierbar sein.
+* **MUST NOT** allein durch ihre Existenz Zugriff auf einen beliebigen Room oder eine beliebige Ressource erhalten.
+* **SHOULD** über eine überprüfbare Herkunft oder Authentifizierungsgrundlage verfügen.
+
+---
+
+# 8. Device Context – normative Definition
+
+Der **Device Context** beschreibt den für eine Aktion relevanten technischen Ausführungskontext.
+
+Er kann unter anderem umfassen:
+
+* Gerät,
+* Laufzeitumgebung,
+* Plattform,
+* Netzwerk-Kontext,
+* Sicherheitszustand.
+
+Device Context ist eine Kontextinformation und keine automatische Vertrauensgarantie.
+
+---
+
+# 9. Consent – normative Definition
+
+**Consent** bezeichnet eine explizite Zustimmung, sofern für einen Vorgang eine solche Zustimmung erforderlich ist.
+
+Consent ist von:
+
+* Identity,
+* Policy,
+* Capability
+
+zu unterscheiden.
+
+Eine Zustimmung ersetzt nicht automatisch eine Policy-Prüfung.
+
+---
+
+# 10. Policy – normative Definition
+
+Eine **Policy** ist eine formal oder semantisch definierte Regelmenge, die festlegt, welche Aktionen unter bestimmten Bedingungen zulässig, unzulässig oder freigabepflichtig sind.
+
+Eine Policy kann sich beziehen auf:
+
+* Actor,
+* Identity,
+* Room,
+* Resource,
+* Action,
+* Zeit,
+* Umgebung,
+* Datenklasse,
+* Risiko,
+* Capability.
+
+### Normative Anforderungen
+
+Eine Policy:
+
+* **MUST** eindeutig referenzierbar sein, wenn sie eine sicherheits- oder zugriffsrelevante Entscheidung bestimmt.
+* **MUST NOT** als bloße Freitextnotiz behandelt werden, wenn sie eine normative Zugriffsentscheidung begründet.
+* **SHOULD** eine Version oder einen Gültigkeitskontext besitzen.
+
+---
+
+# 11. Session – normative Definition
+
+Eine **Session** ist ein zeitlich begrenzter Interaktionskontext zwischen einem Actor und STOE.
+
+Eine Session verbindet beispielsweise:
+
+**Identity + Context + Capability**
+
+Eine Session:
+
+* **MUST** einen definierten Beginn besitzen.
+* **MUST** einen überprüfbaren Status besitzen.
+* **SHOULD** ein definiertes Ablauf- oder Beendigungsereignis besitzen.
+
+---
+
+# 12. Capability – normative Definition
+
+Eine **Capability** ist eine kontrollierte und begrenzte Handlungsmöglichkeit.
+
+Sie beschreibt:
+
+> **Welche konkrete Handlung darf ein bestimmtes Subjekt in welchem Kontext und unter welchen Bedingungen ausführen?**
+
+Eine Capability kann mindestens auf folgende Dimensionen beschränkt sein:
+
+* Actor,
+* Room,
+* Resource,
+* Action,
+* Zeit,
+* Policy.
+
+### Normative Anforderungen
+
+Eine Capability:
+
+* **MUST** einen definierten Geltungsbereich besitzen.
+* **MUST NOT** implizit einen unbegrenzten globalen Zugriff darstellen.
+* **SHOULD** zeitlich begrenzt werden.
+* **MUST** widerrufbar oder anderweitig invalidierbar sein, sofern sie länger als einen atomaren Vorgang gilt.
+
+---
+
+# 13. Room – normative Definition
+
+Ein **Room** ist ein logisch abgegrenzter Kontext für Zustände, Ressourcen, Policies, Sessions, Capabilities, Events und Prozesse.
+
+Der Room ist die zentrale **Context Boundary**.
+
+### Normative Anforderungen
+
+Ein Room:
+
+* **MUST** eine eindeutige Identität besitzen.
+* **MUST** einen definierten Zustand besitzen.
+* **MUST** einen definierten Zugriffskontext besitzen.
+* **MUST** eindeutig bestimmen können, welche Ressourcen in seinem Scope liegen.
+* **MUST NOT** implizit mit beliebigen anderen Rooms gleichgesetzt werden.
+* **MUST NOT** implizit einen vollständigen Cross-Room-Zugriff zulassen.
+
+---
+
+# 14. Room Boundary – normative Definition
+
+Eine **Room Boundary** ist die logische Grenze zwischen einem Room und einem anderen Kontext.
+
+Die Boundary bestimmt:
+
+* Sichtbarkeit,
+* Zugriff,
+* Ressourcennutzung,
+* Kommunikation,
+* Transformationen,
+* Datenübertragung.
+
+Eine Room Boundary:
+
+* **MUST** bei Cross-Room-Aktionen explizit berücksichtigt werden.
+* **MUST NOT** allein durch technische Erreichbarkeit als überschritten gelten.
+* **SHOULD** durch eine definierte Bridge oder Capability kontrolliert werden.
+
+---
+
+# 15. Resource – normative Definition
+
+Eine **Resource** ist ein Objekt, Datenbestand, Dienst, Modell, Rechensystem oder sonstiger verwertbarer Systemgegenstand.
+
+Beispiele:
+
+* Datei,
+* Datenbank,
+* Datensatz,
+* Modell,
+* Container,
+* API,
+* VM,
+* Storage,
+* Knowledge Object.
+
+Eine Resource besitzt mindestens einen konzeptionellen Identitätsbezug.
+
+---
+
+# 16. State – normative Definition
+
+Ein **State** bezeichnet den bekannten, beobachteten oder systemisch gültigen Zustand eines STOE-Objekts oder eines definierten Systemkontextes.
+
+Ein State beantwortet:
+
+> **Wie ist etwas zu einem bestimmten Zeitpunkt bzw. unter einem bestimmten Beobachtungskontext?**
+
+### Normative Anforderungen
+
+Ein State:
+
+* **MUST** einem Scope oder Objekt zugeordnet sein.
+* **MUST** in einem definierten State-Kontext interpretierbar sein.
+* **MUST NOT** ohne definierte Transition stillschweigend ersetzt werden.
+* **SHOULD** einen zeitlichen Bezug besitzen.
+
+---
+
+# 17. State Identity
+
+Ein Zustand soll konzeptionell eindeutig unterscheidbar sein.
+
+Die Identität eines States muss mindestens ermöglichen:
+
+* Bezug zum betroffenen Objekt,
+* Bezug zur Zustandsversion,
+* zeitlichen Kontext,
+* Herkunft bzw. Entstehungskontext.
+
+Zwei unterschiedliche Zustände dürfen nicht ausschließlich über denselben allgemeinen Objektnamen unterschieden werden.
+
+---
+
+# 18. Transition – normative Definition
+
+Eine **Transition** ist ein kontrollierter Übergang von einem Zustand in einen anderen.
+
+Formal:
+
+**State A → Transition → State B**
+
+Eine Transition:
+
+* **MUST** einen Ausgangszustand oder definierten Anfangskontext besitzen.
+* **MUST** einen Zielzustand oder definierten Endzustand besitzen.
+* **MUST** durch einen zulässigen Auslöser oder Event-Kontext begründet sein.
+* **MUST NOT** unkontrolliert oder semantisch unsichtbar erfolgen.
+
+---
+
+# 19. Event – normative Definition
+
+Ein **Event** ist eine dokumentierbare Feststellung über ein relevantes Geschehen innerhalb des STOE-Kontextes.
+
+Ein Event beantwortet:
+
+> **Was ist geschehen?**
+
+Ein Event kann beispielsweise eine:
+
+* Zustandsänderung,
+* Access-Entscheidung,
+* Ressourcennutzung,
+* Loop-Aktion,
+* Freigabe,
+* Ablehnung,
+* Konflikterkennung
+
+beschreiben.
+
+Ein relevantes Event:
+
+* **MUST** zeitlich einordenbar sein.
+* **MUST** einem Kontext zuordenbar sein.
+* **SHOULD** einen Actor oder auslösenden Mechanismus referenzieren.
+
+---
+
+# 20. Loop – normative Definition
+
+Ein **Loop** ist ein kontrollierter, wiederkehrender oder zyklischer Verarbeitungskontext.
+
+Ein Loop besteht konzeptionell aus:
+
+**Observe → Evaluate → Transform → Validate → Commit → Repeat**
+
+Ein Loop:
+
+* **MUST** einen definierten Scope besitzen.
+* **MUST** einem Room oder einem vergleichbaren Kontext zugeordnet sein.
+* **MUST** einen Lebenszyklus besitzen.
+* **MUST NOT** einen Zustand außerhalb seines vorgesehenen Scopes verändern.
+
+---
+
+# 21. Multi-Loop – normative Definition
+
+**Multi-Loop** bezeichnet die gleichzeitige Existenz oder Koordination mehrerer Loops innerhalb eines gemeinsamen oder verbundenen STOE-Kontexts.
+
+Multi-Loop erlaubt:
+
+* Parallelität,
+* Verschachtelung,
+* Abhängigkeiten,
+* Synchronisierung,
+* Wiederaufnahme,
+* unabhängige Beendigung.
+
+### Normative Anforderungen
+
+Ein Multi-Loop-System:
+
+* **MUST** die Identität einzelner Loops erhalten.
+* **MUST** Parent-/Child-Beziehungen abbilden können, sofern Verschachtelung verwendet wird.
+* **MUST** konkurrierende Ressourcenänderungen erkennen oder durch geeignete Kontrollmechanismen verhindern.
+* **MUST NOT** einen parallelen Konflikt stillschweigend als konsistent behandeln.
+
+---
+
+# 22. Transformation – normative Definition
+
+Eine **Transformation** ist eine kontrollierte Veränderung eines bestehenden Zustands, einer Ressource oder eines anderen STOE-Objekts.
+
+Eine Transformation:
+
+* **MUST** innerhalb eines zulässigen Kontextes stattfinden.
+* **MUST** einen nachvollziehbaren Ursprung besitzen.
+* **MUST** den entstehenden Zustand eindeutig bestimmen oder beschreiben.
+* **SHOULD** einen Transformationstyp besitzen.
+
+---
+
+# 23. BackLink – normative Definition
+
+Ein **BackLink** ist eine semantisch definierte Rück- oder Querverbindung zwischen zwei STOE-Objekten.
+
+Ein BackLink unterscheidet sich von einer bloßen Referenz dadurch, dass er die **Bedeutung der Beziehung** ausdrückt.
+
+Beispiele:
+
+* DERIVED_FROM,
+* CAUSED_BY,
+* VERIFIED_BY,
+* REFERENCES,
+* DEPENDS_ON,
+* VERSION_OF,
+* CONFLICTS_WITH,
+* RESOLVES.
+
+### Normative Anforderungen
+
+Ein BackLink:
+
+* **MUST** eine Quelle besitzen.
+* **MUST** ein Ziel besitzen.
+* **MUST** eine definierte Relation besitzen.
+* **SHOULD** einen Entstehungszeitpunkt besitzen.
+* **SHOULD** eine Evidenz oder Begründungsreferenz besitzen, sofern die Relation nachweisrelevant ist.
+
+---
+
+# 24. BackLink Direction
+
+BackLinks besitzen eine definierte Richtung:
+
+**Source → Relation → Target**
+
+Die inverse Navigation:
+
+**Target ← Relation ← Source**
+
+MUSS logisch möglich sein.
+
+Ob die inverse Beziehung physisch gespeichert oder dynamisch abgeleitet wird, bleibt der Implementierung überlassen.
+
+---
+
+# 25. Temporal BackLink – normative Definition
+
+Ein **Temporal BackLink** ist ein BackLink mit zeitlichem Geltungskontext.
+
+Er kann mindestens unterscheiden zwischen:
+
+* Erstellung,
+* Beobachtung,
+* Gültigkeitsbeginn,
+* Gültigkeitsende.
+
+Eine zeitlich relevante Beziehung:
+
+* **SHOULD** einen beobachtbaren Zeitkontext besitzen.
+* **MUST** bei kritischen historischen Rekonstruktionsfällen zeitlich unterscheidbar sein.
+
+---
+
+# 26. Trace – normative Definition
+
+Ein **Trace** ist eine logisch zusammenhängende Folge von Events, States, Transitions, Actions oder anderen relevanten Objekten.
+
+Ein Trace beantwortet:
+
+> **Wie entwickelte sich dieser Vorgang von seinem Ausgangspunkt bis zum gegenwärtigen oder abgeschlossenen Ergebnis?**
+
+Ein Trace:
+
+* **MUST** eine zusammenhängende Identität besitzen.
+* **MUST** relevante Ereignisse in eine nachvollziehbare Beziehung setzen.
+* **SHOULD** Parent-/Child-Traces unterstützen.
+
+---
+
+# 27. Evidence – normative Definition
+
+**Evidence** bezeichnet eine überprüfbare Grundlage, die zur Begründung einer Aussage, Entscheidung, Transition oder Beziehung herangezogen wird.
+
+Evidence kann beispielsweise sein:
+
+* Event,
+* Dokument,
+* Ressource,
+* Messwert,
+* Signatur,
+* Hash,
+* Verifikationsergebnis,
+* Policy-Version,
+* externe Referenz.
+
+Evidence ist nicht automatisch gleichbedeutend mit „Wahrheit“.
+
+Sie bezeichnet die zugrunde liegende **nachvollziehbare Grundlage**.
+
+---
+
+# 28. Conflict – normative Definition
+
+Ein **Conflict** ist eine vom System erkannte Unvereinbarkeit mehrerer Zustände, Transformationen, Policies, Ressourcenversionen oder Entscheidungen.
+
+Ein Conflict:
+
+* **MUST** explizit erkennbar sein.
+* **MUST NOT** durch stilles Überschreiben verschwinden.
+* **SHOULD** einen eigenen Lebenszyklus besitzen.
+* **MUST** vor einer konfliktabhängigen endgültigen Commit-Entscheidung behandelt werden.
+
+---
+
+# 29. Bridge – normative Definition
+
+Eine **Bridge** ist eine explizite Kontrollverbindung zwischen zwei getrennten STOE-Kontexten.
+
+Eine Bridge kann beispielsweise zwei Rooms verbinden.
+
+Eine Bridge:
+
+* **MUST** einen definierten Zweck besitzen.
+* **MUST** einen definierten Scope besitzen.
+* **SHOULD** über Policy und Capability kontrolliert werden.
+* **MUST NOT** als pauschale Vertrauensbeziehung interpretiert werden.
+
+---
+
+# 30. Approval – normative Definition
+
+**Approval** bezeichnet eine explizit erteilte Freigabe für eine Aktion oder Transition, wenn eine entsprechende Policy eine solche Freigabe verlangt.
+
+Approval:
+
+* **MUST** einem konkreten Vorgang zuordenbar sein.
+* **SHOULD** einen Actor oder Approval-Mechanismus referenzieren.
+* **MUST NOT** automatisch auf beliebige Folgeaktionen übertragbar sein, sofern dies nicht ausdrücklich vom Scope der Approval umfasst ist.
+
+---
+
+# 31. Quarantine – normative Definition
+
+**Quarantine** bezeichnet einen kontrollierten isolierten Zustand für einen Actor, eine Resource, einen Prozess, einen Room oder eine andere STOE-Einheit.
+
+Quarantine dient dazu:
+
+* weitere unkontrollierte Verarbeitung zu verhindern,
+* Analyse zu ermöglichen,
+* Beweise zu erhalten,
+* eine spätere Freigabe oder Ablehnung vorzubereiten.
+
+---
+
+# 32. Audit Record – normative Definition
+
+Ein **Audit Record** ist eine nachvollziehbare Aufzeichnung über eine relevante Aktion, Entscheidung, Transition oder Systemveränderung.
+
+Ein Audit Record soll mindestens den Kontext abbilden, der für die Nachvollziehbarkeit erforderlich ist.
+
+Dazu können gehören:
+
+* Actor,
+* Zeitpunkt,
+* Room,
+* Ressource,
+* Aktion,
+* Policy,
+* Capability,
+* vorheriger Zustand,
+* neuer Zustand,
+* Ergebnis,
+* Trace.
+
+---
+
+# 33. Result – normative Definition
+
+Ein **Result** ist das Ergebnis eines definierten Transformations-, Analyse-, Prüf- oder Entscheidungsprozesses.
+
+Ein Result:
+
+* **MUST** einen Herkunftskontext besitzen.
+* **SHOULD** die zugrunde liegenden wesentlichen Inputs referenzieren.
+* **SHOULD** mit einem Trace verbunden sein.
+
+---
+
+# 34. Normative State Machine
+
+Für STOE gilt grundsätzlich:
+
+**Kein impliziter State Change.**
+
+Eine Zustandsänderung muss semantisch als Transition verstanden werden.
+
+Beispiel:
+
+**CREATED → INITIALIZING → READY → ACTIVE**
+
+Weitere Zustände:
+
+**PAUSED**
+
+**LOCKED**
+
+**DRAINING**
+
+**SEALED**
+
+**ARCHIVED**
+
+**QUARANTINED**
+
+**REVOKED**
+
+**ERROR**
+
+Nicht jede Transition ist in jedem Zustand zulässig.
+
+---
+
+# 35. Normative Transition Rule
+
+Eine zulässige Transition muss konzeptionell folgende Bedingungen erfüllen:
+
+**Known Context**
+
+↓
+
+**Valid Current State**
+
+↓
+
+**Permitted Transition**
+
+↓
+
+**Valid Trigger**
+
+↓
+
+**Policy Evaluation**
+
+↓
+
+**Capability / Authorization**
+
+↓
+
+**Transformation**
+
+↓
+
+**New State**
+
+↓
+
+**Event**
+
+↓
+
+**Trace / Audit**
+
+Fehlt eine für die jeweilige Transition notwendige Voraussetzung, darf der Zustand nicht stillschweigend verändert werden.
+
+---
+
+# 36. Normative Access Chain
+
+Der normative Zugriffspfad lautet:
+
+**Identity**
+
+↓
+
+**Device Context**
+
+↓
+
+**Consent**
+
+↓
+
+**Policy**
+
+↓
+
+**Session**
+
+↓
+
+**Capability**
+
+↓
+
+**Room**
+
+↓
+
+**Resource**
+
+Nicht jede Implementierung muss sämtliche Ebenen technisch separat realisieren.
+
+Semantisch muss jedoch klar bleiben:
+
+> **Authentifizierung, Autorisierung, Kontext und Ressourcenzugriff sind unterschiedliche Konzepte.**
+
+---
+
+# 37. Normative Cross-Room Rule
+
+Eine Aktion über eine Room Boundary hinweg:
+
+* **MUST** einen expliziten Cross-Room-Kontext besitzen.
+* **MUST** dem Source- und Target-Kontext zuordenbar sein.
+* **SHOULD** über Bridge oder Capability kontrolliert werden.
+* **MUST NOT** ausschließlich aufgrund physischer oder netzwerktechnischer Erreichbarkeit zulässig sein.
+
+---
+
+# 38. Normative Multi-Loop Rule
+
+Wenn mehrere Loops dieselbe Resource oder denselben State-Kontext betreffen:
+
+* **MUST** ihre Beteiligung erkennbar bleiben.
+* **MUST** ein möglicher Konflikt erkennbar sein.
+* **MUST NOT** eine konkurrierende Mutation still überschreiben.
+* **SHOULD** ein Synchronisations-, Versionierungs- oder Merge-Modell verwenden.
+
+---
+
+# 39. Normative BackLink Rule
+
+Jede für Provenance, Governance, Security oder Nachvollziehbarkeit relevante Transformation:
+
+* **SHOULD** mindestens einen Herkunftsbezug besitzen.
+* **MUST** bei entsprechend klassifizierten kritischen Vorgängen nachvollziehbar auf ihre Quelle oder ihren Trigger zurückführbar sein.
+
+Damit gilt:
+
+> **Critical transformation without provenance = non-conformant behavior.**
+
+---
+
+# 40. Normative No-Silent-Action Rule
+
+STOE definiert als übergreifendes Prinzip:
+
+**Keine stille relevante Aktion.**
+
+Eine Aktion ist relevant, wenn sie beispielsweise:
+
+* einen Zustand verändert,
+* eine Berechtigung verändert,
+* eine Ressource verändert,
+* eine Room Boundary überschreitet,
+* einen Loop startet oder beendet,
+* einen Konflikt erzeugt oder löst,
+* eine sicherheitsrelevante Entscheidung beeinflusst.
+
+Solche Aktionen müssen innerhalb der vorgesehenen Semantik nachvollziehbar sein.
+
+---
+
+# 41. Normative No-Implicit-Trust Rule
+
+STOE definiert:
+
+> **Bekanntheit ist nicht gleich Vertrauenswürdigkeit.**
+
+Daraus folgt:
+
+Eine bekannte Identity:
+
+≠
+
+automatische Capability.
+
+Eine vorhandene Session:
+
+≠
+
+automatische Vollberechtigung.
+
+Ein erreichbarer Room:
+
+≠
+
+automatischer Zugriff.
+
+Eine bekannte Resource:
+
+≠
+
+automatische Änderungsberechtigung.
+
+---
+
+# 42. Normative Fail-Closed Rule
+
+Für sicherheitskritische Entscheidungen gilt:
+
+Wenn eine notwendige Kontrollinformation nicht zuverlässig verfügbar oder nicht eindeutig interpretierbar ist, darf keine stillschweigende Freigabe erfolgen.
+
+Mögliche Zustände sind:
+
+**DENY**
+
+**CHALLENGE**
+
+**REQUIRE_APPROVAL**
+
+**QUARANTINE**
+
+Dies gilt insbesondere bei:
+
+* unklarer Capability,
+* fehlender Policy,
+* ungültiger Session,
+* unbekanntem Room-Kontext,
+* unauflösbarem Conflict,
+* ungültigem State.
+
+---
+
+# 43. Normative Provenance Rule
+
+Jeder relevante Resultatpfad soll grundsätzlich rekonstruktierbar sein.
+
+Konzeptionelle Beziehung:
+
+**Result**
+
+↓
+
+**Transformation**
+
+↓
+
+**Input State**
+
+↓
+
+**Resource**
+
+↓
+
+**Event**
+
+↓
+
+**Policy**
+
+↓
+
+**Capability**
+
+↓
+
+**Actor**
+
+Damit wird Provenance ein Bestandteil der Architektur und nicht lediglich eine optionale spätere Dokumentation.
+
+---
+
+# 44. Normative Temporal Rule
+
+Zeit ist ein semantischer Bestandteil des STOE-Modells.
+
+Bei zeitkritischen Objekten soll unterschieden werden zwischen:
+
+* erstellt,
+* beobachtet,
+* gültig,
+* beendet,
+* widerrufen,
+* ersetzt.
+
+Damit kann zwischen:
+
+**Current State**
+
+und
+
+**Historical State**
+
+unterschieden werden.
+
+---
+
+# 45. Normative Conflict Rule
+
+Ein erkannter Conflict:
+
+* **MUST** als eigener Zustand oder als explizite Konfliktbedingung erkennbar bleiben.
+* **MUST NOT** durch einen unsichtbaren Schreibvorgang verschwinden.
+* **MUST** eine definierte Resolution erhalten, bevor ein abhängiger Commit als abschließend gilt.
+
+---
+
+# 46. Normative Approval Rule
+
+Wenn eine Policy eine menschliche oder organisatorische Freigabe verlangt:
+
+**MUST NOT** die technische Ausführung die Approval-Anforderung umgehen.
+
+Die Approval gilt nur innerhalb ihres definierten Scope.
+
+---
+
+# 47. Normative Separation Rule
+
+Die folgenden Konzepte müssen semantisch getrennt bleiben:
+
+**Identity ≠ Authorization**
+
+**Authorization ≠ Capability**
+
+**Capability ≠ Session**
+
+**Session ≠ Room**
+
+**Room ≠ Resource**
+
+**State ≠ Event**
+
+**Event ≠ Audit**
+
+**Link ≠ Evidence**
+
+**Loop ≠ State**
+
+**Result ≠ Proof**
+
+**Visibility ≠ Permission**
+
+Diese Trennungen sind Teil der STOE-Architektursemantik.
+
+---
+
+# 48. Normative Object Relationship Model
+
+STOE verwendet folgende Grundbeziehung:
+
+**Actor**
+
+↓
+
+handelt innerhalb einer
+
+**Session**
+
+↓
+
+mit einer
+
+**Capability**
+
+↓
+
+innerhalb eines
+
+**Room**
+
+↓
+
+auf einer
+
+**Resource**
+
+↓
+
+unter einem
+
+**Policy Context**
+
+↓
+
+durch eine
+
+**Transformation**
+
+↓
+
+von einem
+
+**State**
+
+↓
+
+zu einem neuen
+
+**State**
+
+↓
+
+erzeugt ein
+
+**Event**
+
+↓
+
+wird durch einen
+
+**Trace**
+
+verbunden
+
+↓
+
+und erhält bei Bedarf
+
+**BackLinks / Evidence / Audit Records**
+
+---
+
+# 49. Normative Multi-Loop Relationship
+
+Ein Multi-Loop-Kontext soll strukturell unterscheiden zwischen:
+
+**Root Loop**
+
+**Child Loop**
+
+**Sibling Loop**
+
+**Nested Loop**
+
+**Dependent Loop**
+
+Dadurch können parallele Prozesse sowohl technisch als auch semantisch auseinandergehalten werden.
+
+---
+
+# 50. Loop Isolation
+
+Ein Loop darf nicht automatisch auf sämtliche Ressourcen oder Zustände seines Rooms zugreifen.
+
+Der Room definiert den Kontext.
+
+Die Capability definiert die konkrete Handlungsmöglichkeit.
+
+Damit gilt:
+
+**Room Scope ≠ Loop Permission**
+
+Diese Unterscheidung ist insbesondere für Multi-Agent-Systeme wichtig.
+
+---
+
+# 51. Agentic Execution Model
+
+Für einen KI-Agenten kann das normative Modell beispielsweise lauten:
+
+**Agent Identity**
+
+↓
+
+**Session**
+
+↓
+
+**Capability**
+
+↓
+
+**Room**
+
+↓
+
+**Loop**
+
+↓
+
+**Tool / Resource**
+
+↓
+
+**Transformation**
+
+↓
+
+**Event**
+
+↓
+
+**Result**
+
+↓
+
+**BackLink**
+
+Damit ist die Agentenaktion in einen nachvollziehbaren Kontext eingebettet.
+
+---
+
+# 52. MCP / API Semantik
+
+MCP, API oder andere Schnittstellen dürfen konzeptionell als Transport- und Interaktionsmechanismen betrachtet werden.
+
+Sie ersetzen nicht automatisch:
+
+* Policy,
+* Capability,
+* Room Boundary,
+* Trace,
+* Audit.
+
+Eine externe API-Verbindung ist daher nicht automatisch eine Autorisierung.
+
+---
+
+# 53. Graph Semantics
+
+STOE kann als semantisches Graphmodell betrachtet werden.
+
+### Nodes
+
+* Actor,
+* Identity,
+* Room,
+* Resource,
+* State,
+* Event,
+* Loop,
+* Capability,
+* Policy,
+* Result,
+* Evidence.
+
+### Relations
+
+* DERIVED_FROM,
+* CAUSED_BY,
+* VERIFIED_BY,
+* DEPENDS_ON,
+* REFERENCES,
+* VERSION_OF,
+* CHILD_OF,
+* PARENT_OF,
+* CONFLICTS_WITH,
+* RESOLVES.
+
+Die Beziehung besitzt dabei eine fachliche Bedeutung.
+
+---
+
+# 54. Evidence-before-Assertion Principle
+
+STOE definiert als übergreifendes Architekturprinzip:
+
+> **Evidence before Assertion.**
+
+Das bedeutet nicht, dass jede Systemoperation wissenschaftlich bewiesen sein muss.
+
+Es bedeutet:
+
+Eine Aussage, Entscheidung oder Zustandsannahme soll dort, wo Nachvollziehbarkeit erforderlich ist, auf eine explizite Grundlage zurückgeführt werden können.
+
+---
+
+# 55. Explainability
+
+STOE behandelt Explainability primär als Strukturproblem.
+
+Ein System ist erklärbarer, wenn es die Beziehungen zwischen:
+
+**Input → Context → Policy → Action → Transformation → Result**
+
+erhalten kann.
+
+Textuelle Erklärungen können darauf aufbauen.
+
+Sie ersetzen aber nicht die zugrunde liegende Provenance.
+
+---
+
+# 56. Historische Rekonstruktion
+
+Eine konforme Architektur soll bei entsprechendem Scope ermöglichen, einen früheren Systemzustand zu rekonstruieren.
+
+Dazu gehören insbesondere:
+
+* historische Events,
+* State-Versionen,
+* relevante Policies,
+* Capability-Kontext,
+* BackLinks,
+* relevante Ressourcenreferenzen.
+
+Der historische Zustand darf dabei nicht mit dem heutigen Zustand verwechselt werden.
+
+---
+
+# 57. Simulation und Replay
+
+STOE kann konzeptionell zwei unterschiedliche Betriebsmodi vorsehen:
+
+### Replay
+
+Nachvollziehen eines bereits stattgefundenen Vorgangs.
+
+### Simulation
+
+Durchspielen eines möglichen Vorgangs ohne produktive Zustandsübernahme.
+
+Diese beiden Modi sollen semantisch vom normalen Commit-Pfad unterscheidbar sein.
+
+---
+
+# 58. Quarantine Lifecycle
+
+Ein Quarantine-Zustand kann folgenden Prozess verwenden:
+
+**DETECT**
+
+↓
+
+**ISOLATE**
+
+↓
+
+**ANALYZE**
+
+↓
+
+**VERIFY**
+
+↓
+
+**DECIDE**
+
+↓
+
+**RELEASE / REJECT / RETAIN**
+
+Der Quarantine-Vorgang besitzt selbst:
+
+* States,
+* Events,
+* Loops,
+* Policies,
+* Trace.
+
+---
+
+# 59. Architekturprinzipien
+
+STOE basiert auf folgenden normativen Leitprinzipien:
+
+### 1. Context Before Action
+
+Eine relevante Aktion benötigt einen definierten Kontext.
+
+### 2. Authorization Before Transformation
+
+Eine kontrollierte Transformation setzt eine zulässige Handlungsmöglichkeit voraus.
+
+### 3. State Before State Change
+
+Ein neuer Zustand soll aus einem bekannten oder definierten Ausgangszustand entstehen.
+
+### 4. Event for Relevant Change
+
+Relevante Veränderungen sollen durch Ereignisse nachvollziehbar sein.
+
+### 5. Explicit Cross-Room
+
+Room-Grenzen dürfen nicht implizit überschritten werden.
+
+### 6. No Silent Mutation
+
+Keine relevante stille Zustandsänderung.
+
+### 7. No Silent Conflict Resolution
+
+Keine stille Auflösung konkurrierender Zustände.
+
+### 8. Provenance by Design
+
+Herkunft wird architektonisch berücksichtigt.
+
+### 9. Temporal Awareness
+
+Zeitliche Gültigkeit wird semantisch berücksichtigt.
+
+### 10. Evidence before Assertion
+
+Nachweise werden gegenüber bloßen Behauptungen priorisiert.
+
+---
+
+# 60. Normative Konformitätsklassen
+
+Für eine spätere formale Spezifikation können mindestens folgende Konformitätsklassen definiert werden:
+
+**STOE-ROOM**
+
+Konformität mit Room und Room Boundary.
+
+**STOE-ACCESS**
+
+Konformität mit Identity, Policy, Session und Capability.
+
+**STOE-STATE**
+
+Konformität mit State und Transition.
+
+**STOE-EVENT**
+
+Konformität mit Event und Trace.
+
+**STOE-LOOP**
+
+Konformität mit Loop und Multi-Loop.
+
+**STOE-LINK**
+
+Konformität mit BackLink und Relation Semantics.
+
+**STOE-PROVENANCE**
+
+Konformität mit Evidence und Herkunftsnachweis.
+
+**STOE-AUDIT**
+
+Konformität mit Audit- und Nachvollziehbarkeitsanforderungen.
+
+**STOE-FULL**
+
+Konformität über den definierten Gesamtumfang der STOE-Spezifikation.
+
+---
+
+# 61. Normative Mindestarchitektur
+
+Ein vollständiges STOE-System sollte konzeptionell mindestens folgende Funktionen unterscheiden:
+
+**Context Management**
+
+↓
+
+**Access Control**
+
+↓
+
+**State Management**
+
+↓
+
+**Transition Control**
+
+↓
+
+**Event Management**
+
+↓
+
+**Loop Orchestration**
+
+↓
+
+**Relation / BackLink Management**
+
+↓
+
+**Trace Management**
+
+↓
+
+**Evidence / Provenance**
+
+↓
+
+**Audit / Governance**
+
+Diese Funktionen dürfen technisch in einer oder mehreren Komponenten umgesetzt werden; ihre semantische Trennung bleibt jedoch erhalten.
+
+---
+
+# 62. Gesamtmodell
+
+Das vollständige Modell lautet:
+
+**Identity**
+
+→ **Context**
+
+→ **Policy**
+
+→ **Capability**
+
+→ **Room**
+
+→ **Resource**
+
+→ **State**
+
+→ **Loop**
+
+→ **Transformation**
+
+→ **New State**
+
+→ **Event**
+
+→ **BackLink**
+
+→ **Trace**
+
+→ **Evidence**
+
+→ **Audit**
+
+Der Ablauf ist nicht zwingend linear.
+
+Loops können parallel existieren.
+
+Rooms können kontrolliert verbunden werden.
+
+Events können mehrere Zustände beeinflussen.
+
+BackLinks können quer durch den gesamten Graphen reichen.
+
+Traces können mehrere Loops umfassen.
+
+---
+
+# 63. Gesamtformel
+
+Das konzeptionelle STOE-Modell kann zusammengefasst werden als:
+
+**STOE = Context + State + Policy + Capability + Event + Loop + Relation + Trace + Evidence + Audit**
+
+Oder als Transformationsprinzip:
+
+**Context**
+
+↓
+
+**Authorization**
+
+↓
+
+**Observation**
+
+↓
+
+**Evaluation**
+
+↓
+
+**Transformation**
+
+↓
+
+**Validation**
+
+↓
+
+**State Change**
+
+↓
+
+**Event**
+
+↓
+
+**Provenance**
+
+↓
+
+**Trace**
+
+---
+
+# 64. Abschließende normative Aussage
+
+STOE definiert einen digitalen Verarbeitungsvorgang nicht primär als Folge technischer Befehle.
+
+STOE definiert ihn als:
+
+> **kontrollierte Transformation eines Zustands innerhalb eines definierten Kontextes unter einer definierten Policy mit einer definierten Handlungsmöglichkeit und nachvollziehbarer Herkunft.**
+
+Daraus folgen die zentralen Beziehungen:
+
+**Room definiert den Kontext.**
+
+**Policy definiert die zulässigen Regeln.**
+
+**Capability definiert die konkrete Handlungsmöglichkeit.**
+
+**State definiert die Situation.**
+
+**Transition definiert den Zustandswechsel.**
+
+**Event dokumentiert das Geschehen.**
+
+**Loop beschreibt den Prozess.**
+
+**Multi-Loop beschreibt parallele oder verschachtelte Prozesse.**
+
+**BackLink beschreibt die semantische Beziehung.**
+
+**Evidence beschreibt die Grundlage.**
+
+**Trace verbindet die Vorgänge.**
+
+**Audit bewahrt die Nachvollziehbarkeit.**
+
+Damit entsteht eine gemeinsame normative Sprache für komplexe Systeme, ohne bereits eine bestimmte Programmiersprache, Datenbank, Cloud-Plattform, Containertechnologie oder konkrete Implementierung vorzuschreiben.
+
+Das Concept bildet damit die Grundlage für eine spätere formale **STOE-1.0 Architecture Specification**, ein **STOE State Model**, ein **STOE Event Model**, ein **STOE Policy Model**, ein **STOE Conformance Model** sowie darauf aufbauende API-, MCP-, Plugin- und Orchestrierungs-Spezifikationen.
+# STOE-1.0
+
+## Conceptual Architecture Paper
+
+### Room · Room-Access · Multi-Loop · BackLink · State · Event · Trace
+
+**Dokumenttyp:** Konzeptuelle Architektur- und Systembeschreibung
+**Status:** Concept / Architectural Draft
+**Ausführung:** bewusst ohne Quellcode und ohne Implementierungsdetails
+**Ziel:** Beschreibung eines zustands-, ereignis-, zugriffs- und graphorientierten Systemmodells für komplexe digitale, KI-, Daten- und Workflow-Umgebungen.
+
+---
+
+# 1. Executive Summary
+
+STOE steht konzeptionell für eine **State-/Transformation-Oriented Engine**.
+
+Der zentrale Gedanke besteht darin, digitale Verarbeitung nicht lediglich als linearen Workflow zu verstehen, sondern als kontrollierte Folge von **Zuständen, Ereignissen, Berechtigungen, Transformationen, Beziehungen und Nachweisen**.
+
+Ein klassischer Workflow beschreibt häufig:
+
+**Input → Verarbeitung → Output**
+
+STOE betrachtet dagegen:
+
+**Identität → Zugriff → Kontext → Zustand → Ereignis → Transformation → neuer Zustand → Nachweis → Rückverbindung**
+
+Dadurch entsteht eine Architektur, in der nicht nur das Ergebnis einer Verarbeitung interessant ist, sondern auch:
+
+* aus welchem Zustand dieses Ergebnis entstanden ist,
+* welche Ressourcen verwendet wurden,
+* welche Regeln gegolten haben,
+* welche Berechtigung die Verarbeitung erlaubt hat,
+* welcher Akteur oder welcher Prozess sie ausgelöst hat,
+* welche anderen Prozesse parallel beteiligt waren,
+* welche Abhängigkeiten bestanden,
+* welche Beziehungen später nachvollziehbar sein müssen,
+* und welche Zustände oder Ereignisse zu einem Ergebnis geführt haben.
+
+Der **Room** bildet dabei den kontrollierten räumlichen und logischen Kontext.
+
+Der **Room-Access** definiert, wer unter welchen Bedingungen innerhalb dieses Kontextes handeln darf.
+
+Der **State** beschreibt den jeweils gültigen oder beobachteten Zustand.
+
+Das **Event** dokumentiert eine relevante Veränderung oder Beobachtung.
+
+Der **Multi-Loop-Mechanismus** erlaubt mehrere parallele oder verschachtelte Verarbeitungskreisläufe.
+
+Der **BackLink** stellt die semantische und zeitliche Rückverbindung zwischen Zuständen, Ereignissen, Ressourcen, Transformationen und Ergebnissen her.
+
+Zusammen bilden diese Elemente einen kontrollierten Transformationsraum.
+
+---
+
+# 2. Ausgangsproblem
+
+Moderne digitale Systeme bestehen immer häufiger aus einer Vielzahl gleichzeitig arbeitender Komponenten:
+
+* Menschen,
+* Anwendungen,
+* KI-Agenten,
+* Datenbanken,
+* APIs,
+* MCP-Server,
+* Connectoren,
+* Worker,
+* Container,
+* virtuellen Maschinen,
+* Cloud- und lokalen Ressourcen,
+* Automatisierungsprozessen,
+* Sicherheitsdiensten,
+* Richtlinien- und Policy-Systemen,
+* Wissensgraphen,
+* Monitoring- und Audit-Systemen.
+
+Die klassische Vorstellung eines einzelnen linearen Prozesses reicht dafür häufig nicht mehr aus.
+
+Ein reales System kann gleichzeitig beispielsweise:
+
+1. Daten lesen,
+2. eine Analyse durchführen,
+3. eine zweite Analyse verifizieren,
+4. eine Sicherheitsprüfung starten,
+5. einen externen Dienst abfragen,
+6. eine Wissensbeziehung erstellen,
+7. eine neue Ressourcenversion erzeugen,
+8. eine Entscheidung vorbereiten,
+9. einen Konflikt feststellen,
+10. und anschließend alle Vorgänge miteinander in Beziehung setzen.
+
+Diese Prozesse können parallel, verschachtelt oder voneinander abhängig sein.
+
+Das entscheidende Problem lautet daher:
+
+> **Wie bleibt ein komplexes, paralleles und verteiltes System verständlich, kontrollierbar und rückverfolgbar?**
+
+STOE beantwortet diese Frage durch die Einführung eines konsistenten Zustands- und Beziehungsmodells.
+
+---
+
+# 3. Grundidee: Der kontrollierte digitale Raum
+
+STOE verwendet den Begriff **Room** als zentrale konzeptionelle Einheit.
+
+Ein Room ist kein zwingend physischer Raum.
+
+Er ist vielmehr ein:
+
+> **logisch kontrollierter Zustands-, Ressourcen-, Identitäts-, Policy- und Interaktionskontext.**
+
+Ein Room kann beispielsweise repräsentieren:
+
+* ein Forschungsprojekt,
+* einen KI-Arbeitsraum,
+* einen Mandanten,
+* einen Datenbereich,
+* einen Workflow,
+* eine Sicherheitszone,
+* eine Entwicklungsumgebung,
+* eine Quarantänezone,
+* eine temporäre Analyseumgebung,
+* einen gemeinsam genutzten digitalen Arbeitskontext.
+
+Der Room schafft somit eine klar definierte Grenze.
+
+Innerhalb dieser Grenze kann STOE feststellen:
+
+* welche Ressourcen vorhanden sind,
+* welche Zustände bestehen,
+* welche Prozesse aktiv sind,
+* welche Zugriffe erlaubt sind,
+* welche Policies gelten,
+* welche Ereignisse stattgefunden haben,
+* und welche Beziehungen zwischen Objekten bestehen.
+
+---
+
+# 4. Room als Kontextcontainer
+
+Ein Room wird konzeptionell als **Context Container** verstanden.
+
+Er umfasst mindestens folgende Dimensionen:
+
+### Identität
+
+Wer oder was befindet sich im Room?
+
+Beispielsweise:
+
+* Mensch,
+* Agent,
+* Service,
+* Anwendung,
+* Worker,
+* Organisation,
+* temporäre Identität.
+
+### Ressourcenkontext
+
+Welche Ressourcen dürfen innerhalb des Rooms verwendet werden?
+
+Beispielsweise:
+
+* Dateien,
+* Datensätze,
+* Datenbanken,
+* Modelle,
+* Speicher,
+* Rechenkapazität,
+* Wissensobjekte,
+* externe Dienste.
+
+### Policy-Kontext
+
+Welche Regeln gelten?
+
+Beispielsweise:
+
+* Read-Only,
+* Schreibzugriff,
+* Freigabe erforderlich,
+* Export verboten,
+* externe Verbindung verboten,
+* bestimmte Datenklassen zulässig,
+* bestimmte Aktionen nur unter zusätzlichen Bedingungen erlaubt.
+
+### Zustandskontext
+
+Welche Zustände befinden sich aktuell im Room?
+
+### Ereigniskontext
+
+Welche relevanten Ereignisse sind passiert?
+
+### Prozesskontext
+
+Welche Loops oder Workflows laufen aktuell?
+
+### Beziehungs- und Trace-Kontext
+
+Welche Objekte sind miteinander verbunden und wie kann eine Entwicklung rückverfolgt werden?
+
+---
+
+# 5. Room ist kein Besitzmodell
+
+Ein zentraler konzeptioneller Punkt ist:
+
+> **Ein Room ist nicht automatisch Eigentümer jeder Ressource, die innerhalb seines Kontextes sichtbar wird.**
+
+Eine Ressource kann:
+
+* in einem Room erzeugt,
+* aus einem anderen Room referenziert,
+* temporär eingebunden,
+* nur lesbar verfügbar,
+* über eine kontrollierte Bridge bereitgestellt,
+* oder aus einem externen System bezogen werden.
+
+Damit werden **Kontext**, **Besitz**, **Zugriff** und **Verantwortung** voneinander getrennt.
+
+Diese Trennung ist insbesondere für Multi-Tenant-, Forschungs-, Unternehmens- und KI-Umgebungen wichtig.
+
+---
+
+# 6. Room Lifecycle
+
+Ein Room besitzt einen eigenen Lebenszyklus.
+
+## 6.1 Creation
+
+Der Room wird konzeptionell angelegt.
+
+Noch darf daraus nicht automatisch operative Aktivität entstehen.
+
+## 6.2 Initialization
+
+Der Kontext wird vorbereitet:
+
+* Policy-Zuordnung,
+* Ressourcendefinition,
+* Identitätsrahmen,
+* Sicherheitsparameter,
+* Initialzustand.
+
+## 6.3 Ready
+
+Der Room ist vollständig definiert und grundsätzlich betriebsbereit.
+
+## 6.4 Active
+
+Operative Verarbeitung findet statt.
+
+## 6.5 Paused
+
+Die Verarbeitung wird kontrolliert angehalten.
+
+Der Zustand bleibt erhalten.
+
+## 6.6 Locked
+
+Bestimmte oder sämtliche operative Aktionen werden blockiert.
+
+## 6.7 Draining
+
+Aktive Prozesse werden kontrolliert beendet oder zu einem definierten Endpunkt geführt.
+
+## 6.8 Sealed
+
+Der Room wird gegen weitere reguläre Veränderungen abgeschlossen.
+
+## 6.9 Archived
+
+Der Room verbleibt als historische oder analytische Einheit.
+
+## 6.10 Quarantined
+
+Ein Room kann in einen isolierten Zustand überführt werden, wenn eine Situation eine weitere Verarbeitung nicht zulässt.
+
+Wichtig ist dabei:
+
+> **Ein Zustandswechsel ist selbst ein Ereignis.**
+
+Dadurch kann später nachvollzogen werden, wann und warum ein Room seinen Zustand verändert hat.
+
+---
+
+# 7. Room-Access als eigenes Architekturmodul
+
+Zugriff ist in STOE nicht einfach eine boolesche Entscheidung:
+
+**Zugriff = Ja / Nein**
+
+Stattdessen ist der Zugriff kontextabhängig.
+
+Die Entscheidung kann beispielsweise davon abhängen:
+
+* welche Identität anfragt,
+* welches Gerät verwendet wird,
+* welcher Room betroffen ist,
+* welche Ressource angefragt wird,
+* welche Aktion durchgeführt werden soll,
+* welche Policy gilt,
+* welche Capability existiert,
+* ob eine Zustimmung erforderlich ist,
+* ob die Session gültig ist,
+* ob der Room aktuell gesperrt ist,
+* ob die Ressource gerade verändert wird,
+* ob parallele Prozesse eine Kollision verursachen.
+
+Damit entsteht ein mehrdimensionales Access Model.
+
+---
+
+# 8. Das Trust Path Modell
+
+STOE kann den Zugriff konzeptionell als Vertrauenskette modellieren:
+
+**Identity → Device → Consent → Policy → Session → Capability → Room → Resource**
+
+Das bedeutet:
+
+Eine bekannte Identität alleine reicht nicht.
+
+Auch ein technisch authentifiziertes Subjekt besitzt nicht automatisch Zugriff auf jede Ressource.
+
+Der konkrete Handlungsspielraum entsteht erst durch den gesamten Kontext.
+
+---
+
+# 9. Capability statt permanenter Berechtigung
+
+STOE bevorzugt konzeptionell **zeitlich und sachlich begrenzte Fähigkeiten**.
+
+Eine Capability beschreibt:
+
+* wer handeln darf,
+* in welchem Room,
+* auf welcher Ressource,
+* mit welcher Aktion,
+* unter welchen Bedingungen,
+* für welchen Zeitraum.
+
+Damit entsteht ein Prinzip:
+
+> **Nicht „Du darfst alles“, sondern „Du darfst genau diese Handlung in diesem Kontext unter diesen Bedingungen“.**
+
+Dieses Modell ist besonders geeignet für:
+
+* KI-Agenten,
+* autonome Worker,
+* Connectoren,
+* MCP-Tools,
+* temporäre Sessions,
+* externe Integrationen,
+* Multi-Tenant-Systeme.
+
+---
+
+# 10. Access Decision
+
+Die Access-Schicht muss nicht nur `ALLOW` oder `DENY` kennen.
+
+Konzeptionell sind mehrere Entscheidungen sinnvoll:
+
+### ALLOW
+
+Die angefragte Aktion ist erlaubt.
+
+### DENY
+
+Die Aktion ist nicht erlaubt.
+
+### CHALLENGE
+
+Zusätzliche Informationen oder Bedingungen müssen erfüllt werden.
+
+### REQUIRE APPROVAL
+
+Eine zusätzliche Freigabe ist notwendig.
+
+### QUARANTINE
+
+Der Vorgang darf nicht normal fortgesetzt werden und muss in einen kontrollierten Isolationspfad wechseln.
+
+Damit wird Access Control zu einem **Entscheidungsprozess** und nicht zu einer einfachen Tür.
+
+---
+
+# 11. Der State als zentrale Realität
+
+Der Zustand ist eine der wichtigsten STOE-Abstraktionen.
+
+Ein State beantwortet:
+
+> **Wie sieht die bekannte Systemrealität zu diesem Zeitpunkt aus?**
+
+Ein Zustand kann sich auf Folgendes beziehen:
+
+* einen Room,
+* eine Ressource,
+* einen Prozess,
+* eine Session,
+* eine Capability,
+* ein Dokument,
+* eine Analyse,
+* ein Datenobjekt,
+* einen Agenten,
+* eine Policy,
+* einen gesamten Workflow.
+
+Dabei ist entscheidend:
+
+> Ein Zustand ist nicht gleichbedeutend mit einem einzelnen technischen Datensatz.
+
+Ein Zustand ist eine **semantische Beschreibung einer Situation**.
+
+---
+
+# 12. State Transition
+
+STOE betrachtet Veränderungen als kontrollierte Transition:
+
+**State A → Transition → State B**
+
+Die Transition wird durch einen definierten Kontext ausgelöst.
+
+Dieser Kontext kann enthalten:
+
+* Event,
+* Actor,
+* Policy,
+* Capability,
+* Resource-Version,
+* Zeit,
+* Kontextbedingungen,
+* vorherigen Zustand.
+
+Somit ist eine Zustandsänderung nicht „einfach passiert“.
+
+Sie besitzt eine erklärbare Herkunft.
+
+---
+
+# 13. Events als historische Tatsachen
+
+Ein Event beantwortet:
+
+> **Was ist geschehen?**
+
+Ein State beantwortet dagegen:
+
+> **Wie ist der Zustand?**
+
+Diese Unterscheidung ist fundamental.
+
+Beispiel:
+
+**State**
+
+„Room ist ACTIVE.“
+
+**Event**
+
+„Room wurde um 18:02 Uhr von PAUSED auf ACTIVE gesetzt.“
+
+Der State beschreibt den aktuellen Sachverhalt.
+
+Das Event beschreibt den Vorgang, durch den dieser Sachverhalt entstanden ist.
+
+---
+
+# 14. State + Event
+
+STOE verbindet daher:
+
+**State = gegenwärtig bzw. beobachteter Zustand**
+
+**Event = dokumentierte Veränderung bzw. Beobachtung**
+
+**Trace = Zusammenhang mehrerer Events und Zustände**
+
+Diese drei Ebenen bilden gemeinsam eine nachvollziehbare Historie.
+
+---
+
+# 15. Multi-Loop als Erweiterung des linearen Workflows
+
+In klassischen Workflows existiert oft ein dominanter Ablauf:
+
+**A → B → C → D**
+
+STOE betrachtet dagegen:
+
+```text
+                    ┌── Verification
+                    │
+Research ───────────┼── Security
+                    │
+                    ├── Transformation
+                    │
+                    └── Compliance
+```
+
+Ein Hauptprozess kann mehrere Child-Prozesse eröffnen.
+
+Jeder dieser Prozesse kann wiederum eigene Subprozesse erzeugen.
+
+Dadurch entsteht ein **Loop Tree** oder sogar ein **Loop Graph**.
+
+---
+
+# 16. Was ist ein Loop?
+
+Ein Loop ist ein kontrollierter Verarbeitungskreislauf.
+
+Konzeptionell:
+
+**Observe → Evaluate → Transform → Validate → Commit → Observe Again**
+
+Ein Loop ist daher nicht nur eine Schleife im Programmcode.
+
+Er beschreibt einen **wiederkehrenden semantischen Prozess**.
+
+Beispielsweise:
+
+### Research Loop
+
+Beobachten → Informationen sammeln → analysieren → Hypothese erzeugen → erneut prüfen
+
+### Verification Loop
+
+Resultat empfangen → prüfen → Gegenprüfung → verifizieren → Ergebnis bestätigen oder zurückweisen
+
+### Security Loop
+
+Anfrage → Risikoanalyse → Policy-Prüfung → Freigabe/Blockierung → erneute Prüfung
+
+### Optimization Loop
+
+Zustand messen → Verbesserung ermitteln → Änderung durchführen → Ergebnis messen → weiter optimieren
+
+---
+
+# 17. Multi-Loop Parallelität
+
+Mehrere Loops dürfen gleichzeitig existieren.
+
+Wichtig ist jedoch:
+
+> **Parallelität bedeutet nicht Zustandsfreiheit.**
+
+Wenn zwei Loops dieselbe Ressource verändern wollen, entsteht eine potenzielle Konfliktsituation.
+
+STOE muss daher erkennen:
+
+* gleicher Ressourcenbezug,
+* gleiche Version,
+* konkurrierende Änderung,
+* unterschiedliche Policy,
+* unterschiedliche Priorität,
+* unterschiedliche Herkunft.
+
+---
+
+# 18. Loop Hierarchy
+
+Loops können hierarchisch organisiert werden.
+
+Beispielsweise:
+
+**Root Loop: Projektentwicklung**
+
+darunter:
+
+* Research Loop,
+* Architecture Loop,
+* Security Loop,
+* Validation Loop,
+* Documentation Loop.
+
+Darunter wiederum:
+
+* einzelne Prüfzyklen,
+* einzelne Analysen,
+* einzelne Transformationsschritte.
+
+Damit entsteht eine nachvollziehbare Kette:
+
+**Root → Child → Sub-Loop → Event → Result**
+
+---
+
+# 19. Root Loop
+
+Jede komplexe Verarbeitung sollte konzeptionell einer **Root Loop** zugeordnet werden können.
+
+Die Root Loop beantwortet:
+
+> **Zu welchem übergeordneten Vorgang gehört diese Aktivität?**
+
+Dies ist besonders relevant für:
+
+* KI-Agenten,
+* Forschungsprojekte,
+* lang laufende Workflows,
+* Multi-Agent-Systeme,
+* komplexe Unternehmensprozesse.
+
+Dadurch kann ein einzelnes Ereignis bis zum ursprünglichen Prozess zurückverfolgt werden.
+
+---
+
+# 20. BackLink als Rückverbindung
+
+Der BackLink ist eines der wichtigsten Elemente des Modells.
+
+Ein normaler Link sagt:
+
+> A ist mit B verbunden.
+
+Ein STOE-BackLink sagt zusätzlich:
+
+> **A steht in Beziehung zu B aufgrund einer bestimmten Bedeutung, eines bestimmten Vorgangs, einer bestimmten Herkunft und eines bestimmten zeitlichen Kontextes.**
+
+Beziehungen können beispielsweise sein:
+
+* abgeleitet aus,
+* ausgelöst durch,
+* verifiziert durch,
+* basiert auf,
+* referenziert,
+* abhängig von,
+* ersetzt durch,
+* im Konflikt mit,
+* löst auf,
+* Version von,
+* Kind von,
+* Elternbeziehung.
+
+---
+
+# 21. Warum BackLinks wichtig sind
+
+Ohne BackLinks entsteht häufig ein Problem:
+
+Ein aktueller Datensatz existiert, aber seine Herkunft ist unklar.
+
+Beispiel:
+
+**Analyse-Ergebnis X**
+
+Woher kommt X?
+
+* aus welchem Datensatz?
+* aus welcher Version?
+* aus welchem Prompt?
+* aus welcher Policy?
+* aus welchem Agentenlauf?
+* aus welchem Room?
+* nach welcher Verifikation?
+* unter welchen Bedingungen?
+
+BackLinks ermöglichen eine Antwort auf diese Fragen.
+
+---
+
+# 22. Provenance
+
+BackLinks bilden damit einen wesentlichen Teil einer **Provenance-Struktur**.
+
+Provenance bedeutet:
+
+> die nachvollziehbare Herkunft und Entwicklung eines Ergebnisses.
+
+Ein Ergebnis kann beispielsweise aus mehreren Quellen stammen:
+
+**Quelle A + Quelle B + Analyse C + Verifikation D → Ergebnis E**
+
+STOE kann diese Beziehung als Graph verstehen:
+
+**A → C**
+
+**B → C**
+
+**C → D**
+
+**D → E**
+
+Damit entsteht eine nachvollziehbare Herkunftskette.
+
+---
+
+# 23. Temporalität
+
+Nicht jede Beziehung ist zeitlich dauerhaft gültig.
+
+Deshalb muss ein BackLink konzeptionell zwischen mindestens folgenden Fragen unterscheiden:
+
+* Wann wurde die Beziehung hergestellt?
+* Wann wurde sie beobachtet?
+* Für welchen Zeitraum war sie gültig?
+* Wurde sie später ersetzt?
+* Wurde sie widerrufen?
+* Wurde eine neue Beziehung erzeugt?
+
+Dadurch entsteht ein **temporal-aware graph**.
+
+Dieser kann historische Entwicklungen abbilden.
+
+---
+
+# 24. BackLink und Versionierung
+
+Versionen lassen sich ebenfalls als Beziehungen ausdrücken.
+
+Beispielsweise:
+
+**Resource v1**
+
+↓
+
+**Resource v2**
+
+↓
+
+**Resource v3**
+
+Die Beziehung lautet nicht einfach „identisch“, sondern beispielsweise:
+
+**v2 ist Version von v1**
+
+oder:
+
+**v3 ersetzt v2**
+
+Dadurch kann das System erkennen, welche Version zu welchem Zeitpunkt relevant war.
+
+---
+
+# 25. BackLink und Beweise
+
+Ein BackLink kann zusätzlich auf Evidenz verweisen.
+
+Evidenz kann konzeptionell sein:
+
+* Event,
+* Dokument,
+* Ressource,
+* Signatur,
+* Hash,
+* Messung,
+* Policy-Entscheidung,
+* Verifikationsergebnis,
+* externe Referenz.
+
+Damit wird aus einem simplen Beziehungsgraphen ein **Evidence-aware Graph**.
+
+---
+
+# 26. Trace
+
+Der Trace verbindet die einzelnen Elemente zu einer übergeordneten Geschichte.
+
+Beispiel:
+
+**Anfrage**
+
+↓
+
+**Access Decision**
+
+↓
+
+**Capability**
+
+↓
+
+**Room Entry**
+
+↓
+
+**Loop Start**
+
+↓
+
+**Resource Read**
+
+↓
+
+**Transformation**
+
+↓
+
+**Validation**
+
+↓
+
+**BackLink**
+
+↓
+
+**Result**
+
+↓
+
+**Loop Completion**
+
+Ein Trace beantwortet somit:
+
+> **Was ist während dieses Vorgangs tatsächlich passiert?**
+
+---
+
+# 27. Unterschied zwischen State, Event, Trace und BackLink
+
+Diese Begriffe dürfen nicht vermischt werden.
+
+| Element    | Zentrale Frage                                         |
+| ---------- | ------------------------------------------------------ |
+| State      | Wie ist der Zustand?                                   |
+| Event      | Was ist passiert?                                      |
+| Trace      | Wie hängt eine Folge von Vorgängen zusammen?           |
+| BackLink   | In welcher Beziehung stehen zwei oder mehrere Objekte? |
+| Policy     | Was ist unter diesen Bedingungen erlaubt?              |
+| Capability | Welche konkrete Handlungsmöglichkeit wurde erteilt?    |
+| Room       | In welchem kontrollierten Kontext findet etwas statt?  |
+| Loop       | Welcher wiederkehrende Prozess arbeitet daran?         |
+
+Damit erhält jede Architekturkomponente eine klar definierte Rolle.
+
+---
+
+# 28. Room + Multi-Loop + BackLink
+
+Die drei Kernkomponenten ergänzen sich:
+
+**Room** beantwortet:
+
+> Wo und unter welchem Kontext?
+
+**Multi-Loop** beantwortet:
+
+> Welche Prozesse arbeiten daran?
+
+**BackLink** beantwortet:
+
+> Wie hängen die Ergebnisse und Vorgänge miteinander zusammen?
+
+Zusammen entsteht:
+
+**Context + Process + Relationship**
+
+---
+
+# 29. Konflikte zwischen Loops
+
+Ein zentraler STOE-Fall ist die parallele Veränderung.
+
+Beispiel:
+
+Ein Research Loop erzeugt eine neue Ressourcenversion.
+
+Gleichzeitig erzeugt ein Security Loop eine weitere Version.
+
+Beide basieren auf demselben Ausgangszustand.
+
+Dann existieren:
+
+**State A**
+
+→ Research → **State B**
+
+**State A**
+
+→ Security → **State C**
+
+B und C sind nicht automatisch kompatibel.
+
+STOE soll daraus keinen stillen Überschreibevorgang machen.
+
+Stattdessen wird ein expliziter Konfliktzustand erzeugt.
+
+---
+
+# 30. Conflict als eigener Zustand
+
+Ein Konflikt ist keine Fehlfunktion.
+
+Er kann eine legitime Systemrealität darstellen.
+
+Daher kann:
+
+**CONFLICT**
+
+selbst ein definierter Zustand sein.
+
+Der Konflikt besitzt anschließend einen eigenen Lifecycle:
+
+**Detect → Freeze → Compare → Evaluate → Resolve → Verify → Commit**
+
+Dadurch wird Konfliktbehandlung zu einem kontrollierten Prozess.
+
+---
+
+# 31. Merge und Resolution
+
+Eine Konfliktauflösung kann mehrere Formen haben:
+
+### Merge
+
+Beide Ergebnisse werden miteinander kombiniert.
+
+### Select
+
+Eine Variante wird unter definierter Policy ausgewählt.
+
+### Reject
+
+Eine Variante wird verworfen.
+
+### Human Approval
+
+Ein Mensch entscheidet.
+
+### External Validation
+
+Eine externe Prüfkomponente wird einbezogen.
+
+### Re-Run
+
+Die Loops werden mit geänderten Bedingungen erneut ausgeführt.
+
+Die wichtigste Regel lautet:
+
+> **Die Auflösung eines Konfliktes darf nicht unsichtbar erfolgen.**
+
+Die Entscheidung selbst erzeugt wiederum State, Event und Trace.
+
+---
+
+# 32. Cross-Room Interaction
+
+Ein besonders wichtiger Bereich ist die Kommunikation zwischen Rooms.
+
+Beispiel:
+
+**Research Room**
+
+↓
+
+**Controlled Bridge**
+
+↓
+
+**Security Room**
+
+↓
+
+**Verification Room**
+
+Kein Room soll automatisch auf den vollständigen Kontext eines anderen Rooms zugreifen können.
+
+Stattdessen wird eine explizite Beziehung hergestellt.
+
+Diese kann folgende Eigenschaften besitzen:
+
+* Richtung,
+* Zweck,
+* Ressourcenumfang,
+* Gültigkeitsdauer,
+* Policy,
+* Capability,
+* Auditierbarkeit.
+
+---
+
+# 33. Room Bridge
+
+Eine Room Bridge ist konzeptionell eine kontrollierte Verbindung zwischen zwei Kontexten.
+
+Sie ist weder:
+
+* ein globaler Freigabeschalter,
+* noch ein automatisches Vertrauensverhältnis.
+
+Sie ist vielmehr:
+
+> **eine explizite, policy-gesteuerte Verbindung zweier ansonsten separierter Kontexte.**
+
+Damit kann STOE auch komplexe Multi-Tenant- oder Multi-Organisation-Szenarien modellieren.
+
+---
+
+# 34. KI-Agenten
+
+Das Modell eignet sich besonders für Agentensysteme.
+
+Ein Agent wird nicht einfach als „Bot mit Tools“ betrachtet.
+
+Er arbeitet innerhalb eines definierten Kontextes:
+
+**Agent Identity**
+
+↓
+
+**Session**
+
+↓
+
+**Capability**
+
+↓
+
+**Room**
+
+↓
+
+**Loop**
+
+↓
+
+**Action**
+
+↓
+
+**Event**
+
+↓
+
+**BackLink**
+
+Dadurch kann nachvollzogen werden:
+
+* welcher Agent aktiv war,
+* welche Capability verwendet wurde,
+* in welchem Room,
+* welche Ressource betroffen war,
+* welche Transformation ausgeführt wurde,
+* welches Ergebnis entstand.
+
+---
+
+# 35. Multi-Agent-Systeme
+
+Mehrere Agenten können gleichzeitig im selben Room oder in verschiedenen Rooms arbeiten.
+
+Beispielsweise:
+
+**Planner Agent**
+
+→ erstellt Arbeitsplan
+
+**Research Agent**
+
+→ untersucht Quellen
+
+**Verification Agent**
+
+→ prüft Ergebnisse
+
+**Security Agent**
+
+→ prüft Zugriffs- und Risikokontext
+
+**Transformation Agent**
+
+→ erstellt Ergebnis
+
+Alle diese Aktivitäten können wiederum durch BackLinks verbunden werden.
+
+Damit entsteht ein **koordiniertes Multi-Agent-System mit nachvollziehbarer Herkunft**.
+
+---
+
+# 36. Mensch und KI
+
+STOE soll konzeptionell nicht voraussetzen, dass Menschen und Maschinen unterschiedlich modelliert werden müssen.
+
+Beide können als **Actors/Subjects** innerhalb des gleichen Governance-Modells erscheinen.
+
+Der Unterschied liegt nicht zwingend in der Grundstruktur, sondern in:
+
+* Rolle,
+* Capability,
+* Policy,
+* Approval,
+* Verantwortung,
+* Ausführungsmodell.
+
+Damit kann eine Human-in-the-Loop-Struktur genauso wie eine Agent-to-Agent-Struktur modelliert werden.
+
+---
+
+# 37. Human Approval
+
+Bestimmte Vorgänge können eine menschliche Entscheidung benötigen.
+
+Beispiel:
+
+**Agent erstellt Ergebnis**
+
+↓
+
+**Policy erkennt Freigabepflicht**
+
+↓
+
+**Human Review**
+
+↓
+
+**Approval**
+
+↓
+
+**Commit**
+
+Der menschliche Vorgang wird dabei ebenfalls als Teil des Trace erfasst.
+
+---
+
+# 38. Auditability
+
+Audit ist nicht lediglich ein nachträgliches Log.
+
+Im STOE-Konzept ist Audit Bestandteil des Architekturmodells.
+
+Jede relevante Veränderung soll prinzipiell beantworten können:
+
+**Wer?**
+
+**Was?**
+
+**Wann?**
+
+**Wo?**
+
+**Warum?**
+
+**Auf welcher Grundlage?**
+
+**Mit welcher Berechtigung?**
+
+**Mit welchem Ergebnis?**
+
+**Welche Nachfolgeaktivitäten entstanden daraus?**
+
+---
+
+# 39. Fail-Closed Principle
+
+Ein wichtiger Grundsatz lautet:
+
+> **Wenn eine notwendige Kontrollinformation fehlt, soll eine sicherheitskritische Aktion nicht automatisch erlaubt werden.**
+
+Beispiele:
+
+Fehlende Policy
+
+→ keine implizite Freigabe.
+
+Fehlende Capability
+
+→ kein automatischer Zugriff.
+
+Unklarer Room-Kontext
+
+→ keine Cross-Room-Aktion.
+
+Ungültiger Zustand
+
+→ keine normale Transformation.
+
+Ungeklärter Konflikt
+
+→ kein stilles Überschreiben.
+
+---
+
+# 40. Separation of Concerns
+
+STOE trennt bewusst mehrere Ebenen.
+
+### Identity Layer
+
+Wer ist das Subjekt?
+
+### Context Layer
+
+In welchem Room findet die Handlung statt?
+
+### Policy Layer
+
+Welche Regel gilt?
+
+### Capability Layer
+
+Welche Handlung ist erlaubt?
+
+### State Layer
+
+Wie ist der aktuelle Zustand?
+
+### Event Layer
+
+Was ist passiert?
+
+### Loop Layer
+
+Welcher Prozess arbeitet?
+
+### Relation Layer
+
+Wie hängen Objekte zusammen?
+
+### Audit Layer
+
+Wie wird alles nachvollziehbar?
+
+Diese Trennung verhindert, dass eine einzelne Komponente zu viele Verantwortlichkeiten übernimmt.
+
+---
+
+# 41. Governance
+
+STOE kann auch außerhalb der technischen Sicherheitsdimension als Governance-Modell verwendet werden.
+
+Ein Workflow kann dadurch unterscheiden zwischen:
+
+* Entscheidung,
+* Empfehlung,
+* Freigabe,
+* Umsetzung,
+* Verifikation,
+* Dokumentation.
+
+Damit entsteht eine klare Trennung zwischen:
+
+**Entscheidungsgrundlage**
+
+und
+
+**Entscheidung**
+
+und
+
+**technischer Ausführung**
+
+und
+
+**anschließender Prüfung**.
+
+---
+
+# 42. Evidence Before Assertion
+
+Ein zentrales konzeptionelles Prinzip kann lauten:
+
+> **Evidence before Assertion.**
+
+Eine Behauptung oder ein Zustand soll möglichst nicht isoliert betrachtet werden.
+
+Stattdessen sollte eine nachvollziehbare Grundlage existieren:
+
+**Claim**
+
+↓
+
+**Evidence**
+
+↓
+
+**Evaluation**
+
+↓
+
+**Decision**
+
+↓
+
+**State**
+
+↓
+
+**Trace**
+
+Dieses Muster ist insbesondere bei:
+
+* Forschung,
+* Compliance,
+* KI,
+* Datenverarbeitung,
+* Sicherheitsanalysen,
+* Governance,
+* wissenschaftlichen Workflows
+
+interessant.
+
+---
+
+# 43. STOE als semantische Infrastruktur
+
+Die Engine ist damit nicht nur ein Workflow-System.
+
+Sie bildet eine semantische Infrastruktur zwischen:
+
+**Daten**
+
+**Prozessen**
+
+**Zuständen**
+
+**Entscheidungen**
+
+**Beziehungen**
+
+**Policies**
+
+**Akteuren**
+
+**Ressourcen**
+
+**Nachweisen**
+
+Dadurch kann die gleiche Architektur in verschiedenen technischen Umgebungen unterschiedliche konkrete Anwendungen unterstützen.
+
+---
+
+# 44. Mögliche Einsatzklassen
+
+Das Konzept lässt sich beispielsweise auf folgende Szenarien übertragen:
+
+### Enterprise Workflows
+
+Verantwortung, Genehmigungen und Prozessschritte werden nachvollziehbar.
+
+### KI-Agenten
+
+Jede Agentenaktion besitzt Kontext und kontrollierte Fähigkeiten.
+
+### Forschungsumgebungen
+
+Ergebnisse können bis zu ihren Ausgangsdaten und Prüfungen verfolgt werden.
+
+### Datenräume
+
+Datenzugriff und Datenweitergabe erfolgen innerhalb kontrollierter Rooms.
+
+### Multi-Tenant-Plattformen
+
+Jeder Tenant erhält einen isolierten Kontext mit definierten Bridges.
+
+### DevOps
+
+Deployments, Builds, Ressourcenänderungen und Validierungen können als Zustands- und Eventketten abgebildet werden.
+
+### Security Operations
+
+Erkennung, Analyse, Quarantäne und Wiederherstellung können in Loops und Zuständen modelliert werden.
+
+---
+
+# 45. Erweiterbarkeit
+
+Das Konzept soll nicht auf einen festen Technologie-Stack beschränkt sein.
+
+Ein STOE-System könnte konzeptionell mit verschiedenen technischen Umgebungen verbunden werden:
+
+* lokale Server,
+* Container,
+* Kubernetes,
+* virtuelle Maschinen,
+* Datenbanken,
+* Graphdatenbanken,
+* Event Stores,
+* Messaging-Systeme,
+* API-Gateways,
+* MCP,
+* A2A,
+* RAG,
+* lokale KI-Modelle,
+* Cloud-Ressourcen.
+
+STOE ist dabei die **semantische Kontrollschicht**, nicht zwingend die physische Infrastruktur selbst.
+
+---
+
+# 46. STOE und Graph-Technologien
+
+Das BackLink-Modell führt natürlich zu einem Graphmodell.
+
+Knoten können sein:
+
+* Room,
+* User,
+* Agent,
+* Resource,
+* State,
+* Event,
+* Loop,
+* Capability,
+* Policy,
+* Decision,
+* Result.
+
+Kanten können sein:
+
+* DERIVED_FROM,
+* DEPENDS_ON,
+* VERIFIED_BY,
+* CAUSED_BY,
+* REFERENCES,
+* VERSION_OF,
+* CHILD_OF,
+* CONFLICTS_WITH.
+
+Dadurch entsteht ein **Operational Knowledge Graph**.
+
+Dieser Graph ist nicht lediglich Wissensspeicher.
+
+Er enthält operative Beziehungen über:
+
+* Herkunft,
+* Zustand,
+* Zeit,
+* Entscheidung,
+* Zugriff,
+* Prozess,
+* Provenance.
+
+---
+
+# 47. X-Graph-Verknüpfung
+
+In einer weiterführenden Architektur könnte das Modell mit einer X-Graph-Schicht verbunden werden.
+
+Dabei würde der Room nicht nur seinen unmittelbaren lokalen Kontext kennen.
+
+Er könnte zusätzlich auf einen größeren semantischen Graphen zugreifen.
+
+Damit entsteht beispielsweise:
+
+**Local Room Graph**
+
+und darüber:
+
+**Global / Federated Knowledge Graph**
+
+Die Verbindung sollte wiederum über kontrollierte Capabilities erfolgen.
+
+Damit könnte zwischen:
+
+**lokaler Realität**
+
+und
+
+**föderierter semantischer Realität**
+
+unterschieden werden.
+
+---
+
+# 48. Temporale Dimension
+
+Ein wesentlicher weiterer Ausbau besteht in der zeitlichen Modellierung.
+
+Ein Objekt kann mehrere Zustände besitzen:
+
+**S1 → S2 → S3 → S4**
+
+Dabei ist S4 aktuell.
+
+Aber STOE soll historische Zustände nicht aus der Modellierung verlieren.
+
+So kann später die Frage beantwortet werden:
+
+> Wie sah dieser Room zu Zeitpunkt T aus?
+
+oder:
+
+> Welche Ressourcenversion war zum Zeitpunkt der Entscheidung aktiv?
+
+oder:
+
+> Welche Policy galt zu diesem Zeitpunkt?
+
+Damit wird die Architektur **historisch rekonstruierbar**.
+
+---
+
+# 49. Zustandsrekonstruktion
+
+Ein starkes Ziel des Konzepts ist:
+
+> **Aus der Ereignis- und Transformationsgeschichte einen früheren konsistenten Systemzustand rekonstruieren zu können.**
+
+Dies bedeutet konzeptionell:
+
+**Current State**
+
+kann aus:
+
+**Initial State + Events + validierte Transitions**
+
+hergeleitet werden.
+
+Damit wird die Historie nicht nur zu einem Archiv.
+
+Sie wird zu einem Teil der erklärbaren Systemrealität.
+
+---
+
+# 50. Observability
+
+STOE trennt zwischen:
+
+**Was ist technisch messbar?**
+
+und
+
+**Was ist semantisch passiert?**
+
+Ein Monitoring-System kann melden:
+
+„Prozess CPU 78 %“
+
+STOE kann daraus einen größeren Zusammenhang herstellen:
+
+„Verification Loop war aktiv, bearbeitete Ressource X, führte Transformation Y durch, erzeugte State Z und wartete anschließend auf Approval.“
+
+Damit entsteht eine Verbindung zwischen technischer Observability und semantischer Observability.
+
+---
+
+# 51. Sicherheitszonen
+
+Rooms können auch als Sicherheitsdomänen interpretiert werden.
+
+Beispiel:
+
+**PUBLIC ROOM**
+
+↓
+
+**WORK ROOM**
+
+↓
+
+**RESTRICTED ROOM**
+
+↓
+
+**QUARANTINE ROOM**
+
+Die Kommunikation zwischen diesen Zonen wird nicht implizit angenommen.
+
+Damit kann ein System verschiedene Trust Levels modellieren.
+
+---
+
+# 52. Quarantäne
+
+Quarantäne ist ein besonders interessanter Spezialfall.
+
+Eine Ressource oder ein Prozess kann nicht nur:
+
+**ALLOW / DENY**
+
+sein.
+
+Er kann auch:
+
+**ISOLATE**
+
+sein.
+
+Beispielsweise:
+
+**Unbekannte Ressource**
+
+↓
+
+**Quarantine Room**
+
+↓
+
+**Analyse Loop**
+
+↓
+
+**Verification Loop**
+
+↓
+
+**Decision**
+
+↓
+
+**Release oder Reject**
+
+Damit wird Quarantäne zu einem regulären architektonischen Zustand statt zu einem nachträglichen Notmechanismus.
+
+---
+
+# 53. Policy-Dynamik
+
+Policies müssen nicht zwingend statisch sein.
+
+Eine Policy kann sich im Laufe eines Prozesses verändern.
+
+Daher muss das System die Frage berücksichtigen:
+
+> Welche Policy galt genau zu dem Zeitpunkt, an dem die Handlung stattfand?
+
+Aus diesem Grund gehört die Policy-Referenz in den Trace-Kontext.
+
+---
+
+# 54. Explainability
+
+STOE kann auch eine Grundlage für technische Explainability schaffen.
+
+Eine Frage wie:
+
+> Warum wurde dieses Ergebnis erzeugt?
+
+kann über den Trace beantwortet werden:
+
+**Result**
+
+↓
+
+**Transformation**
+
+↓
+
+**Input States**
+
+↓
+
+**Resources**
+
+↓
+
+**Policies**
+
+↓
+
+**Capabilities**
+
+↓
+
+**Actor**
+
+↓
+
+**Events**
+
+Damit wird Explainability nicht als nachträgliche Textgenerierung verstanden, sondern als **strukturierte Herkunftserklärung**.
+
+---
+
+# 55. Deterministische und nichtdeterministische Prozesse
+
+Nicht jede Transformation liefert immer dasselbe Ergebnis.
+
+Besonders bei KI-Systemen können Ergebnisse variieren.
+
+STOE muss daher nicht verlangen, dass jedes Resultat identisch reproduzierbar ist.
+
+Stattdessen ist entscheidend:
+
+> **Die verwendeten Bedingungen müssen nachvollziehbar sein.**
+
+Beispielsweise:
+
+* Modellkontext,
+* Eingabestatus,
+* Ressourcenversion,
+* Policy,
+* Agent,
+* Loop,
+* Zeitpunkt,
+* verwendete Werkzeuge,
+* resultierende Entscheidungen.
+
+Damit kann auch ein nicht vollständig deterministischer Prozess dokumentiert werden.
+
+---
+
+# 56. Replay und Simulation
+
+Eine weitere konzeptionelle Möglichkeit ist ein Replay.
+
+Ein historischer Trace kann verwendet werden, um zu untersuchen:
+
+* was passiert ist,
+* welche Zustände entstanden,
+* wo eine Entscheidung getroffen wurde,
+* welche Policy wirksam war.
+
+Darüber hinaus kann ein **Simulation Mode** denkbar sein:
+
+Ein zukünftiger Zustand wird berechnet, ohne den produktiven Zustand zu verändern.
+
+Dadurch könnten Systeme unterscheiden zwischen:
+
+**Simulation**
+
+und
+
+**Commit**
+
+---
+
+# 57. Dry-Run-Konzept
+
+Ein Dry Run kann sämtliche relevanten Schritte durchlaufen:
+
+* Policy evaluation,
+* Resource evaluation,
+* Loop orchestration,
+* conflict detection,
+* backlink generation,
+
+ohne anschließend produktive Änderungen zu übernehmen.
+
+Das ermöglicht sichere Tests komplexer Workflows.
+
+---
+
+# 58. Sicherheitsprinzip der kontrollierten Transformation
+
+Jede Transformation sollte konzeptionell folgende Fragen beantworten:
+
+**Was war vorher?**
+
+**Was soll danach sein?**
+
+**Warum darf die Transformation stattfinden?**
+
+**Wer bzw. was löst sie aus?**
+
+**Welche Ressourcen sind betroffen?**
+
+**Welche Policy gilt?**
+
+**Welche Capability erlaubt die Aktion?**
+
+**Welche Nachweise entstehen?**
+
+Damit wird eine Transformation zu einem **kontrollierten Systemereignis**.
+
+---
+
+# 59. Gesamtarchitektur
+
+Das vollständige konzeptionelle Modell kann deshalb folgendermaßen dargestellt werden:
+
+**Identity**
+
+↓
+
+**Device / Context**
+
+↓
+
+**Consent**
+
+↓
+
+**Policy**
+
+↓
+
+**Session**
+
+↓
+
+**Capability**
+
+↓
+
+**Room**
+
+↓
+
+**State**
+
+↓
+
+**Multi-Loop**
+
+↓
+
+**Transformation**
+
+↓
+
+**Validation**
+
+↓
+
+**New State**
+
+↓
+
+**Event**
+
+↓
+
+**BackLink**
+
+↓
+
+**Trace**
+
+↓
+
+**Audit**
+
+↓
+
+**Knowledge / Graph**
+
+Dabei handelt es sich nicht zwingend um eine streng lineare Ausführung.
+
+Der Trace und der Graph können alle Ebenen miteinander verbinden.
+
+---
+
+# 60. Das Room-Loop-Graph-Modell
+
+Eine besonders wichtige Zusammenfassung lautet:
+
+### Room
+
+definiert den **Kontext**.
+
+### Loop
+
+definiert den **Prozess**.
+
+### State
+
+definiert die **Situation**.
+
+### Event
+
+definiert das **Geschehen**.
+
+### BackLink
+
+definiert die **Beziehung**.
+
+### Capability
+
+definiert die **Handlungsmöglichkeit**.
+
+### Policy
+
+definiert die **Zulässigkeit**.
+
+### Trace
+
+definiert die **Nachvollziehbarkeit**.
+
+### Audit
+
+definiert die **historische Belegbarkeit**.
+
+---
+
+# 61. Architekturprinzipien
+
+STOE kann auf folgende Grundprinzipien reduziert werden:
+
+**1. Context before Action**
+
+Eine Aktion benötigt einen definierten Kontext.
+
+**2. Authorization before Transformation**
+
+Eine relevante Transformation benötigt eine zulässige Handlungsmöglichkeit.
+
+**3. State before State Change**
+
+Ein neuer Zustand entsteht aus einem bekannten Ausgangszustand.
+
+**4. Event for Change**
+
+Eine relevante Änderung erzeugt eine dokumentierte historische Spur.
+
+**5. Explicit Cross-Room**
+
+Room-Grenzen dürfen nicht implizit überschritten werden.
+
+**6. No Silent Mutation**
+
+Zustände dürfen nicht unsichtbar verändert werden.
+
+**7. No Silent Conflict Resolution**
+
+Konflikte dürfen nicht heimlich überschrieben werden.
+
+**8. Provenance by Design**
+
+Herkunft soll Bestandteil der Architektur sein.
+
+**9. Temporal Awareness**
+
+Beziehungen und Zustände besitzen einen zeitlichen Kontext.
+
+**10. Evidence before Assertion**
+
+Aussagen und Ergebnisse sollen auf nachvollziehbaren Grundlagen beruhen.
+
+---
+
+# 62. Zielbild
+
+Das Zielbild von STOE ist eine Umgebung, in der ein komplexer digitaler Vorgang nicht mehr als undurchsichtige Kette erscheint.
+
+Stattdessen wird er als nachvollziehbarer Zusammenhang sichtbar:
+
+**Context**
+
+→ Room
+
+**Authorization**
+
+→ Capability
+
+**Process**
+
+→ Multi-Loop
+
+**Condition**
+
+→ State
+
+**Change**
+
+→ Event
+
+**Relationship**
+
+→ BackLink
+
+**History**
+
+→ Trace
+
+**Verification**
+
+→ Evidence
+
+**Governance**
+
+→ Policy
+
+Damit entsteht eine Architektur, die sowohl für technische Systeme als auch für organisatorische und KI-gestützte Prozesse geeignet ist.
+
+---
+
+# 63. Schlusskonzept
+
+STOE ist in diesem Verständnis keine reine Workflow-Engine.
+
+Es ist ein konzeptionelles Modell für:
+
+**zustandsorientierte Verarbeitung,**
+
+**kontextgebundene Zugriffe,**
+
+**parallele und verschachtelte Prozesse,**
+
+**zeitliche Nachvollziehbarkeit,**
+
+**semantische Beziehungen,**
+
+**Provenance,**
+
+**Policy Enforcement,**
+
+**Auditability**
+
+und
+
+**kontrollierte Transformation.**
+
+Die zentrale Idee lautet:
+
+> **Nichts Relevantes soll isoliert betrachtet werden müssen.**
+
+Ein Zustand gehört zu einem Kontext.
+
+Eine Transformation gehört zu einem Prozess.
+
+Ein Prozess gehört zu einem Trace.
+
+Ein Ergebnis besitzt eine Herkunft.
+
+Eine Berechtigung besitzt einen Geltungsbereich.
+
+Eine Beziehung besitzt eine Bedeutung.
+
+Ein Konflikt besitzt einen Zustand.
+
+Eine Entscheidung besitzt eine Grundlage.
+
+Damit wird aus einzelnen technischen Operationen ein **zusammenhängendes, erklärbares und kontrollierbares Systemmodell**.
+
+---
+
+# 64. Kompakte STOE-Formel
+
+Das Gesamtkonzept kann abschließend als folgende Architekturformel verstanden werden:
+
+**STOE = Context + State + Policy + Capability + Event + Loop + Relation + Trace + Evidence**
+
+oder semantisch:
+
+**Room → Control → Process → Transform → Verify → Relate → Trace**
+
+Das Ziel ist nicht, jede digitale Operation maximal komplex zu machen.
+
+Das Ziel ist vielmehr:
+
+> **Komplexität strukturiert sichtbar, kontrollierbar und nachvollziehbar zu machen.**
+# STOE-1.0 – Room, Room-Access, Multi-Loop & BackLink Specification
+
+**Dokumenttyp:** Technische Architektur-Spezifikation
+**Status:** Concept / Draft Specification
+**System:** State-/Transformation-Oriented Engine (STOE)
+**Zweck:** Definition von kontrollierten Rooms, Zugriffszuständen, parallelen Loops und nachvollziehbaren BackLinks.
+
+---
+
+## 1. Architekturprinzip
+
+STOE betrachtet einen Verarbeitungsvorgang nicht als einfache Kette von:
+
+`Input → Process → Output`
+
+sondern als kontrollierten Zustandsraum:
+
+```text
+Resource
+   │
+   ▼
+Room
+   │
+   ├── Access Policy
+   ├── State
+   ├── Events
+   ├── Capabilities
+   ├── Loops
+   ├── Links
+   └── Audit Trail
+          │
+          ▼
+      Transformation
+          │
+          ▼
+      New State
+```
+
+Ein **Room** definiert dabei die kontrollierte Umgebung, in der Ressourcen, Identitäten, Policies, Events und Transformationen zusammengeführt werden.
+
+---
+
+# 2. Normative Begriffe
+
+Die folgenden Begriffe werden normativ verwendet:
+
+**MUST**
+Eine Anforderung ist zwingend.
+
+**MUST NOT**
+Eine Operation ist ausdrücklich verboten.
+
+**SHOULD**
+Eine Implementierung soll dies grundsätzlich unterstützen.
+
+**SHOULD NOT**
+Eine Implementierung soll dies grundsätzlich vermeiden.
+
+**MAY**
+Eine Implementierung kann diese Funktion optional bereitstellen.
+
+---
+
+# 3. Room Model
+
+Ein `Room` ist ein logischer, isolierter Zustandsraum.
+
+Ein Room besitzt mindestens:
+
+```text
+room_id
+room_type
+state
+owner
+access_policy
+resource_scope
+capability_scope
+loop_scope
+audit_scope
+created_at
+updated_at
+```
+
+### 3.1 Room-Typen
+
+```text
+PUBLIC
+PRIVATE
+INVITED
+PROJECT
+TENANT
+SYSTEM
+TEMPORARY
+ARCHIVE
+QUARANTINE
+WORKFLOW
+RESEARCH
+```
+
+Zusätzliche Room-Typen dürfen als Plugins registriert werden.
+
+---
+
+# 4. Room State Machine
+
+Ein Room verwendet eine explizite Zustandsmaschine.
+
+```text
+CREATED
+   │
+   ▼
+INITIALIZING
+   │
+   ▼
+READY
+   │
+   ├──► ACTIVE
+   │       │
+   │       ├──► PAUSED
+   │       │      │
+   │       │      └──► ACTIVE
+   │       │
+   │       ├──► LOCKED
+   │       │
+   │       └──► DRAINING
+   │
+   ▼
+SEALED
+   │
+   ▼
+ARCHIVED
+```
+
+Zusätzlich:
+
+```text
+ERROR
+QUARANTINED
+REVOKED
+```
+
+Ein Zustand darf nur über eine definierte Transition verändert werden.
+
+Direktes Überschreiben des Zustands ist **MUST NOT**.
+
+---
+
+# 5. Room Access Model
+
+Der Zugriff erfolgt nicht allein über eine Identität.
+
+STOE verwendet:
+
+```text
+Identity
+   ↓
+Device
+   ↓
+Consent
+   ↓
+Policy
+   ↓
+Session
+   ↓
+Capability
+   ↓
+Room
+   ↓
+Resource
+```
+
+Eine gültige Identität erzeugt daher nicht automatisch Zugriff.
+
+---
+
+# 6. Access Decision
+
+Die zentrale Entscheidung lautet:
+
+```text
+ALLOW
+DENY
+CHALLENGE
+REQUIRE_APPROVAL
+QUARANTINE
+```
+
+Beispiel:
+
+```json
+{
+  "request_id": "req-01J...",
+  "subject": "user:123",
+  "room_id": "room:research-01",
+  "action": "resource.read",
+  "resource": "dataset:alpha",
+  "decision": "ALLOW",
+  "policy_id": "policy:research-read",
+  "capability_id": "cap:7f...",
+  "expires_at": "2026-09-17T20:30:00Z"
+}
+```
+
+---
+
+# 7. Capability-basierter Zugriff
+
+Ein Room-Zugriff sollte nicht als dauerhafte Berechtigung modelliert werden.
+
+Stattdessen:
+
+```text
+Access Request
+      ↓
+Policy Evaluation
+      ↓
+Capability Issued
+      ↓
+Short-Lived Session
+      ↓
+Action
+      ↓
+Audit Event
+      ↓
+Capability Expired
+```
+
+Capabilities besitzen mindestens:
+
+```text
+capability_id
+subject_id
+room_id
+resource_scope
+action_scope
+issued_at
+expires_at
+policy_id
+session_id
+status
+```
+
+Mögliche Statuswerte:
+
+```text
+ISSUED
+ACTIVE
+SUSPENDED
+EXPIRED
+REVOKED
+CONSUMED
+```
+
+---
+
+# 8. Room Access Modes
+
+Ein Room kann mehrere Zugriffsebenen gleichzeitig besitzen.
+
+| Mode    | Beschreibung             |
+| ------- | ------------------------ |
+| READ    | Lesen                    |
+| WRITE   | Schreiben                |
+| EXECUTE | Transformation ausführen |
+| ADMIN   | Room verwalten           |
+| OBSERVE | Events beobachten        |
+| LINK    | BackLinks erzeugen       |
+| LOOP    | Loops starten/verwalten  |
+| EXPORT  | Daten exportieren        |
+| REVOKE  | Berechtigungen entziehen |
+
+Beispiel:
+
+```json
+{
+  "room_id": "room:project-x",
+  "principal": "agent:planner",
+  "permissions": [
+    "READ",
+    "OBSERVE",
+    "LINK"
+  ]
+}
+```
+
+Der Agent kann somit beispielsweise Daten lesen und Verbindungen herstellen, aber keine Transformation ausführen.
+
+---
+
+# 9. Room Isolation
+
+Rooms MUST logisch voneinander isoliert sein.
+
+Eine Ressource aus:
+
+```text
+room:A
+```
+
+darf nicht implizit für:
+
+```text
+room:B
+```
+
+sichtbar werden.
+
+Ein Cross-Room-Zugriff benötigt eine explizite Capability:
+
+```text
+Room A
+  │
+  │ explicit capability
+  ▼
+Bridge
+  │
+  ▼
+Room B
+```
+
+Die Bridge selbst wird auditierbar.
+
+---
+
+# 10. Multi-Loop Model
+
+STOE erlaubt mehrere gleichzeitig aktive Verarbeitungsschleifen.
+
+Ein Loop ist definiert als:
+
+```text
+Input
+ ↓
+Observe
+ ↓
+Evaluate
+ ↓
+Transform
+ ↓
+Validate
+ ↓
+Commit
+ ↓
+Emit Event
+```
+
+Ein Loop kann jedoch einen anderen Loop starten.
+
+Beispiel:
+
+```text
+LOOP-A: Research
+      │
+      ├── LOOP-B: Verification
+      │
+      ├── LOOP-C: Security
+      │
+      └── LOOP-D: Transformation
+```
+
+---
+
+# 11. Loop Identity
+
+Jeder Loop besitzt:
+
+```text
+loop_id
+parent_loop_id
+root_loop_id
+room_id
+state
+priority
+trigger
+policy_scope
+iteration
+created_at
+updated_at
+```
+
+Beispiel:
+
+```json
+{
+  "loop_id": "loop:research-001",
+  "parent_loop_id": null,
+  "root_loop_id": "loop:research-001",
+  "room_id": "room:project-x",
+  "state": "ACTIVE",
+  "iteration": 12
+}
+```
+
+Ein Child-Loop:
+
+```json
+{
+  "loop_id": "loop:verification-001",
+  "parent_loop_id": "loop:research-001",
+  "root_loop_id": "loop:research-001",
+  "room_id": "room:project-x",
+  "state": "ACTIVE"
+}
+```
+
+---
+
+# 12. Loop States
+
+```text
+CREATED
+QUEUED
+ACTIVE
+WAITING
+BLOCKED
+PAUSED
+COMPLETED
+FAILED
+CANCELLED
+TERMINATED
+```
+
+Der Unterschied zwischen `FAILED` und `TERMINATED` ist wichtig:
+
+```text
+FAILED      = Verarbeitung fehlgeschlagen
+TERMINATED  = Verarbeitung explizit beendet
+```
+
+---
+
+# 13. Loop Synchronization
+
+Mehrere Loops dürfen nicht unkontrolliert dieselbe Ressource verändern.
+
+Dafür wird ein Synchronisationsmodell eingeführt:
+
+```text
+LOCK
+LEASE
+VERSION
+CHECKPOINT
+MERGE
+CONFLICT
+```
+
+Beispiel:
+
+```text
+Resource v41
+    │
+    ├── Loop-A → v42
+    │
+    └── Loop-B → v42
+                │
+                ▼
+             CONFLICT
+                │
+                ▼
+             MERGE
+                │
+                ▼
+             v43
+```
+
+---
+
+# 14. BackLink Model
+
+Ein BackLink ist mehr als eine einfache URL oder Datenbankreferenz.
+
+Er beschreibt:
+
+> **Warum zwei Zustände, Events, Ressourcen oder Transformationen miteinander verbunden sind.**
+
+Ein BackLink enthält mindestens:
+
+```text
+link_id
+source_id
+target_id
+relation
+created_by
+created_at
+confidence
+evidence
+policy_scope
+```
+
+---
+
+# 15. BackLink Relations
+
+STOE definiert zunächst:
+
+```text
+DERIVED_FROM
+TRANSFORMED_FROM
+CAUSED_BY
+TRIGGERED_BY
+VALIDATED_BY
+VERIFIED_BY
+DEPENDS_ON
+REFERENCES
+SUPERSEDES
+CONFLICTS_WITH
+RESOLVES
+CHILD_OF
+PARENT_OF
+SAME_AS
+VERSION_OF
+```
+
+Beispiel:
+
+```json
+{
+  "link_id": "link:9821",
+  "source_id": "state:0042",
+  "target_id": "event:8831",
+  "relation": "CAUSED_BY",
+  "created_by": "loop:verification-001",
+  "confidence": 0.97,
+  "evidence": [
+    "event-hash:abc123",
+    "resource-version:v41"
+  ]
+}
+```
+
+---
+
+# 16. BackLinks müssen bidirektional navigierbar sein
+
+Aus:
+
+```text
+A → B
+```
+
+soll das System sowohl:
+
+```text
+A → B
+```
+
+als auch:
+
+```text
+B ← A
+```
+
+ableiten können.
+
+Das bedeutet nicht zwingend, dass zwei physische Datensätze gespeichert werden müssen.
+
+Eine Implementierung darf eine inverse Relation dynamisch erzeugen.
+
+---
+
+# 17. Temporal BackLinks
+
+BackLinks sollen zeitlich nachvollziehbar sein.
+
+```text
+State-001
+   │
+   │ DERIVED_FROM
+   │ @ 18:01:11
+   ▼
+State-002
+   │
+   │ VERIFIED_BY
+   │ @ 18:03:07
+   ▼
+State-003
+```
+
+Jede Beziehung besitzt daher einen zeitlichen Kontext.
+
+Empfohlen:
+
+```text
+valid_from
+valid_until
+observed_at
+created_at
+```
+
+Damit kann STOE unterscheiden zwischen:
+
+```text
+Wann wurde die Verbindung erzeugt?
+Wann war sie gültig?
+Wann wurde sie beobachtet?
+```
+
+---
+
+# 18. Event Model
+
+Jede relevante Transition erzeugt ein Event.
+
+```json
+{
+  "event_id": "evt:01J...",
+  "event_type": "ROOM.ACCESS.GRANTED",
+  "room_id": "room:project-x",
+  "subject_id": "agent:planner",
+  "previous_state": "REQUESTED",
+  "new_state": "ACTIVE",
+  "timestamp": "2026-09-17T17:45:10Z",
+  "actor": "policy-engine",
+  "trace_id": "trace:abc",
+  "parent_event_id": null
+}
+```
+
+---
+
+# 19. Trace Chain
+
+Room, Loop und BackLink werden über eine gemeinsame Trace-ID verbunden.
+
+```text
+TRACE-001
+ │
+ ├── ACCESS_REQUEST
+ │
+ ├── POLICY_DECISION
+ │
+ ├── CAPABILITY_ISSUED
+ │
+ ├── LOOP_STARTED
+ │
+ ├── RESOURCE_READ
+ │
+ ├── TRANSFORMATION
+ │
+ ├── VALIDATION
+ │
+ ├── BACKLINK_CREATED
+ │
+ └── LOOP_COMPLETED
+```
+
+Damit entsteht eine nachvollziehbare Kette:
+
+```text
+WHO
+WHAT
+WHY
+WHEN
+WHERE
+WITH WHICH POLICY
+WITH WHICH CAPABILITY
+WITH WHICH RESOURCE
+WITH WHICH RESULT
+```
+
+---
+
+# 20. MCP Interface
+
+Die Room-/Loop-Schicht kann als MCP-kompatible Werkzeuggruppe exponiert werden.
+
+### Tools
+
+```text
+room.create
+room.inspect
+room.access.request
+room.access.revoke
+room.lock
+room.unlock
+room.seal
+
+loop.create
+loop.start
+loop.pause
+loop.resume
+loop.cancel
+loop.inspect
+loop.children
+
+link.create
+link.get
+link.list
+link.reverse
+link.trace
+
+event.emit
+event.get
+event.trace
+```
+
+---
+
+# 21. API Example
+
+```http
+POST /stoe/v1/rooms
+```
+
+```json
+{
+  "room_type": "PROJECT",
+  "name": "Project-X",
+  "policy_id": "policy:project-default"
+}
+```
+
+Antwort:
+
+```json
+{
+  "room_id": "room:project-x",
+  "state": "CREATED"
+}
+```
+
+Access Request:
+
+```http
+POST /stoe/v1/rooms/room:project-x/access
+```
+
+```json
+{
+  "subject": "agent:planner",
+  "action": "READ",
+  "resource_scope": [
+    "dataset:alpha"
+  ]
+}
+```
+
+---
+
+# 22. Multi-Loop API
+
+```http
+POST /stoe/v1/loops
+```
+
+```json
+{
+  "room_id": "room:project-x",
+  "loop_type": "VERIFICATION",
+  "parent_loop_id": "loop:research-001"
+}
+```
+
+Antwort:
+
+```json
+{
+  "loop_id": "loop:verification-002",
+  "root_loop_id": "loop:research-001",
+  "state": "CREATED"
+}
+```
+
+---
+
+# 23. BackLink API
+
+```http
+POST /stoe/v1/links
+```
+
+```json
+{
+  "source_id": "state:0042",
+  "target_id": "event:8831",
+  "relation": "CAUSED_BY",
+  "evidence": [
+    "event-hash:abc123"
+  ]
+}
+```
+
+---
+
+# 24. Conflict Resolution
+
+Mehrere Loops können divergierende Zustände erzeugen.
+
+STOE darf einen Konflikt nicht stillschweigend überschreiben.
+
+```text
+STATE-A
+   │
+   ├── modification X
+   │
+   └── modification Y
+```
+
+führt zu:
+
+```text
+CONFLICT
+```
+
+und anschließend zu einem kontrollierten Prozess:
+
+```text
+DETECT
+  ↓
+FREEZE
+  ↓
+COMPARE
+  ↓
+POLICY CHECK
+  ↓
+MERGE / SELECT / REJECT
+  ↓
+NEW STATE
+  ↓
+AUDIT
+```
+
+---
+
+# 25. Policy Hooks
+
+Jeder kritische Vorgang besitzt Policy Hooks:
+
+```text
+before_access
+after_access
+
+before_transform
+after_transform
+
+before_loop
+after_loop
+
+before_link
+after_link
+
+before_commit
+after_commit
+```
+
+Damit können Sicherheits-, Compliance- oder Governance-Plugins eingebunden werden.
+
+---
+
+# 26. Plugin Interface
+
+Minimaler Plugin-Vertrag:
+
+```python
+class STOEPlugin:
+
+    plugin_id: str
+    version: str
+
+    def initialize(self, context):
+        ...
+
+    def validate(self, event, context):
+        ...
+
+    def transform(self, state, context):
+        ...
+
+    def finalize(self, context):
+        ...
+```
+
+Plugins dürfen den globalen Zustand nicht direkt manipulieren.
+
+Sie erzeugen stattdessen:
+
+```text
+Proposal
+   ↓
+Policy
+   ↓
+Transition
+   ↓
+Event
+```
+
+---
+
+# 27. Docker Component Model
+
+```text
+stoe-gateway
+      │
+      ▼
+stoe-api
+      │
+      ├── room-service
+      ├── access-service
+      ├── loop-engine
+      ├── backlink-engine
+      ├── policy-engine
+      ├── event-store
+      └── audit-service
+             │
+             ▼
+        persistent storage
+```
+
+Optional:
+
+```text
+mcp-gateway
+a2a-gateway
+rag-service
+graph-index
+worker-pool
+observability
+```
+
+---
+
+# 28. Kubernetes Operator Model
+
+Ein Kubernetes Operator kann deklarativ folgende Ressourcen verwalten:
+
+```text
+STOERoom
+STOEPolicy
+STOELoop
+STOEBackLink
+STOECapability
+STOEWorkflow
+```
+
+Beispiel:
+
+```yaml
+apiVersion: stoe.io/v1
+kind: STOERoom
+metadata:
+  name: project-x
+spec:
+  type: PROJECT
+  policyRef: project-default
+  isolation: strict
+```
+
+Loop:
+
+```yaml
+apiVersion: stoe.io/v1
+kind: STOELoop
+metadata:
+  name: verification
+spec:
+  roomRef: project-x
+  type: VERIFICATION
+  concurrency: 4
+```
+
+---
+
+# 29. Sicherheitsgrundsatz
+
+Der zentrale Grundsatz lautet:
+
+```text
+No implicit trust.
+No implicit room crossing.
+No implicit state mutation.
+No hidden transformation.
+No silent conflict resolution.
+No unaudited capability.
+```
+
+Damit wird jede relevante Zustandsänderung nachvollziehbar.
+
+---
+
+# 30. Gesamtmodell
+
+Das vollständige STOE-Modell ergibt:
+
+```text
+                    ┌──────────────────┐
+                    │     Identity     │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │ Device / Consent │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │      Policy      │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │    Capability    │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                 ┌────────────────────────┐
+                 │          ROOM          │
+                 │                        │
+                 │ State                  │
+                 │ Resources              │
+                 │ Events                 │
+                 │ Policies               │
+                 │ Capabilities           │
+                 │                        │
+                 │   ┌──────────────┐     │
+                 │   │  LOOP A      │     │
+                 │   ├──────────────┤     │
+                 │   │  LOOP B      │     │
+                 │   ├──────────────┤     │
+                 │   │  LOOP C      │     │
+                 │   └──────────────┘     │
+                 │          │             │
+                 └──────────┼─────────────┘
+                            │
+                            ▼
+                     ┌──────────────┐
+                     │   BackLink   │
+                     │   Graph      │
+                     └──────┬───────┘
+                            │
+                            ▼
+                     ┌──────────────┐
+                     │ Audit/Trace  │
+                     └──────────────┘
+```
+
+---
+
+# 31. Architekturformel
+
+Die wesentliche STOE-Abstraktion kann damit formal zusammengefasst werden als:
+
+```text
+STOE =
+Room
++ State
++ Event
++ Policy
++ Capability
++ Loop
++ BackLink
++ Trace
++ Audit
+```
+
+Oder als Transformationsbeziehung:
+
+```text
+(State, Event, Policy, Capability)
+        │
+        ▼
+   Transformation
+        │
+        ▼
+     New State
+        │
+        ├── Event
+        ├── BackLink
+        └── Audit Record
+```
+
+Damit wird STOE nicht lediglich zu einer Workflow-Engine, sondern zu einer **zustandsorientierten Transformations- und Nachverfolgbarkeitsarchitektur**.
+<img width="512" height="512" alt="84F1A753-97E1-4C40-9E3D-F3FB5D99B589" src="https://github.com/user-attachments/assets/2862ac67-cbb5-4924-a81d-83c27db11b0c" />
+<img width="2512" height="416" alt="Image1 (1)" src="https://github.com/user-attachments/assets/9271668f-9587-42d5-87fd-b5caad54c804" />
+<img width="1408" height="768" alt="Image3" src="https://github.com/user-attachments/assets/1085d5b1-544c-4b49-bb0c-5b7ea9eb4c49" />
+<img width="1024" height="559" alt="Code_Generated_Image" src="https://github.com/user-attachments/assets/76d4cb2f-99c3-4c66-a33e-104bf3909d1e" />
+<img width="1024" height="559" alt="Code_Generated_Image (1)" src="https://github.com/user-attachments/assets/d006c78a-d634-4d81-9a8b-3f70db238379" />
+<img width="1024" height="559" alt="Code_Generated_Image (2)" src="https://github.com/user-attachments/assets/8a768321-52f7-4848-ba0b-753db2303222" />
+<img width="1024" height="559" alt="Code_Generated_Image (3)" src="https://github.com/user-attachments/assets/bf24e9e1-6abd-429e-9979-8ef7fd4541d3" />
+<img width="1024" height="559" alt="Code_Generated_Image (4)" src="https://github.com/user-attachments/assets/0ebdcb04-2c0b-4dec-9024-45cabccd84c7" />
+<img width="1024" height="559" alt="Code_Generated_Image (5)" src="https://github.com/user-attachments/assets/5410793e-622b-4019-8d61-b5a0ddaad003" />
+<img width="1024" height="559" alt="Code_Generated_Image (6)" src="https://github.com/user-attachments/assets/41fe526c-87d9-4763-91a1-7909d9b7f567" />
+<img width="1024" height="559" alt="Code_Generated_Image (7)" src="https://github.com/user-attachments/assets/576603d3-63e6-4db3-ae2e-d03590e3307d" />
+<img width="1024" height="559" alt="Code_Generated_Image (8)" src="https://github.com/user-attachments/assets/27656784-326e-4a3c-a46b-b54e284f1f8c" />
+<img width="1024" height="559" alt="Code_Generated_Image (9)" src="https://github.com/user-attachments/assets/9053fa0d-f4f8-41ba-977e-5c7a0ef5df1f" />
+<img width="1024" height="559" alt="Code_Generated_Image (10)" src="https://github.com/user-attachments/assets/3bf5ee17-14b2-48e4-a64d-8c5972dd0a6c" />
+<img width="1024" height="559" alt="Code_Generated_Image (11)" src="https://github.com/user-attachments/assets/b772cb08-8cec-416d-aefe-54b96edfb311" />
+<img width="1024" height="559" alt="Code_Generated_Image (12)" src="https://github.com/user-attachments/assets/93dcb3de-b4e0-496f-80e4-aced5b58013d" />
+<img width="1024" height="559" alt="Code_Generated_Image (13)" src="https://github.com/user-attachments/assets/486da921-ada6-4e10-a5e6-62fd4e1ed7b4" />
+<img width="1024" height="559" alt="Code_Generated_Image (14)" src="https://github.com/user-attachments/assets/2f30d583-762e-42fa-90e2-b8f34f0642d6" />
+<img width="1024" height="559" alt="Code_Generated_Image (15)" src="https://github.com/user-attachments/assets/45d189e2-0a03-425f-97f8-024dee473027" />
+<img width="1024" height="559" alt="Code_Generated_Image (16)" src="https://github.com/user-attachments/assets/fc835f55-1091-485a-aae5-19781c697402" />
+<img width="1024" height="559" alt="Code_Generated_Image (17)" src="https://github.com/user-attachments/assets/c5efd84c-be62-4709-9aca-3fdedca7e0db" />
+<img width="1024" height="559" alt="Code_Generated_Image (18)" src="https://github.com/user-attachments/assets/1064f4fa-56d1-4f1b-af8b-5699552bf0ae" />
+<img width="1024" height="559" alt="Code_Generated_Image (19)" src="https://github.com/user-attachments/assets/ba49c577-58ee-42c9-a728-96a4e32a830f" />
+<img width="1024" height="559" alt="Code_Generated_Image (20)" src="https://github.com/user-attachments/assets/413e062a-22ef-40c5-81f3-756eedf9f6b8" />
+<img width="1024" height="559" alt="Code_Generated_Image (21)" src="https://github.com/user-attachments/assets/d53b6180-0d40-4509-9151-1558d976e598" />
+<img width="1024" height="559" alt="Code_Generated_Image (22)" src="https://github.com/user-attachments/assets/9f7ebb92-bb2c-4746-b2bc-970041a3c08d" />
+<img width="1024" height="559" alt="Code_Generated_Image (23)" src="https://github.com/user-attachments/assets/057c1d9b-e0b1-4216-9e3c-c35377b880f8" />
+<img width="1024" height="559" alt="Code_Generated_Image (24)" src="https://github.com/user-attachments/assets/e2dcb611-1f5c-474e-87d9-3375a6a658de" />
+<img width="1024" height="559" alt="Code_Generated_Image (25)" src="https://github.com/user-attachments/assets/e31d3728-e41f-4fb8-b0e1-3b63e40514b8" />
+<img width="1024" height="559" alt="Code_Generated_Image (26)" src="https://github.com/user-attachments/assets/11f24470-d8d7-4148-8cc6-c696880211ca" />
+<img width="1024" height="559" alt="Code_Generated_Image (27)" src="https://github.com/user-attachments/assets/6aef4cec-72fe-49b9-a448-f58128b2fd69" />
+<img width="1024" height="559" alt="Code_Generated_Image (28)" src="https://github.com/user-attachments/assets/ce8906f2-b3c4-4c50-ab89-050ffdbc67e8" />
+<img width="1024" height="559" alt="Code_Generated_Image (29)" src="https://github.com/user-attachments/assets/c4fc8f2b-a52c-4c7f-8d72-a7b9e93de35a" />
+<img width="1024" height="559" alt="Code_Generated_Image (30)" src="https://github.com/user-attachments/assets/6478ad40-5fe6-44b6-baa2-9cb1bf2d8408" />
+<img width="1024" height="559" alt="Code_Generated_Image (31)" src="https://github.com/user-attachments/assets/a646603c-c85f-4fd3-b0ec-3c7e965476be" />
+<img width="1024" height="559" alt="Code_Generated_Image (32)" src="https://github.com/user-attachments/assets/64944171-0b54-4bbf-a2aa-517f02e01d48" />
+<img width="1024" height="559" alt="Code_Generated_Image (33)" src="https://github.com/user-attachments/assets/66d530ab-a295-4905-b87c-1819a073f2d0" />
+<img width="1024" height="559" alt="Code_Generated_Image (34)" src="https://github.com/user-attachments/assets/93cebd8e-6333-4cc6-a71e-4c47c33eb02f" />
+<img width="1408" height="768" alt="Gemini_Generated_Image_2kc7ks2kc7ks2kc7" src="https://github.com/user-attachments/assets/915ce52c-0d14-4c2d-bf4f-9b911f9d3366" />
+<img width="1408" height="768" alt="Gemini_Generated_Image_2kc7ks2kc7ks2kc7 (1)" src="https://github.com/user-attachments/assets/68b7e306-0f54-4b80-b6d7-6e4e6d79c180" />
