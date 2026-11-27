@@ -1,0 +1,50 @@
+{
+  "masterbook_version": "2.4.0",
+  "project_title": "DP MASTERBOOK LETTRE",
+  "author_orcid": "https://orcid.org/0009-0000-0152-1535",
+  "timestamp_utc": "2026-11-27T03:22:10Z",
+  "sandbox_mode": false,
+  "dry_run": false,
+  "local_artifact_sha256": "0bc30d81a74014019fe7556d15365484dee238404f3cd7624e9e1dc98b12ebfc",
+  "artifact_files": [
+    "DP_MASTERBOOK_LETTRE.pdf"
+  ],
+  "certifications": [
+    {
+      "institution": "Harvard Dataverse",
+      "status": "ERROR",
+      "error": "HTTP 403 for POST https://dataverse.harvard.edu/api/datasets/:persistentId/actions/:publish?persistentId=doi%3A10.7910%2FDVN%2F4PH1MK&type=major: {\"status\":\"ERROR\",\"message\":\"Thanks for your submission. This dataset has been flagged for review and cannot be published until that review is complete. The repository team has been notified and will review it within the next business day, Monday through Friday, 9 a.m.–5 p.m., excluding holidays. No further action is needed from you.<br>Please note that we are unable to respond to inquiries about the review. The repository reserves the right to remove content that is not supported by the repository.\"}"
+    },
+    {
+      "institution": "Zenodo (CERN)",
+      "status": "PUBLISHED",
+      "persistent_id": "10.5281/zenodo.24575735",
+      "concept_doi": "10.5281/zenodo.24575734",
+      "landing_page": "https://zenodo.org/records/24575735",
+      "api_receipt_endpoint": "https://zenodo.org/api/records/24575735"
+    },
+    {
+      "institution": "Figshare",
+      "status": "ERROR",
+      "error": "<urlopen error [Errno 32] Broken pipe>"
+    },
+    {
+      "institution": "Dryad",
+      "status": "ERROR",
+      "error": "HTTP 400 for PUT https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.79cnp5jd8/files/DP_MASTERBOOK_LETTRE.pdf: "
+    },
+    {
+      "institution": "Internet Archive",
+      "status": "ERROR",
+      "error": "<urlopen error The write operation timed out>"
+    },
+    {
+      "institution": "Software Heritage (UNESCO)",
+      "status": "ARCHIVAL_REQUESTED",
+      "origin_url": "https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings",
+      "save_request_status": "accepted",
+      "save_task_status": "pending",
+      "api_receipt_endpoint": "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings/"
+    }
+  ]
+}

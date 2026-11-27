@@ -1,0 +1,27 @@
+{
+  "masterbook_version": "2.4.0",
+  "project_title": "DP MASTERBOOK LETTRE",
+  "author_orcid": "https://orcid.org/0009-0000-0152-1535",
+  "timestamp_utc": "2026-11-27T03:32:34Z",
+  "sandbox_mode": false,
+  "dry_run": false,
+  "local_artifact_sha256": "0bc30d81a74014019fe7556d15365484dee238404f3cd7624e9e1dc98b12ebfc",
+  "artifact_files": [
+    "DP_MASTERBOOK_LETTRE.pdf"
+  ],
+  "certifications": [
+    {
+      "institution": "Figshare",
+      "status": "PUBLISHED",
+      "article_id": "35136091",
+      "persistent_id": "",
+      "landing_page": "https://figshare.com/articles/dataset/DP_MASTERBOOK_LETTRE/35136091",
+      "api_receipt_endpoint": "https://api.figshare.com/v2/articles/35136091"
+    },
+    {
+      "institution": "Internet Archive",
+      "status": "ERROR",
+      "error": "HTTP 503 for PUT https://s3.us.archive.org/masterbook-dp-masterbook-lettre/DP_MASTERBOOK_LETTRE.pdf: <?xml version='1.0' encoding='UTF-8'?>\n<Error><Code>SlowDown</Code><Message>Please reduce your request rate.</Message><Resource>Your upload of masterbook-dp-masterbook-lettre from username starlightsmovementz@rekeyglobedynamicz.worldbankeyes.eu appears to be spam. If you believe this is a mistake, contact info@archive.org and include this entire message in your email.</Resource><RequestId>5ed1d4ae-0308-46e3-9351-abc02f6a6023</RequestId></Error>"
+    }
+  ]
+}

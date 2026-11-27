@@ -526,7 +526,15 @@ def publish_figshare(
         file_meta = http_request("GET", file_location, headers=headers).body
         if isinstance(file_meta, dict) and file_meta.get("upload_url"):
             upload_url = str(file_meta["upload_url"])
-            http_request("PUT", f"{upload_url}/1", headers=headers, raw_body=file_bytes)
+            upload_info = http_request("GET", upload_url).body
+            parts = upload_info.get("parts", []) if isinstance(upload_info, dict) else []
+            if parts:
+                for part in parts:
+                    part_no = part["partNo"]
+                    chunk = file_bytes[part["startOffset"] : part["endOffset"] + 1]
+                    http_request("PUT", f"{upload_url}/{part_no}", raw_body=chunk, timeout=180)
+            else:
+                http_request("PUT", f"{upload_url}/1", raw_body=file_bytes, timeout=180)
             http_request("POST", file_location, headers=headers)
 
     http_request("POST", f"{base_url}/v2/account/articles/{article_id}/publish", headers=headers)
@@ -657,7 +665,7 @@ def publish_internet_archive(
 
     for file_path in files:
         put_url = f"{base_url}/{identifier}/{urllib.parse.quote(file_path.name)}"
-        http_request("PUT", put_url, headers=headers, raw_body=file_path.read_bytes())
+        http_request("PUT", put_url, headers=headers, raw_body=file_path.read_bytes(), timeout=600)
 
     return {
         "institution": cfg["name"],

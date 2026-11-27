@@ -1,0 +1,28 @@
+{
+  "project_title": "DP MASTERBOOK LETTRE",
+  "description": "DP MASTERBOOK LETTRE — Offizielle Dokumentation und Referenz-Publikation (Daniel Pohl / sTarLighTsMoveMenTz).",
+  "license": "EUPL-1.2",
+  "keywords": [
+    "DP MASTERBOOK",
+    "Architecture",
+    "Documentation",
+    "EUPL-1.2"
+  ],
+  "author": {
+    "name": "Daniel Pohl",
+    "orcid": "https://orcid.org/0009-0000-0152-1535",
+    "email": "starlightsmovementz@rekeyglobedynamicz.worldbankeyes.eu"
+  },
+  "dataverse_space": {
+    "parent_alias": ":root",
+    "alias": "starlightsmovementz-masterbook",
+    "name": "sTarLighTsMoveMenTz Institutional Research Space",
+    "affiliation": "sTarLighTsMoveMenTz",
+    "dataverse_type": "RESEARCH_PROJECTS",
+    "description": "Offizieller Forschungs- und Publikations-Space für Infrastruktur- und Systemarchitektur."
+  },
+  "git_repository_url": "https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings",
+  "artifact_files": [
+    "DP_MASTERBOOK_LETTRE.pdf"
+  ]
+}
