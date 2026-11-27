@@ -542,6 +542,28 @@ def publish_figshare(
     }
 
 
+def request_dryad_token(base_url: str, client_id: str, client_secret: str) -> str:
+    """Exchange Dryad OAuth2 client_id and client_secret for a Bearer access token."""
+    form = urllib.parse.urlencode(
+        {
+            "client_id": client_id,
+            "client_secret": client_secret,
+            "grant_type": "client_credentials",
+        }
+    ).encode("utf-8")
+    resp = http_request(
+        "POST",
+        f"{base_url}/oauth/token",
+        headers={"Content-Type": "application/x-www-form-urlencoded"},
+        raw_body=form,
+    )
+    body = resp.body if isinstance(resp.body, dict) else {}
+    token = str(body.get("access_token", "")).strip()
+    if not token:
+        raise RuntimeError(f"Dryad /oauth/token response did not contain access_token: {body}")
+    return token
+
+
 def publish_dryad(
     cfg: dict[str, Any],
     metadata: dict[str, Any],
@@ -560,7 +582,14 @@ def publish_dryad(
             "api_receipt_endpoint": f"{base_url}/api/v2/datasets/doi%3A10.5061%2Fdryad.dryrun",
         }
 
-    headers = get_auth_headers(cfg, required=True)
+    headers = get_auth_headers(cfg, required=False)
+    if not headers:
+        client_id = os.environ.get("DRYAD_CLIENT_ID", "").strip()
+        client_secret = os.environ.get("DRYAD_CLIENT_SECRET", "").strip()
+        if client_id and client_secret:
+            headers = {"Authorization": f"Bearer {request_dryad_token(base_url, client_id, client_secret)}"}
+        else:
+            headers = get_auth_headers(cfg, required=True)
     name_parts = metadata["author"]["name"].rsplit(" ", 1)
     first_name = name_parts[0]
     last_name = name_parts[1] if len(name_parts) > 1 else name_parts[0]

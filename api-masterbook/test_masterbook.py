@@ -10,6 +10,7 @@ from institutional_masterbook import (
     load_dotenv_if_present,
     main,
     persist_verified_probes,
+    request_dryad_token,
     run_masterbook,
 )
 
@@ -164,6 +165,18 @@ class TestMasterbook(unittest.TestCase):
             saved = json.loads(reg_path.read_text(encoding="utf-8"))
             self.assertEqual(saved["masterbook_version"], "2.4.0")
             self.assertEqual(saved["institutions"]["zenodo"]["verified_connection"]["status"], "OK")
+
+    def test_request_dryad_token_oauth(self) -> None:
+        from unittest.mock import patch
+        from institutional_masterbook import HttpResponse
+
+        with patch(
+            "institutional_masterbook.http_request",
+            return_value=HttpResponse(status=200, body={"access_token": "dryad_tok_xyz"}),
+        ) as mocked:
+            tok = request_dryad_token("https://datadryad.org", "cid", "csec")
+            self.assertEqual(tok, "dryad_tok_xyz")
+            self.assertEqual(mocked.call_args.args[1], "https://datadryad.org/oauth/token")
 
 
 if __name__ == "__main__":

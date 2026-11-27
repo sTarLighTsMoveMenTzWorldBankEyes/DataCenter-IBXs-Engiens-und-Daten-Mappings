@@ -1,0 +1,23 @@
+{
+  "masterbook_version": "2.4.0",
+  "project_title": "Institutional API-Masterbook & Multi-Repository Architecture",
+  "author_orcid": "https://orcid.org/0009-0000-0152-1535",
+  "timestamp_utc": "2026-11-27T03:16:38Z",
+  "sandbox_mode": false,
+  "dry_run": false,
+  "local_artifact_sha256": "de0b7fe21b40816792eab5e74d3521ba5a035fc7353a0139c23ba495d89c8691",
+  "artifact_files": [
+    "endpoints_registry.json",
+    "MASTERBOOK.md",
+    "CITATION.cff"
+  ],
+  "certifications": [
+    {
+      "institution": "Dryad",
+      "status": "SUBMITTED",
+      "persistent_id": "doi:10.5061/dryad.5x69p8dnt",
+      "landing_page": "https://datadryad.org/stash/dataset/doi:10.5061/dryad.5x69p8dnt",
+      "api_receipt_endpoint": "https://datadryad.org/api/v2/datasets/doi%3A10.5061%2Fdryad.5x69p8dnt"
+    }
+  ]
+}
