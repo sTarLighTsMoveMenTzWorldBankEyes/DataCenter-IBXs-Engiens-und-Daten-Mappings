@@ -1,0 +1,62 @@
+{
+  "masterbook_version": "2.3.0",
+  "project_title": "DataCenter-IBXs-Engiens-und-Daten-Mappings",
+  "author_orcid": "https://orcid.org/0009-0000-0152-1535",
+  "timestamp_utc": "2026-11-27T02:49:35Z",
+  "sandbox_mode": false,
+  "dry_run": false,
+  "local_artifact_sha256": "c5d87051ed4b919ab79de7fb3590c467b1c0cf7de31e5482b023f393d83bcbf2",
+  "artifact_files": [
+    "CaZaR-LiminalityCosmicOrbitsNulliusContinuum-main.zip",
+    "DACHXCFEES-main.zip",
+    "DSGVO-Menschenrechte-KI-Ethik-Systemintegration-und-europ-ische-Gesetzeskonformit-t-miteinander.-main.zip",
+    "DataCenter-IBXs-Engiens-und-Daten-Mappings-main.zip",
+    "EU-UNION-UNITED-NATION-NATO-Corp.-by-Hnoss-Policy--main.zip",
+    "Global-Data-Center-Map-main.zip",
+    "INTERMEDIALGALAKTICConstellation-main.zip",
+    "INTERMEDIALGALAKTICConstellationen-main.zip",
+    "Projekt-2026---IHoLyCLaC-by-EU-UNION--main.zip",
+    "README.md",
+    "curly-engine-main (3).zip",
+    "federalregister-web-main.zip",
+    "ironic-26.1.6.tar.gz",
+    "lil-it-patch1-main (1).zip",
+    "lil-it-patch1-main (2).zip",
+    "lil-it-patch1-main.zip",
+    "rails-main.zip",
+    "tauri-dev.zip"
+  ],
+  "certifications": [
+    {
+      "institution": "Harvard Dataverse",
+      "status": "ERROR",
+      "error": "HTTP 400 for POST https://dataverse.harvard.edu/api/datasets/:persistentId/add?persistentId=doi%3A10.7910%2FDVN%2FVCMTZD: {\"status\":\"ERROR\",\"message\":\"Failed to add file to dataset.\"}"
+    },
+    {
+      "institution": "Zenodo (CERN)",
+      "status": "PUBLISHED",
+      "persistent_id": "10.5281/zenodo.24575368",
+      "concept_doi": "10.5281/zenodo.24575367",
+      "landing_page": "https://zenodo.org/records/24575368",
+      "api_receipt_endpoint": "https://zenodo.org/api/records/24575368"
+    },
+    {
+      "institution": "Figshare",
+      "status": "ERROR",
+      "error": "HTTP 500 for POST https://api.figshare.com/v2/account/articles/35135944/files/71940049: {\"message\": \"Unexpected/unknown exception\", \"code\": \"UnknownException\"}"
+    },
+    {
+      "institution": "Internet Archive",
+      "status": "ERROR",
+      "error": "<urlopen error The write operation timed out>"
+    },
+    {
+      "institution": "Software Heritage (UNESCO)",
+      "status": "ARCHIVAL_REQUESTED",
+      "origin_url": "https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings",
+      "save_request_status": "accepted",
+      "save_task_status": "pending",
+      "api_receipt_endpoint": "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings/"
+    }
+  ]
+}

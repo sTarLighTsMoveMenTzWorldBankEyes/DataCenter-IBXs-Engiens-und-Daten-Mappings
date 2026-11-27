@@ -1,0 +1,1476 @@
+{
+  "masterbook_version": "2.3.0",
+  "timestamp_utc": "2026-11-27T02:46:00Z",
+  "total_probed": 163,
+  "reachable_ok": 160,
+  "auth_required": 3,
+  "results": [
+    {
+      "key": "adb_kidb",
+      "institution": "ADB – Asian Development Bank (KIDB SDMX API)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 883.5,
+      "url": "https://kidb.adb.org/"
+    },
+    {
+      "key": "anu_open_research",
+      "institution": "Australian National University – ANU (Open Research)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1502.2,
+      "url": "https://openresearch-repository.anu.edu.au/server/oai/request?verb=Identify"
+    },
+    {
+      "key": "archives_portal_europe",
+      "institution": "Archives Portal Europe",
+      "category": "Staatliche Archive",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 227.8,
+      "url": "https://api.archivesportaleurope.net/"
+    },
+    {
+      "key": "arxiv",
+      "institution": "arXiv (Preprints)",
+      "category": "Offene Allrounder",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 125.5,
+      "url": "https://oaipmh.arxiv.org/oai?verb=Identify"
+    },
+    {
+      "key": "basel_edoc",
+      "institution": "Universität Basel (edoc)",
+      "category": "Schweiz (ETH-Bereich, Universitäten & SWISSUbase)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 271.3,
+      "url": "https://edoc.unibas.ch/"
+    },
+    {
+      "key": "bis_stats",
+      "institution": "BIS / BIZ – Bank for International Settlements (SDMX API)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 142.2,
+      "url": "https://stats.bis.org/api/v1/dataflow/BIS"
+    },
+    {
+      "key": "bnf",
+      "institution": "Bibliothèque nationale de France (BnF)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 277.0,
+      "url": "https://api.bnf.fr/"
+    },
+    {
+      "key": "bocconi_iris",
+      "institution": "Università Bocconi (IRIS Bocconi)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 154.5,
+      "url": "https://iris.unibocconi.it/oai/request?verb=Identify"
+    },
+    {
+      "key": "bologna_amsacta",
+      "institution": "Università di Bologna (AMS Acta / IRIS)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 436.9,
+      "url": "https://amsacta.unibo.it/cgi/oai2?verb=Identify"
+    },
+    {
+      "key": "bonn_bonndoc",
+      "institution": "Universität Bonn (bonndoc)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 168.0,
+      "url": "https://bonndoc.ulb.uni-bonn.de/oai/request?verb=Identify"
+    },
+    {
+      "key": "british_library",
+      "institution": "British Library (UK)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 233.8,
+      "url": "https://www.bl.uk/"
+    },
+    {
+      "key": "brown_repository",
+      "institution": "Brown University (Brown Digital Repository)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 181.3,
+      "url": "https://repository.library.brown.edu/api/"
+    },
+    {
+      "key": "bua_berlin",
+      "institution": "Berlin University Alliance (HU edoc, TU DepositOnce, Charité Refubium)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 302.7,
+      "url": "https://www.berlin-university-alliance.de/"
+    },
+    {
+      "key": "bundesbank_sdmx",
+      "institution": "Deutsche Bundesbank (SDMX Web Service)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 124.3,
+      "url": "https://www.bundesbank.de/en"
+    },
+    {
+      "key": "caltech_data",
+      "institution": "Caltech (CaltechDATA & CaltechAUTHORS)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 846.0,
+      "url": "https://data.caltech.edu/"
+    },
+    {
+      "key": "cambridge_apollo",
+      "institution": "University of Cambridge Apollo",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 303.5,
+      "url": "https://www.repository.cam.ac.uk/oai/request?verb=Identify"
+    },
+    {
+      "key": "clearstream_t2s",
+      "institution": "Clearstream (Deutsche Börse Group / T2S & CmaX)",
+      "category": "Finanzen & Zentralbank-Systeme",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 209.9,
+      "url": "https://www.clearstream.com/"
+    },
+    {
+      "key": "cloudflare_radar",
+      "institution": "Cloudflare Radar (Global Internet Traffic, BGP & Security Telemetry)",
+      "category": "Globale Internet-, Cloud- & Rechenzentrums-Infrastruktur",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 92.5,
+      "url": "https://developers.cloudflare.com/radar/"
+    },
+    {
+      "key": "cls_group",
+      "institution": "CLS Group (Global FX Settlement Infrastructure)",
+      "category": "Finanzen & Zentralbank-Systeme",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 220.0,
+      "url": "https://www.cls-group.com/"
+    },
+    {
+      "key": "columbia_academic_commons",
+      "institution": "Columbia University (Academic Commons)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 360.2,
+      "url": "https://academiccommons.columbia.edu/oai?verb=Identify"
+    },
+    {
+      "key": "copenhagen_curis",
+      "institution": "Universität Kopenhagen (CURIS)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 181.5,
+      "url": "https://curis.ku.dk/ws/oai?verb=Identify"
+    },
+    {
+      "key": "cornell_ecommons",
+      "institution": "Cornell University (eCommons)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 420.1,
+      "url": "https://ecommons.cornell.edu/server/oai/request?verb=Identify"
+    },
+    {
+      "key": "dartmouth_digital_commons",
+      "institution": "Dartmouth College (Dartmouth Digital Commons)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 88.8,
+      "url": "https://digitalcommons.dartmouth.edu/do/oai/?verb=Identify"
+    },
+    {
+      "key": "datacite",
+      "institution": "DataCite",
+      "category": "Globale Verzeichnisse & Identifikatoren",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 226.5,
+      "url": "https://api.datacite.org/dois/10.5281/zenodo.24575092"
+    },
+    {
+      "key": "dcu_doras",
+      "institution": "Dublin City University – DCU (DORAS)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 291.2,
+      "url": "https://doras.dcu.ie/cgi/oai2?verb=Identify"
+    },
+    {
+      "key": "ddb",
+      "institution": "Deutsche Digitale Bibliothek (DDB) & Archivportal-D",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 414.2,
+      "url": "https://api.deutsche-digitale-bibliothek.de/"
+    },
+    {
+      "key": "digital_csic",
+      "institution": "DIGITAL.CSIC (Spanischer Forschungsrat CSIC)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 622.9,
+      "url": "https://digital.csic.es/dspace-oai/request?verb=Identify"
+    },
+    {
+      "key": "dspace_mit",
+      "institution": "DSpace@MIT",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 277.6,
+      "url": "https://dspace.mit.edu/oai/request?verb=Identify"
+    },
+    {
+      "key": "dtcc",
+      "institution": "DTCC (Depository Trust & Clearing Corporation)",
+      "category": "Finanzen & Zentralbank-Systeme",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 137.0,
+      "url": "https://www.dtcc.com/"
+    },
+    {
+      "key": "duke_repository",
+      "institution": "Duke University (DukeSpace / RDR)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 758.1,
+      "url": "https://dukespace.lib.duke.edu/oai/request?verb=Identify"
+    },
+    {
+      "key": "ecb_sdmx",
+      "institution": "EZB / ECB – European Central Bank (SDMX 2.1 API)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 282.7,
+      "url": "https://data-api.ecb.europa.eu/service/dataflow/ECB?detail=allstubs"
+    },
+    {
+      "key": "edinburgh_era",
+      "institution": "University of Edinburgh (Edinburgh Research Archive)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 231.7,
+      "url": "https://era.ed.ac.uk/oai/request?verb=Identify"
+    },
+    {
+      "key": "eia_energy",
+      "institution": "EIA – U.S. Energy Information Administration (APIv2)",
+      "category": "Infrastruktur, Energie, Handel & Geodaten (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 218.8,
+      "url": "https://www.eia.gov/opendata/"
+    },
+    {
+      "key": "eib_open_data",
+      "institution": "EIB – European Investment Bank (Open Data / data.europa.eu)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 91.3,
+      "url": "https://data.europa.eu/api/hub/search/"
+    },
+    {
+      "key": "entso_e",
+      "institution": "ENTSO-E Transparency Platform (Europäisches Stromübertragungsnetz)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 127.2,
+      "url": "https://transparency.entsoe.eu/"
+    },
+    {
+      "key": "epfl_infoscience",
+      "institution": "EPFL Lausanne (Infoscience)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 857.3,
+      "url": "https://infoscience.epfl.ch/oai2d?verb=Identify"
+    },
+    {
+      "key": "equinix_fabric",
+      "institution": "Equinix (Global IBX Data Centers & Fabric Interconnection API)",
+      "category": "Globale Internet-, Cloud- & Rechenzentrums-Infrastruktur",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 463.4,
+      "url": "https://developer.equinix.com/"
+    },
+    {
+      "key": "es_business_schools",
+      "institution": "Spanische Business Schools (IESE, IE University, ESADE)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1161.5,
+      "url": "https://www.iese.edu/"
+    },
+    {
+      "key": "esa_copernicus",
+      "institution": "ESA / Copernicus Data Space Ecosystem (EU Erdbeobachtung & Infrastruktur)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 693.0,
+      "url": "https://catalogue.dataspace.copernicus.eu/stac"
+    },
+    {
+      "key": "escholarship",
+      "institution": "eScholarship (University of California)",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 567.8,
+      "url": "https://escholarship.org/graphql"
+    },
+    {
+      "key": "eth_research_collection",
+      "institution": "ETH Research Collection (ETH Zürich)",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 168.8,
+      "url": "https://www.research-collection.ethz.ch/oai/request?verb=Identify"
+    },
+    {
+      "key": "euroclear",
+      "institution": "Euroclear (ICSD & Cross-Border Settlement)",
+      "category": "Finanzen & Zentralbank-Systeme",
+      "status": "AUTH_REQUIRED",
+      "http_status": 403,
+      "latency_ms": 96.3,
+      "url": "https://www.euroclear.com/"
+    },
+    {
+      "key": "europeana",
+      "institution": "Europeana",
+      "category": "Globale Verzeichnisse & Identifikatoren",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 431.1,
+      "url": "https://api.europeana.eu/"
+    },
+    {
+      "key": "eurostat",
+      "institution": "Eurostat (API Statistics & SDMX 2.1/3.0)",
+      "category": "Infrastruktur, Energie, Handel & Geodaten (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 101.9,
+      "url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/dataflow/ESTAT?detail=allstubs"
+    },
+    {
+      "key": "fred_stlouisfed",
+      "institution": "FRED – Federal Reserve Economic Data (St. Louis Fed)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 123.0,
+      "url": "https://fred.stlouisfed.org/docs/api/fred/"
+    },
+    {
+      "key": "freiburg_freidok",
+      "institution": "Universität Freiburg (FreiDok plus)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 284.8,
+      "url": "https://freidok.uni-freiburg.de/oai?verb=Identify"
+    },
+    {
+      "key": "fu_berlin_refubium",
+      "institution": "Freie Universität Berlin (Refubium)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 143.0,
+      "url": "https://refubium.fu-berlin.de/oai/request?verb=Identify"
+    },
+    {
+      "key": "galway_aran",
+      "institution": "University of Galway (ARAN)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 163.9,
+      "url": "https://www.universityofgalway.ie/"
+    },
+    {
+      "key": "gleif_lei",
+      "institution": "GLEIF – Global Legal Entity Identifier Foundation (LEI API)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 378.1,
+      "url": "https://api.gleif.org/api/v1/lei-records?page[size]=1"
+    },
+    {
+      "key": "gs1_global",
+      "institution": "GS1 Global (GLN / GTIN – Globale Lieferketten- & Standort-Infrastruktur)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "AUTH_REQUIRED",
+      "http_status": 403,
+      "latency_ms": 53.4,
+      "url": "https://www.gs1.org/standards/get-started"
+    },
+    {
+      "key": "hamburg_uhh",
+      "institution": "Universität Hamburg (Forschungsdaten & Publikationen)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 311.7,
+      "url": "https://www.fdr.uni-hamburg.de/api/records"
+    },
+    {
+      "key": "harvard_dash",
+      "institution": "Harvard DASH",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 125.7,
+      "url": "https://dash.harvard.edu/"
+    },
+    {
+      "key": "hathitrust",
+      "institution": "HathiTrust",
+      "category": "Globale Verzeichnisse & Identifikatoren",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 231.4,
+      "url": "https://catalog.hathitrust.org/api/volumes/brief/json/oclc:424023"
+    },
+    {
+      "key": "helmholtz_fraunhofer_leibniz",
+      "institution": "Außeruniversitäre Forschung (Helmholtz, Fraunhofer-Publica, Leibniz)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 240.2,
+      "url": "https://publica.fraunhofer.de/"
+    },
+    {
+      "key": "hku_scholars",
+      "institution": "The University of Hong Kong (HKU Scholars Hub)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 92.8,
+      "url": "https://www.hku.hk/"
+    },
+    {
+      "key": "hsg_alexandria",
+      "institution": "Universität St. Gallen – HSG (Alexandria)",
+      "category": "Schweiz (ETH-Bereich, Universitäten & SWISSUbase)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 218.6,
+      "url": "https://www.alexandria.unisg.ch/"
+    },
+    {
+      "key": "iana_icann",
+      "institution": "ICANN / IANA (Global DNS Root, Protocol & Number Registries)",
+      "category": "Globale Internet-, Cloud- & Rechenzentrums-Infrastruktur",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 77.0,
+      "url": "https://www.iana.org/"
+    },
+    {
+      "key": "icao_aviation",
+      "institution": "ICAO (International Civil Aviation Organization – UN Luftfahrt-Infrastruktur)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 195.3,
+      "url": "https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx"
+    },
+    {
+      "key": "iea_energy",
+      "institution": "IEA (International Energy Agency – Globale Energie- & Stromnetz-Infrastruktur)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 107.5,
+      "url": "https://www.iea.org/"
+    },
+    {
+      "key": "imf_sdmx",
+      "institution": "IMF – International Monetary Fund (SDMX 3.0 API)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 740.9,
+      "url": "https://api.imf.org/external/sdmx/3.0/structure/dataflow"
+    },
+    {
+      "key": "imo_maritime",
+      "institution": "IMO / GISIS (International Maritime Organization – UN Seeverkehrs- & Hafen-Infrastruktur)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 506.4,
+      "url": "https://gisis.imo.org/"
+    },
+    {
+      "key": "imperial_spiral",
+      "institution": "Imperial College London (Spiral)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1734.8,
+      "url": "https://spiral.imperial.ac.uk/oai/request?verb=Identify"
+    },
+    {
+      "key": "ip_paris_hal",
+      "institution": "Institut Polytechnique de Paris (HAL)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 382.0,
+      "url": "https://api.archives-ouvertes.fr/"
+    },
+    {
+      "key": "iso_standards",
+      "institution": "ISO (International Organization for Standardization – Globale Infrastruktur- & Techniknormen)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1862.2,
+      "url": "https://www.etsi.org/standards"
+    },
+    {
+      "key": "issn_keepers",
+      "institution": "ISSN International Centre / Keepers Registry",
+      "category": "Globale Verzeichnisse & Identifikatoren",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 123.8,
+      "url": "https://portal.issn.org/"
+    },
+    {
+      "key": "itu_datahub",
+      "institution": "ITU DataHub (Globale Telekommunikations- & Digital-Infrastruktur)",
+      "category": "Infrastruktur, Energie, Handel & Geodaten (WorldWide)",
+      "status": "OK",
+      "http_status": 202,
+      "latency_ms": 101.9,
+      "url": "https://datahub.itu.int/"
+    },
+    {
+      "key": "itu_telecom",
+      "institution": "ITU (International Telecommunication Union – UN)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 751.6,
+      "url": "https://www.itu.int/"
+    },
+    {
+      "key": "jhu_jscholarship",
+      "institution": "Johns Hopkins University (JScholarship)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 458.7,
+      "url": "https://jscholarship.library.jhu.edu/oai/request?verb=Identify"
+    },
+    {
+      "key": "kaist_koasas",
+      "institution": "KAIST (KOASAS)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 861.1,
+      "url": "https://koasas.kaist.ac.kr/oai/request?verb=Identify"
+    },
+    {
+      "key": "karolinska_open_archive",
+      "institution": "Karolinska Institutet (Open Archive)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 202,
+      "latency_ms": 140.5,
+      "url": "https://openarchive.ki.se/oai/request?verb=Identify"
+    },
+    {
+      "key": "kb_nl",
+      "institution": "Koninklijke Bibliotheek (KB Niederlande)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 97.5,
+      "url": "https://www.kb.nl/"
+    },
+    {
+      "key": "kcl_pure",
+      "institution": "King's College London (Research Portal)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 217.9,
+      "url": "https://kclpure.kcl.ac.uk/ws/oai?verb=Identify"
+    },
+    {
+      "key": "kit_open",
+      "institution": "Karlsruher Institut für Technologie – KIT (KITopen)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 226.1,
+      "url": "https://publikationen.bibliothek.kit.edu/"
+    },
+    {
+      "key": "konstanz_kops",
+      "institution": "Universität Konstanz (KOPS)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 109.3,
+      "url": "https://kops.uni-konstanz.de/oai/request?verb=Identify"
+    },
+    {
+      "key": "kuleuven_lirias",
+      "institution": "KU Leuven (Lirias / RDR)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 347.9,
+      "url": "https://lirias.kuleuven.be/oai/request?verb=Identify"
+    },
+    {
+      "key": "kyoto_kurenai",
+      "institution": "Kyoto University (KURENAI)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1076.2,
+      "url": "https://repository.kulib.kyoto-u.ac.jp/server/oai/request?verb=Identify"
+    },
+    {
+      "key": "landesbibliotheken_de",
+      "institution": "Deutsche Landes- & Staatsbibliotheken (BSB, SBB, SLUB/Qucosa, ULB NRW, WLB/BLB, SUB)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 110.6,
+      "url": "https://kxp.k10plus.de/"
+    },
+    {
+      "key": "library_of_congress",
+      "institution": "Library of Congress (USA)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 68.8,
+      "url": "https://www.loc.gov/"
+    },
+    {
+      "key": "lmu_edoc",
+      "institution": "Ludwig-Maximilians-Universität München – LMU (edoc / Open Data LMU)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 254.4,
+      "url": "https://edoc.ub.uni-muenchen.de/cgi/oai2?verb=Identify"
+    },
+    {
+      "key": "lse_research_online",
+      "institution": "London School of Economics (LSE Research Online)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1072.0,
+      "url": "https://eprints.lse.ac.uk/cgi/oai2?verb=Identify"
+    },
+    {
+      "key": "mannheim_madoc",
+      "institution": "Universität Mannheim (MADOC)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 782.2,
+      "url": "https://madoc.bib.uni-mannheim.de/cgi/oai2?verb=Identify"
+    },
+    {
+      "key": "mcgill_escholarship",
+      "institution": "McGill University (eScholarship@McGill)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 820.6,
+      "url": "https://escholarship.mcgill.ca/oai/request?verb=Identify"
+    },
+    {
+      "key": "melbourne_minerva",
+      "institution": "University of Melbourne (Minerva Access)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1262.2,
+      "url": "https://minerva-access.unimelb.edu.au/server/oai/request?verb=Identify"
+    },
+    {
+      "key": "nara",
+      "institution": "NARA (US National Archives)",
+      "category": "Staatliche Archive",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 700.3,
+      "url": "https://catalog.archives.gov/api/v2/"
+    },
+    {
+      "key": "nasa_earthdata_cmr",
+      "institution": "NASA Earthdata / Common Metadata Repository (CMR)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 218.0,
+      "url": "https://cmr.earthdata.nasa.gov/search/"
+    },
+    {
+      "key": "nb_helvetica",
+      "institution": "Schweizerische Nationalbibliothek (NB / e-Helvetica)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 287.8,
+      "url": "https://www.nb.admin.ch/"
+    },
+    {
+      "key": "ndl_japan",
+      "institution": "National Diet Library (Japan)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1076.7,
+      "url": "https://ndlsearch.ndl.go.jp/"
+    },
+    {
+      "key": "northwestern_arch",
+      "institution": "Northwestern University (Arch)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 515.5,
+      "url": "https://arch.library.northwestern.edu/"
+    },
+    {
+      "key": "ntu_dr",
+      "institution": "Nanyang Technological University (DR-NTU)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 159.5,
+      "url": "https://dr.ntu.edu.sg/oai/request?verb=Identify"
+    },
+    {
+      "key": "nus_scholarbank",
+      "institution": "National University of Singapore (ScholarBank@NUS)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 2183.2,
+      "url": "https://scholarbank.nus.edu.sg/oai/request?verb=Identify"
+    },
+    {
+      "key": "oclc_worldcat",
+      "institution": "OCLC / WorldCat",
+      "category": "Globale Verzeichnisse & Identifikatoren",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 536.9,
+      "url": "https://developer.api.oclc.org/"
+    },
+    {
+      "key": "oecd_sdmx",
+      "institution": "OECD (SDMX REST API)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 81.8,
+      "url": "https://sdmx.oecd.org/public/rest/dataflow/all/all/latest"
+    },
+    {
+      "key": "onb",
+      "institution": "Österreichische Nationalbibliothek (ÖNB)",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 200.0,
+      "url": "https://www.onb.ac.at"
+    },
+    {
+      "key": "open_infrastructure_map",
+      "institution": "OpenStreetMap / Overpass & Open Infrastructure Map (Globale Strom-, Gas-, Glasfaser- & Bahnnetze)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 79.2,
+      "url": "https://openinframap.org/"
+    },
+    {
+      "key": "opendoar",
+      "institution": "OpenDOAR (Jisc)",
+      "category": "Globale Verzeichnisse & Identifikatoren",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 102.1,
+      "url": "https://opendoar.ac.uk/"
+    },
+    {
+      "key": "orcid",
+      "institution": "ORCID",
+      "category": "Identität & Metadaten",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 208.6,
+      "url": "https://pub.orcid.org/v3.0/"
+    },
+    {
+      "key": "osm_overpass",
+      "institution": "OpenStreetMap – Overpass API (Globale Geodaten & Infrastruktur)",
+      "category": "Infrastruktur, Energie, Handel & Geodaten (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 447.0,
+      "url": "https://wiki.openstreetmap.org/wiki/Overpass_API"
+    },
+    {
+      "key": "oxford_ora",
+      "institution": "University of Oxford (ORA)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 303.7,
+      "url": "https://ora.ox.ac.uk/oai2?verb=Identify"
+    },
+    {
+      "key": "padova_research",
+      "institution": "Università degli Studi di Padova (Padua Research Archive)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 179.1,
+      "url": "https://www.research.unipd.it/oai/request?verb=Identify"
+    },
+    {
+      "key": "pangaea",
+      "institution": "PANGAEA",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 155.0,
+      "url": "https://ws.pangaea.de/oai/provider?verb=Identify"
+    },
+    {
+      "key": "paris_saclay_hal",
+      "institution": "Université Paris-Saclay (HAL)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 405.3,
+      "url": "https://api.archives-ouvertes.fr/"
+    },
+    {
+      "key": "peeringdb",
+      "institution": "PeeringDB (Global IXPs, Data Centers & ASN Interconnection Registry)",
+      "category": "Globale Internet-, Cloud- & Rechenzentrums-Infrastruktur",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 386.4,
+      "url": "https://www.peeringdb.com/api/"
+    },
+    {
+      "key": "pku_repo",
+      "institution": "Peking University",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 3308.6,
+      "url": "https://www.pku.edu.cn/"
+    },
+    {
+      "key": "polimi_republic",
+      "institution": "Politecnico di Milano (Re.Public@Polimi / IRIS)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 283.5,
+      "url": "https://re.public.polimi.it/oai/request?verb=Identify"
+    },
+    {
+      "key": "polito_iris",
+      "institution": "Politecnico di Torino (IRIS PORTO)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 205.2,
+      "url": "https://iris.polito.it/oai/request?verb=Identify"
+    },
+    {
+      "key": "princeton_data",
+      "institution": "Princeton Data Commons & DataSpace",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 784.0,
+      "url": "https://datacommons.princeton.edu/"
+    },
+    {
+      "key": "psl_hal",
+      "institution": "PSL University (HAL-PSL)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 382.4,
+      "url": "https://api.archives-ouvertes.fr/"
+    },
+    {
+      "key": "rcsi_repo",
+      "institution": "RCSI University of Medicine and Health Sciences (RCSI Repository)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 202,
+      "latency_ms": 120.0,
+      "url": "https://repository.rcsi.com/oai/request?verb=Identify"
+    },
+    {
+      "key": "re3data",
+      "institution": "re3data.org",
+      "category": "Globale Verzeichnisse & Identifikatoren",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 2021.4,
+      "url": "https://www.re3data.org/api/v1/repositories"
+    },
+    {
+      "key": "rian_ireland",
+      "institution": "RIAN (IReL Nationales Open-Access-Portal Irland)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 4224.7,
+      "url": "https://www.irel.ie/"
+    },
+    {
+      "key": "ripe_stat",
+      "institution": "RIPE NCC / RIPEstat (Internet Routing, BGP, RPKI & IP Registry)",
+      "category": "Globale Internet-, Cloud- & Rechenzentrums-Infrastruktur",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 291.4,
+      "url": "https://stat.ripe.net/docs/02.data-api/"
+    },
+    {
+      "key": "rwth_publications",
+      "institution": "RWTH Aachen (RWTH Publications)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 162.5,
+      "url": "https://publications.rwth-aachen.de/oai2d?verb=Identify"
+    },
+    {
+      "key": "sapienza_iris",
+      "institution": "Sapienza Università di Roma (IRIS Sapienza)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 228.7,
+      "url": "https://iris.uniroma1.it/oai/request?verb=Identify"
+    },
+    {
+      "key": "sec_edgar",
+      "institution": "US SEC EDGAR (Corporate Filings & XBRL API)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 286.6,
+      "url": "https://data.sec.gov/"
+    },
+    {
+      "key": "sns_santanna_pisa",
+      "institution": "Scuola Normale Superiore (SNS) & Scuola Superiore Sant'Anna (Pisa)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 354.7,
+      "url": "https://iris.santannapisa.it/oai/request"
+    },
+    {
+      "key": "snu_sspace",
+      "institution": "Seoul National University (S-Space)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1203.7,
+      "url": "https://s-space.snu.ac.kr/oai/request?verb=Identify"
+    },
+    {
+      "key": "software_heritage",
+      "institution": "Software Heritage (UNESCO)",
+      "category": "Web3, DeSci & Code-Archivierung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 175.0,
+      "url": "https://archive.softwareheritage.org/"
+    },
+    {
+      "key": "sorbonne_hal",
+      "institution": "Sorbonne Université (HAL)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 378.6,
+      "url": "https://api.archives-ouvertes.fr/"
+    },
+    {
+      "key": "stanford_sdr",
+      "institution": "Stanford Digital Repository (SDR)",
+      "category": "Universitäten & Forschungseinrichtungen",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 126.9,
+      "url": "https://sdr.library.stanford.edu/"
+    },
+    {
+      "key": "submarine_cable_map",
+      "institution": "TeleGeography Submarine Cable Map & IXP Infrastructure",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 492.2,
+      "url": "https://www.submarinecablemap.com/api/v3/"
+    },
+    {
+      "key": "swift_network",
+      "institution": "SWIFT (ISO 20022 Messaging & Financial APIs)",
+      "category": "Finanzen & Zentralbank-Systeme",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 145.3,
+      "url": "https://www.iso20022.org/"
+    },
+    {
+      "key": "swissubase",
+      "institution": "SWISSUbase (Nationales Schweizer Forschungsdaten-Repository)",
+      "category": "Schweiz (ETH-Bereich, Universitäten & SWISSUbase)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 217.0,
+      "url": "https://www.swissubase.ch/oai/?verb=Identify"
+    },
+    {
+      "key": "sydney_ses",
+      "institution": "University of Sydney (Sydney eScholarship)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 697.0,
+      "url": "https://www.sydney.edu.au/"
+    },
+    {
+      "key": "tcd_tara",
+      "institution": "Trinity College Dublin – TCD (TARA)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 103.7,
+      "url": "https://www.tcd.ie/"
+    },
+    {
+      "key": "tib",
+      "institution": "TIB Hannover",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 445.9,
+      "url": "https://www.tib.eu/"
+    },
+    {
+      "key": "tsinghua_repo",
+      "institution": "Tsinghua University",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1162.9,
+      "url": "https://www.tsinghua.edu.cn/"
+    },
+    {
+      "key": "tu_dresden_qucosa",
+      "institution": "TU Dresden (Qucosa)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 135.6,
+      "url": "https://www.qucosa.de/oai/?verb=Identify"
+    },
+    {
+      "key": "tudelft_4tu",
+      "institution": "TU Delft (4TU.ResearchData & TU Delft Repository)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 145.4,
+      "url": "https://data.4tu.nl/v2/articles"
+    },
+    {
+      "key": "tuebingen_tobias",
+      "institution": "Universität Tübingen (TOBIAS-lib)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 464.7,
+      "url": "https://uni-tuebingen.de/"
+    },
+    {
+      "key": "tum_mediatum",
+      "institution": "Technische Universität München – TUM (mediaTUM)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 113.6,
+      "url": "https://mediatum.ub.tum.de/oai/oai?verb=Identify"
+    },
+    {
+      "key": "uab_ddd",
+      "institution": "Universitat Autònoma de Barcelona – UAB (DDD)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 326.9,
+      "url": "https://ddd.uab.cat/oai2d?verb=Identify"
+    },
+    {
+      "key": "uam_biblos",
+      "institution": "Universidad Autónoma de Madrid – UAM (Biblos-e Archivo)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 255.0,
+      "url": "https://repositorio.uam.es/"
+    },
+    {
+      "key": "ub_diposit",
+      "institution": "Universitat de Barcelona – UB (Dipòsit Digital)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 311.8,
+      "url": "https://diposit.ub.edu/dspace-oai/request?verb=Identify"
+    },
+    {
+      "key": "ubc_circle",
+      "institution": "University of British Columbia – UBC (cIRcle / Borealis)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 632.9,
+      "url": "https://circle.ubc.ca/oai/request?verb=Identify"
+    },
+    {
+      "key": "uc3m_earchivo",
+      "institution": "Universidad Carlos III de Madrid – UC3M (e-Archivo)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 231.5,
+      "url": "https://e-archivo.uc3m.es/oai/request?verb=Identify"
+    },
+    {
+      "key": "ucc_cora",
+      "institution": "University College Cork – UCC (CORA)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 373.3,
+      "url": "https://cora.ucc.ie/oai/request?verb=Identify"
+    },
+    {
+      "key": "ucd_repo",
+      "institution": "University College Dublin – UCD (Research Repository UCD)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 111.8,
+      "url": "https://www.ucd.ie/"
+    },
+    {
+      "key": "uchicago_knowledge",
+      "institution": "University of Chicago (Knowledge@UChicago)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 532.9,
+      "url": "https://knowledge.uchicago.edu/oai2d?verb=Identify"
+    },
+    {
+      "key": "ucl_discovery",
+      "institution": "University College London (UCL Discovery)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1508.4,
+      "url": "https://discovery.ucl.ac.uk/cgi/oai2?verb=Identify"
+    },
+    {
+      "key": "ucm_docta",
+      "institution": "Universidad Complutense de Madrid – UCM (Docta Complutense)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 275.1,
+      "url": "https://www.ucm.es/"
+    },
+    {
+      "key": "uk_national_archives",
+      "institution": "The National Archives (UK)",
+      "category": "Staatliche Archive",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 325.4,
+      "url": "https://www.nationalarchives.gov.uk/help-with-your-research/discovery-help/"
+    },
+    {
+      "key": "ul_research_repo",
+      "institution": "University of Limerick – UL (ULIR)",
+      "category": "Irland (Spitzenuniversitäten & RIAN)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 231.3,
+      "url": "https://researchrepository.ul.ie/oai/request?verb=Identify"
+    },
+    {
+      "key": "umich_deepblue",
+      "institution": "University of Michigan (Deep Blue)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "AUTH_REQUIRED",
+      "http_status": 403,
+      "latency_ms": 157.9,
+      "url": "https://umich.edu/"
+    },
+    {
+      "key": "un_comtrade",
+      "institution": "UN Comtrade (Global Trade Statistics API)",
+      "category": "Infrastruktur, Energie, Handel & Geodaten (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 2379.9,
+      "url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS"
+    },
+    {
+      "key": "un_data",
+      "institution": "UNdata (United Nations Statistics SDMX API)",
+      "category": "Infrastruktur, Energie, Handel & Geodaten (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 425.0,
+      "url": "https://data.un.org/ws/rest/dataflow/all/all/latest"
+    },
+    {
+      "key": "unibe_boris",
+      "institution": "Universität Bern (BORIS)",
+      "category": "Schweiz (ETH-Bereich, Universitäten & SWISSUbase)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 269.4,
+      "url": "https://boris.unibe.ch/"
+    },
+    {
+      "key": "unige_archive_ouverte",
+      "institution": "Universität Genf – UNIGE (Archive ouverte)",
+      "category": "Schweiz (ETH-Bereich, Universitäten & SWISSUbase)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 156.3,
+      "url": "https://archive-ouverte.unige.ch/"
+    },
+    {
+      "key": "unil_serval",
+      "institution": "Universität Lausanne – UNIL (Serval)",
+      "category": "Schweiz (ETH-Bereich, Universitäten & SWISSUbase)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 318.2,
+      "url": "https://www.unil.ch/"
+    },
+    {
+      "key": "unimi_air",
+      "institution": "Università Statale di Milano – UniMi (AIR)",
+      "category": "Italien (Top-Universitäten & Scuole Superiori)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 170.3,
+      "url": "https://air.unimi.it/oai/request?verb=Identify"
+    },
+    {
+      "key": "unsw_unsworks",
+      "institution": "UNSW Sydney (UNSWorks)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 3083.7,
+      "url": "https://unsworks.unsw.edu.au/server/oai/request?verb=Identify"
+    },
+    {
+      "key": "upc_upcommons",
+      "institution": "Universitat Politècnica de Catalunya – UPC (UPCommons)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 293.2,
+      "url": "https://upcommons.upc.edu/oai/request"
+    },
+    {
+      "key": "upenn_scholarlycommons",
+      "institution": "University of Pennsylvania (ScholarlyCommons)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 527.9,
+      "url": "https://repository.upenn.edu/server/oai/request?verb=Identify"
+    },
+    {
+      "key": "upf_erepositori",
+      "institution": "Universitat Pompeu Fabra – UPF (e-Repositori)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 447.9,
+      "url": "https://repositori.upf.edu/oai/request?verb=Identify"
+    },
+    {
+      "key": "upm_oa",
+      "institution": "Universidad Politécnica de Madrid – UPM (Archivo Digital)",
+      "category": "Spanien (Spitzenuniversitäten & CSIC)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 423.1,
+      "url": "https://oa.upm.es/perl/oai2?verb=Identify"
+    },
+    {
+      "key": "usap_dc",
+      "institution": "USAP-DC (United States Antarctic Program Data Center)",
+      "category": "Internationale Infrastruktur (Energie, Satellit, Telekom & Logistik)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 338.0,
+      "url": "https://www.usap-dc.org/oai?verb=Identify"
+    },
+    {
+      "key": "usp_bdpi",
+      "institution": "Universidade de São Paulo – USP (BDPI)",
+      "category": "Eliteuniversitäten (Regionale Verbünde)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 1636.3,
+      "url": "https://repositorio.usp.br/oai/request?verb=Identify"
+    },
+    {
+      "key": "utokyo_repo",
+      "institution": "University of Tokyo (UTokyo Repository)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 3230.0,
+      "url": "https://repository.dl.itc.u-tokyo.ac.jp/oai?verb=Identify"
+    },
+    {
+      "key": "utoronto_tspace",
+      "institution": "University of Toronto (TSpace)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 892.7,
+      "url": "https://tspace.library.utoronto.ca/"
+    },
+    {
+      "key": "uzh_zora",
+      "institution": "Universität Zürich – UZH (ZORA)",
+      "category": "Schweiz (ETH-Bereich, Universitäten & SWISSUbase)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 469.0,
+      "url": "https://www.zora.uzh.ch/cgi/oai2?verb=Identify"
+    },
+    {
+      "key": "whu_bucerius_hpi",
+      "institution": "Spezial-Hochschulen (WHU, Bucerius Law School, HPI Potsdam)",
+      "category": "Deutschland: Exzellenz, TU9, U15 & Forschung",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 110.2,
+      "url": "https://hpi.de/"
+    },
+    {
+      "key": "world_bank",
+      "institution": "World Bank (Open Data & WDI API v2)",
+      "category": "Finanzen & Makroökonomie (WorldWide)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 80.8,
+      "url": "https://api.worldbank.org/v2/country?format=json"
+    },
+    {
+      "key": "yale_elischolar",
+      "institution": "Yale University (EliScholar)",
+      "category": "Eliteuniversitäten (Global Top 25)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 182.7,
+      "url": "https://elischolar.library.yale.edu/do/oai/?verb=Identify"
+    },
+    {
+      "key": "zbw_econstor",
+      "institution": "ZBW / EconStor",
+      "category": "Bibliotheken (DACH & International)",
+      "status": "OK",
+      "http_status": 200,
+      "latency_ms": 151.6,
+      "url": "https://www.econstor.eu/oai/request?verb=Identify"
+    }
+  ]
+}

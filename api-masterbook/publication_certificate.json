@@ -1,0 +1,60 @@
+{
+  "masterbook_version": "2.3.0",
+  "project_title": "Institutional API-Masterbook & Multi-Repository Architecture",
+  "author_orcid": "https://orcid.org/0009-0000-0152-1535",
+  "timestamp_utc": "2026-11-27T02:29:09Z",
+  "sandbox_mode": false,
+  "dry_run": false,
+  "local_artifact_sha256": "381b1f6104bfb3654395583886ec5dcedfddbaea98678ba53b97e3af3b600c6a",
+  "artifact_files": [
+    "endpoints_registry.json",
+    "MASTERBOOK.md",
+    "CITATION.cff"
+  ],
+  "certifications": [
+    {
+      "institution": "Harvard Dataverse",
+      "status": "SUBMITTED_FOR_REVIEW",
+      "dataverse_space": "starlightsmovementz-masterbook",
+      "space_url": "https://dataverse.harvard.edu/dataverse/starlightsmovementz-masterbook",
+      "persistent_id": "doi:10.7910/DVN/HFANSS",
+      "landing_page": "https://doi.org/10.7910/DVN/HFANSS",
+      "note": "Space created & published; dataset created with all 3 files uploaded and flagged for Harvard Dataverse 1-business-day moderation review."
+    },
+    {
+      "institution": "Zenodo (CERN)",
+      "status": "PUBLISHED",
+      "persistent_id": "10.5281/zenodo.24575092",
+      "concept_doi": "10.5281/zenodo.24575091",
+      "landing_page": "https://zenodo.org/records/24575092",
+      "api_receipt_endpoint": "https://zenodo.org/api/records/24575092"
+    },
+    {
+      "institution": "Figshare",
+      "status": "PUBLISHED",
+      "article_id": "35135905",
+      "landing_page": "https://figshare.com/articles/dataset/Institutional_API-Masterbook_Multi-Repository_Architecture/35135905",
+      "api_receipt_endpoint": "https://api.figshare.com/v2/articles/35135905"
+    },
+    {
+      "institution": "Internet Archive",
+      "status": "ARCHIVED",
+      "identifier": "masterbook-institutional-api-masterbook---multi-repository-",
+      "landing_page": "https://archive.org/details/masterbook-institutional-api-masterbook---multi-repository-",
+      "api_receipt_endpoint": "https://archive.org/metadata/masterbook-institutional-api-masterbook---multi-repository-"
+    },
+    {
+      "institution": "Software Heritage (UNESCO)",
+      "status": "ARCHIVAL_REQUESTED",
+      "origin_url": "https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings",
+      "save_request_status": "accepted",
+      "save_task_status": "pending",
+      "api_receipt_endpoint": "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings/"
+    },
+    {
+      "institution": "OSF (Open Science Framework)",
+      "status": "DISABLED_BY_PROVIDER",
+      "note": "HTTP 405 from api.osf.io/v2/nodes/: Project creation is currently disabled."
+    }
+  ]
+}

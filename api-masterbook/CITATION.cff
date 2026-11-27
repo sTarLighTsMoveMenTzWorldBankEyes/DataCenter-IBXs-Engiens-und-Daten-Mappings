@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+title: "Institutional API-Masterbook & Multi-Repository Architecture"
+message: "If you use this software or registry architecture, please cite it as below."
+type: software
+authors:
+  - family-names: "Pohl"
+    given-names: "Daniel"
+    orcid: "https://orcid.org/0009-0000-0152-1535"
+repository-code: "https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings"
+license: "EUPL-1.2"
+version: "2.3.0"
+date-released: "2026-11-27"
+keywords:
+  - "API-Masterbook"
+  - "EUPL-1.2"
+  - "Scientific Infrastructure"
+  - "Data Provenance"
+  - "OAIS"
+  - "BagIt"

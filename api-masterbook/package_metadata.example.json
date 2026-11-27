@@ -1,0 +1,16 @@
+{
+  "project_title": "Meine Architektur / Dokumentation",
+  "description": "Technische Dokumentation und Referenz-Artefakt.",
+  "author": {
+    "name": "Max Mustermann",
+    "orcid": "https://orcid.org/0000-0000-0000-0000",
+    "affiliation": "Unabhängiges Forschungsprojekt"
+  },
+  "license": "CC-BY-4.0",
+  "keywords": ["architecture", "documentation", "open-science"],
+  "git_repository_url": "https://github.com/example/my-project",
+  "dataverse_parent_alias": "root",
+  "artifact_files": [
+    "README.md"
+  ]
+}

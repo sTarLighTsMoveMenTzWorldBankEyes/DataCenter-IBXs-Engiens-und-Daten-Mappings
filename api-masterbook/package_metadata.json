@@ -1,0 +1,32 @@
+{
+  "project_title": "Institutional API-Masterbook & Multi-Repository Architecture",
+  "description": "Programmatische Orchestrierungs- und Zertifizierungsarchitektur für wissenschaftliche Repositories, Bibliotheken und globale Infrastruktur.",
+  "license": "EUPL-1.2",
+  "keywords": [
+    "API-Masterbook",
+    "EUPL-1.2",
+    "Scientific Infrastructure",
+    "Data Provenance",
+    "OAIS",
+    "BagIt"
+  ],
+  "author": {
+    "name": "Daniel Pohl",
+    "orcid": "https://orcid.org/0009-0000-0152-1535",
+    "email": "starlightsmovementz@rekeyglobedynamicz.worldbankeyes.eu"
+  },
+  "dataverse_space": {
+    "parent_alias": "root",
+    "alias": "starlightsmovementz-masterbook",
+    "name": "sTarLighTsMoveMenTz Institutional Research Space",
+    "affiliation": "sTarLighTsMoveMenTz",
+    "dataverse_type": "RESEARCH_PROJECTS",
+    "description": "Offizieller Forschungs- und Publikations-Space für Infrastruktur- und Systemarchitektur."
+  },
+  "git_repository_url": "https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings",
+  "artifact_files": [
+    "endpoints_registry.json",
+    "MASTERBOOK.md",
+    "CITATION.cff"
+  ]
+}
