@@ -1,0 +1,39 @@
+{
+  "schema": "licence-references/v1",
+  "author": "Daniel Pohl",
+  "orcid": "https://orcid.org/0009-0000-0152-1535",
+  "license": "EUPL-1.2",
+  "issued": "2026-11-27",
+  "licence_reference_1": {
+    "title": "LAAW Licence-Patent-Registry Gesamtpaket",
+    "packages": [
+      {
+        "file": "ALL-IN-ONE-GESAMTPAKET_Licence-Patent-Registry_Daniel-Pohl_2026-11-27.zip",
+        "sha256": "b542b4dd4095ce3044d350c53ed037dbad2a542216afa3cc61b0dfab5a3a3cf8",
+        "size_bytes": 40038117
+      },
+      {
+        "file": "Google-Antigravity-Paket-COMPLETE_Daniel-Pohl_2026-11-27.zip",
+        "sha256": "c3610f9b93bf0641c76e800281cac5293191a3bcc4e9712fcb3f539ccb8200b0",
+        "size_bytes": 17164072
+      }
+    ]
+  },
+  "licence_reference_2": {
+    "title": "DevinAI-Paket COMPLETE",
+    "packages": [
+      {
+        "file": "DevinAI-Paket-COMPLETE_Daniel-Pohl_2026-11-27.zip",
+        "sha256": "e7b1c1bb2bf87a0c47a4a1e3331f0df46f91995f61ea6b3dca1cea624e87b57a",
+        "size_bytes": 22874047
+      }
+    ]
+  },
+  "applies_to": {
+    "zenodo": ["10.5281/zenodo.24575092", "10.5281/zenodo.24575368", "10.5281/zenodo.24575735"],
+    "figshare": ["10.6084/m9.figshare.35135905.v1", "10.6084/m9.figshare.35136091.v1"],
+    "dataverse": ["doi:10.7910/DVN/HFANSS", "doi:10.7910/DVN/VCMTZD", "doi:10.7910/DVN/4PH1MK"],
+    "internet_archive": ["masterbook-institutional-api-masterbook---multi-repository-"],
+    "github": ["sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings"]
+  }
+}
