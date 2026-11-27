@@ -35,7 +35,14 @@
         "persistent_id",
         "cryptographic_unf",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 202,
+        "verified_url": "https://dataverse.harvard.edu/",
+        "latency_ms": 377.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "zenodo": {
       "name": "Zenodo (CERN)",
@@ -64,7 +71,14 @@
         "concept_doi",
         "landing_page",
         "checksum_md5"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://zenodo.org/",
+        "latency_ms": 239.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "osf": {
       "name": "OSF (Open Science Framework)",
@@ -91,7 +105,14 @@
       "proof_fields": [
         "guid",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://api.osf.io/",
+        "latency_ms": 720.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "figshare": {
       "name": "Figshare",
@@ -119,7 +140,14 @@
         "persistent_id",
         "article_id",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://api.figshare.com/",
+        "latency_ms": 510.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "dryad": {
       "name": "Dryad",
@@ -145,7 +173,14 @@
       "proof_fields": [
         "persistent_id",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://datadryad.org/",
+        "latency_ms": 1523.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "mendeley_data": {
       "name": "Mendeley Data",
@@ -170,7 +205,14 @@
         "persistent_id_or_url",
         "http_status",
         "timestamp_utc"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://data.mendeley.com/api/docs/",
+        "latency_ms": 421.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "internet_archive": {
       "name": "Internet Archive",
@@ -194,7 +236,14 @@
       "proof_fields": [
         "identifier",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://s3.us.archive.org/",
+        "latency_ms": 905.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "arxiv": {
       "name": "arXiv (Preprints)",
@@ -223,8 +272,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://oaipmh.arxiv.org/oai?verb=Identify",
-        "latency_ms": 125.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 105.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "orcid": {
@@ -255,8 +304,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://pub.orcid.org/v3.0/",
-        "latency_ms": 208.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 205.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "software_heritage": {
@@ -289,8 +338,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://archive.softwareheritage.org/",
-        "latency_ms": 175.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 190.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "github": {
@@ -316,7 +365,14 @@
         "persistent_id_or_url",
         "http_status",
         "timestamp_utc"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://api.github.com/",
+        "latency_ms": 273.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "arweave": {
       "name": "Arweave Permaweb / ArDrive",
@@ -339,7 +395,14 @@
         "tx_id",
         "block_height",
         "gateway_url"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://arweave.net/",
+        "latency_ms": 297.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "ipfs_pinata": {
       "name": "IPFS / Pinata",
@@ -364,7 +427,14 @@
         "persistent_id_or_url",
         "http_status",
         "timestamp_utc"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://docs.pinata.cloud/",
+        "latency_ms": 554.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "web3_storage": {
       "name": "Web3.Storage (IPFS & Filecoin)",
@@ -387,7 +457,14 @@
         "persistent_id_or_url",
         "http_status",
         "timestamp_utc"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://web3.storage/docs/",
+        "latency_ms": 448.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "desci_nodes": {
       "name": "DeSci Labs / DeSci Nodes",
@@ -410,7 +487,14 @@
         "persistent_id_or_url",
         "http_status",
         "timestamp_utc"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://nodes.desci.com/",
+        "latency_ms": 404.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "edmond_mpg": {
       "name": "Edmond (Max-Planck-Gesellschaft)",
@@ -436,7 +520,14 @@
         "persistent_id",
         "cryptographic_unf",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://edmond.mpg.de/",
+        "latency_ms": 132.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "heidata": {
       "name": "HeiDATA (Uni Heidelberg)",
@@ -462,7 +553,14 @@
         "persistent_id",
         "cryptographic_unf",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://heidata.uni-heidelberg.de/",
+        "latency_ms": 117.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "gro_data": {
       "name": "GRO.data (Uni Göttingen)",
@@ -488,7 +586,14 @@
         "persistent_id",
         "cryptographic_unf",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://data.goettingen-research-online.de/",
+        "latency_ms": 255.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "darus": {
       "name": "DaRUS (Uni Stuttgart)",
@@ -514,7 +619,14 @@
         "persistent_id",
         "cryptographic_unf",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://darus.uni-stuttgart.de/",
+        "latency_ms": 93.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "juelich_data": {
       "name": "Jülich DATA (FZ Jülich)",
@@ -540,7 +652,14 @@
         "persistent_id",
         "cryptographic_unf",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://data.fz-juelich.de/",
+        "latency_ms": 251.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "harvard_dash": {
       "name": "Harvard DASH",
@@ -569,8 +688,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://dash.harvard.edu/",
-        "latency_ms": 125.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 157.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "dspace_mit": {
@@ -601,8 +720,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://dspace.mit.edu/oai/request?verb=Identify",
-        "latency_ms": 277.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 287.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "princeton_data": {
@@ -631,8 +750,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://datacommons.princeton.edu/",
-        "latency_ms": 784.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 768.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "stanford_sdr": {
@@ -661,8 +780,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://sdr.library.stanford.edu/",
-        "latency_ms": 126.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 564.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "cambridge_apollo": {
@@ -692,8 +811,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.repository.cam.ac.uk/oai/request?verb=Identify",
-        "latency_ms": 303.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 355.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "escholarship": {
@@ -723,8 +842,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://escholarship.org/graphql",
-        "latency_ms": 567.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 721.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "eth_research_collection": {
@@ -754,8 +873,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.research-collection.ethz.ch/oai/request?verb=Identify",
-        "latency_ms": 168.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 144.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "pangaea": {
@@ -784,8 +903,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://ws.pangaea.de/oai/provider?verb=Identify",
-        "latency_ms": 155.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 124.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "datacite": {
@@ -814,8 +933,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.datacite.org/dois/10.5281/zenodo.24575092",
-        "latency_ms": 226.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 231.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "re3data": {
@@ -845,8 +964,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.re3data.org/api/v1/repositories",
-        "latency_ms": 2021.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1360.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "opendoar": {
@@ -876,8 +995,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://opendoar.ac.uk/",
-        "latency_ms": 102.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 134.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "oclc_worldcat": {
@@ -907,8 +1026,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://developer.api.oclc.org/",
-        "latency_ms": 536.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 543.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "issn_keepers": {
@@ -938,8 +1057,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://portal.issn.org/",
-        "latency_ms": 123.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 132.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "europeana": {
@@ -970,8 +1089,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.europeana.eu/",
-        "latency_ms": 431.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 495.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "hathitrust": {
@@ -1001,8 +1120,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://catalog.hathitrust.org/api/volumes/brief/json/oclc:424023",
-        "latency_ms": 231.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 461.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "dnb": {
@@ -1029,7 +1148,14 @@
         "urn",
         "dnb_idn",
         "landing_page"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://services.dnb.de/sru/dnb",
+        "latency_ms": 98.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "tib": {
       "name": "TIB Hannover",
@@ -1058,8 +1184,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.tib.eu/",
-        "latency_ms": 445.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 254.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "zbw_econstor": {
@@ -1089,8 +1215,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.econstor.eu/oai/request?verb=Identify",
-        "latency_ms": 151.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 164.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "onb": {
@@ -1120,8 +1246,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.onb.ac.at",
-        "latency_ms": 200.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 477.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "nb_helvetica": {
@@ -1150,8 +1276,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.nb.admin.ch/",
-        "latency_ms": 287.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 294.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ddb": {
@@ -1182,8 +1308,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.deutsche-digitale-bibliothek.de/",
-        "latency_ms": 414.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 416.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "landesbibliotheken_de": {
@@ -1213,8 +1339,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://kxp.k10plus.de/",
-        "latency_ms": 110.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 130.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "library_of_congress": {
@@ -1243,8 +1369,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.loc.gov/",
-        "latency_ms": 68.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 70.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "british_library": {
@@ -1273,8 +1399,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.bl.uk/",
-        "latency_ms": 233.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 275.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "bnf": {
@@ -1302,9 +1428,9 @@
       "verified_connection": {
         "status": "OK",
         "http_status": 200,
-        "verified_url": "https://api.bnf.fr/",
-        "latency_ms": 277.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "verified_url": "https://data.bnf.fr/sparql",
+        "latency_ms": 291.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "kb_nl": {
@@ -1334,8 +1460,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.kb.nl/",
-        "latency_ms": 97.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 97.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ndl_japan": {
@@ -1365,8 +1491,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://ndlsearch.ndl.go.jp/",
-        "latency_ms": 1076.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 629.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "nara": {
@@ -1397,8 +1523,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://catalog.archives.gov/api/v2/",
-        "latency_ms": 700.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 766.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "uk_national_archives": {
@@ -1427,9 +1553,9 @@
       "verified_connection": {
         "status": "OK",
         "http_status": 200,
-        "verified_url": "https://www.nationalarchives.gov.uk/help-with-your-research/discovery-help/",
-        "latency_ms": 325.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "verified_url": "https://discovery.nationalarchives.gov.uk/API/",
+        "latency_ms": 195.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "archives_portal_europe": {
@@ -1460,8 +1586,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.archivesportaleurope.net/",
-        "latency_ms": 227.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 240.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "staatsarchive_dach_fr": {
@@ -1486,7 +1612,14 @@
         "persistent_id_or_url",
         "http_status",
         "timestamp_utc"
-      ]
+      ],
+      "verified_connection": {
+        "status": "OK",
+        "http_status": 200,
+        "verified_url": "https://www.archivportal-d.de",
+        "latency_ms": 143.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
+      }
     },
     "oxford_ora": {
       "name": "University of Oxford (ORA)",
@@ -1516,8 +1649,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://ora.ox.ac.uk/oai2?verb=Identify",
-        "latency_ms": 303.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 341.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "imperial_spiral": {
@@ -1548,8 +1681,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://spiral.imperial.ac.uk/oai/request?verb=Identify",
-        "latency_ms": 1734.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 602.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "caltech_data": {
@@ -1581,8 +1714,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://data.caltech.edu/",
-        "latency_ms": 846.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1067.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ucl_discovery": {
@@ -1613,8 +1746,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://discovery.ucl.ac.uk/cgi/oai2?verb=Identify",
-        "latency_ms": 1508.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1543.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "yale_elischolar": {
@@ -1645,8 +1778,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://elischolar.library.yale.edu/do/oai/?verb=Identify",
-        "latency_ms": 182.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 177.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "upenn_scholarlycommons": {
@@ -1677,8 +1810,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://repository.upenn.edu/server/oai/request?verb=Identify",
-        "latency_ms": 527.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 357.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "columbia_academic_commons": {
@@ -1710,8 +1843,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://academiccommons.columbia.edu/oai?verb=Identify",
-        "latency_ms": 360.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 429.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "cornell_ecommons": {
@@ -1742,8 +1875,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://ecommons.cornell.edu/server/oai/request?verb=Identify",
-        "latency_ms": 420.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 415.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "uchicago_knowledge": {
@@ -1774,8 +1907,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://knowledge.uchicago.edu/oai2d?verb=Identify",
-        "latency_ms": 532.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 549.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "jhu_jscholarship": {
@@ -1806,8 +1939,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://jscholarship.library.jhu.edu/oai/request?verb=Identify",
-        "latency_ms": 458.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 537.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "nus_scholarbank": {
@@ -1838,8 +1971,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://scholarbank.nus.edu.sg/oai/request?verb=Identify",
-        "latency_ms": 2183.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 2172.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ntu_dr": {
@@ -1870,8 +2003,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://dr.ntu.edu.sg/oai/request?verb=Identify",
-        "latency_ms": 159.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 419.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "tsinghua_repo": {
@@ -1902,8 +2035,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.tsinghua.edu.cn/",
-        "latency_ms": 1162.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 935.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "pku_repo": {
@@ -1934,8 +2067,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.pku.edu.cn/",
-        "latency_ms": 3308.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 3437.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "hku_scholars": {
@@ -1966,8 +2099,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.hku.hk/",
-        "latency_ms": 92.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 244.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "utokyo_repo": {
@@ -1998,8 +2131,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://repository.dl.itc.u-tokyo.ac.jp/oai?verb=Identify",
-        "latency_ms": 3230.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 2067.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "utoronto_tspace": {
@@ -2030,8 +2163,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://tspace.library.utoronto.ca/",
-        "latency_ms": 892.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 818.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "psl_hal": {
@@ -2063,8 +2196,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.archives-ouvertes.fr/",
-        "latency_ms": 382.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 401.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "dartmouth_digital_commons": {
@@ -2095,8 +2228,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://digitalcommons.dartmouth.edu/do/oai/?verb=Identify",
-        "latency_ms": 88.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 104.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "brown_repository": {
@@ -2127,8 +2260,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://repository.library.brown.edu/api/",
-        "latency_ms": 181.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 284.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "duke_repository": {
@@ -2159,8 +2292,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://dukespace.lib.duke.edu/oai/request?verb=Identify",
-        "latency_ms": 758.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 722.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "northwestern_arch": {
@@ -2191,8 +2324,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://arch.library.northwestern.edu/",
-        "latency_ms": 515.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 477.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "umich_deepblue": {
@@ -2223,8 +2356,8 @@
         "status": "AUTH_REQUIRED",
         "http_status": 403,
         "verified_url": "https://umich.edu/",
-        "latency_ms": 157.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 169.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "lse_research_online": {
@@ -2255,8 +2388,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://eprints.lse.ac.uk/cgi/oai2?verb=Identify",
-        "latency_ms": 1072.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1116.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "kcl_pure": {
@@ -2287,8 +2420,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://kclpure.kcl.ac.uk/ws/oai?verb=Identify",
-        "latency_ms": 217.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 189.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "edinburgh_era": {
@@ -2319,8 +2452,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://era.ed.ac.uk/oai/request?verb=Identify",
-        "latency_ms": 231.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 211.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "epfl_infoscience": {
@@ -2351,8 +2484,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://infoscience.epfl.ch/oai2d?verb=Identify",
-        "latency_ms": 857.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 840.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "tum_mediatum": {
@@ -2383,8 +2516,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://mediatum.ub.tum.de/oai/oai?verb=Identify",
-        "latency_ms": 113.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 144.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "lmu_edoc": {
@@ -2415,8 +2548,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://edoc.ub.uni-muenchen.de/cgi/oai2?verb=Identify",
-        "latency_ms": 254.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 219.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "bonn_bonndoc": {
@@ -2447,8 +2580,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://bonndoc.ulb.uni-bonn.de/oai/request?verb=Identify",
-        "latency_ms": 168.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 298.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "rwth_publications": {
@@ -2479,8 +2612,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://publications.rwth-aachen.de/oai2d?verb=Identify",
-        "latency_ms": 162.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 168.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "fu_berlin_refubium": {
@@ -2511,8 +2644,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://refubium.fu-berlin.de/oai/request?verb=Identify",
-        "latency_ms": 143.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 161.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "paris_saclay_hal": {
@@ -2543,8 +2676,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.archives-ouvertes.fr/",
-        "latency_ms": 405.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 398.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ip_paris_hal": {
@@ -2575,8 +2708,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.archives-ouvertes.fr/",
-        "latency_ms": 382.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 384.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "sorbonne_hal": {
@@ -2607,8 +2740,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.archives-ouvertes.fr/",
-        "latency_ms": 378.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 387.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "karolinska_open_archive": {
@@ -2639,8 +2772,8 @@
         "status": "OK",
         "http_status": 202,
         "verified_url": "https://openarchive.ki.se/oai/request?verb=Identify",
-        "latency_ms": 140.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 140.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "copenhagen_curis": {
@@ -2671,8 +2804,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://curis.ku.dk/ws/oai?verb=Identify",
-        "latency_ms": 181.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 208.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "kuleuven_lirias": {
@@ -2703,8 +2836,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://lirias.kuleuven.be/oai/request?verb=Identify",
-        "latency_ms": 347.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 311.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "tudelft_4tu": {
@@ -2736,8 +2869,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://data.4tu.nl/v2/articles",
-        "latency_ms": 145.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 142.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "kyoto_kurenai": {
@@ -2768,8 +2901,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://repository.kulib.kyoto-u.ac.jp/server/oai/request?verb=Identify",
-        "latency_ms": 1076.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1531.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "snu_sspace": {
@@ -2800,8 +2933,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://s-space.snu.ac.kr/oai/request?verb=Identify",
-        "latency_ms": 1203.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1456.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "kaist_koasas": {
@@ -2832,8 +2965,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://koasas.kaist.ac.kr/oai/request?verb=Identify",
-        "latency_ms": 861.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1142.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "melbourne_minerva": {
@@ -2864,8 +2997,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://minerva-access.unimelb.edu.au/server/oai/request?verb=Identify",
-        "latency_ms": 1262.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1428.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "unsw_unsworks": {
@@ -2896,8 +3029,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://unsworks.unsw.edu.au/server/oai/request?verb=Identify",
-        "latency_ms": 3083.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 3092.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "sydney_ses": {
@@ -2928,8 +3061,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.sydney.edu.au/",
-        "latency_ms": 697.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 691.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "anu_open_research": {
@@ -2960,8 +3093,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://openresearch-repository.anu.edu.au/server/oai/request?verb=Identify",
-        "latency_ms": 1502.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1843.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "mcgill_escholarship": {
@@ -2992,8 +3125,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://escholarship.mcgill.ca/oai/request?verb=Identify",
-        "latency_ms": 820.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 916.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ubc_circle": {
@@ -3025,8 +3158,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://circle.ubc.ca/oai/request?verb=Identify",
-        "latency_ms": 632.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 656.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "usp_bdpi": {
@@ -3057,8 +3190,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://repositorio.usp.br/oai/request?verb=Identify",
-        "latency_ms": 1636.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1745.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "kit_open": {
@@ -3089,8 +3222,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://publikationen.bibliothek.kit.edu/",
-        "latency_ms": 226.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 202.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "tuebingen_tobias": {
@@ -3121,8 +3254,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://uni-tuebingen.de/",
-        "latency_ms": 464.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 322.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "hamburg_uhh": {
@@ -3153,8 +3286,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.fdr.uni-hamburg.de/api/records",
-        "latency_ms": 311.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 332.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "tu_dresden_qucosa": {
@@ -3185,8 +3318,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.qucosa.de/oai/?verb=Identify",
-        "latency_ms": 135.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 170.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "konstanz_kops": {
@@ -3217,8 +3350,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://kops.uni-konstanz.de/oai/request?verb=Identify",
-        "latency_ms": 109.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 279.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "bua_berlin": {
@@ -3250,8 +3383,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.berlin-university-alliance.de/",
-        "latency_ms": 302.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 469.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "freiburg_freidok": {
@@ -3282,8 +3415,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://freidok.uni-freiburg.de/oai?verb=Identify",
-        "latency_ms": 284.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 247.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "mannheim_madoc": {
@@ -3314,8 +3447,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://madoc.bib.uni-mannheim.de/cgi/oai2?verb=Identify",
-        "latency_ms": 782.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 798.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "whu_bucerius_hpi": {
@@ -3348,8 +3481,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://hpi.de/",
-        "latency_ms": 110.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 109.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "helmholtz_fraunhofer_leibniz": {
@@ -3382,8 +3515,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://publica.fraunhofer.de/",
-        "latency_ms": 240.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 174.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "polimi_republic": {
@@ -3414,8 +3547,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://re.public.polimi.it/oai/request?verb=Identify",
-        "latency_ms": 283.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 191.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "bologna_amsacta": {
@@ -3446,8 +3579,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://amsacta.unibo.it/cgi/oai2?verb=Identify",
-        "latency_ms": 436.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 452.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "sapienza_iris": {
@@ -3478,8 +3611,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://iris.uniroma1.it/oai/request?verb=Identify",
-        "latency_ms": 228.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 261.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "polito_iris": {
@@ -3510,8 +3643,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://iris.polito.it/oai/request?verb=Identify",
-        "latency_ms": 205.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 300.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "padova_research": {
@@ -3542,8 +3675,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.research.unipd.it/oai/request?verb=Identify",
-        "latency_ms": 179.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 295.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "bocconi_iris": {
@@ -3574,8 +3707,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://iris.unibocconi.it/oai/request?verb=Identify",
-        "latency_ms": 154.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 229.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "sns_santanna_pisa": {
@@ -3607,8 +3740,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://iris.santannapisa.it/oai/request",
-        "latency_ms": 354.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 327.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "unimi_air": {
@@ -3639,8 +3772,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://air.unimi.it/oai/request?verb=Identify",
-        "latency_ms": 170.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 205.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "digital_csic": {
@@ -3671,8 +3804,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://digital.csic.es/dspace-oai/request?verb=Identify",
-        "latency_ms": 622.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 643.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ub_diposit": {
@@ -3703,8 +3836,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://diposit.ub.edu/dspace-oai/request?verb=Identify",
-        "latency_ms": 311.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 289.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "uab_ddd": {
@@ -3735,8 +3868,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://ddd.uab.cat/oai2d?verb=Identify",
-        "latency_ms": 326.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 562.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "uam_biblos": {
@@ -3767,8 +3900,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://repositorio.uam.es/",
-        "latency_ms": 255.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 199.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ucm_docta": {
@@ -3799,8 +3932,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.ucm.es/",
-        "latency_ms": 275.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 317.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "upf_erepositori": {
@@ -3831,8 +3964,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://repositori.upf.edu/oai/request?verb=Identify",
-        "latency_ms": 447.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 465.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "uc3m_earchivo": {
@@ -3863,8 +3996,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://e-archivo.uc3m.es/oai/request?verb=Identify",
-        "latency_ms": 231.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 303.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "upc_upcommons": {
@@ -3895,8 +4028,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://upcommons.upc.edu/oai/request",
-        "latency_ms": 293.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 382.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "upm_oa": {
@@ -3927,8 +4060,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://oa.upm.es/perl/oai2?verb=Identify",
-        "latency_ms": 423.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 381.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "es_business_schools": {
@@ -3961,8 +4094,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.iese.edu/",
-        "latency_ms": 1161.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1316.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "swissubase": {
@@ -3993,8 +4126,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.swissubase.ch/oai/?verb=Identify",
-        "latency_ms": 217.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 237.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "uzh_zora": {
@@ -4025,8 +4158,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.zora.uzh.ch/cgi/oai2?verb=Identify",
-        "latency_ms": 469.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 417.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "basel_edoc": {
@@ -4057,8 +4190,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://edoc.unibas.ch/",
-        "latency_ms": 271.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 252.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "unige_archive_ouverte": {
@@ -4089,8 +4222,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://archive-ouverte.unige.ch/",
-        "latency_ms": 156.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 178.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "unibe_boris": {
@@ -4121,8 +4254,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://boris.unibe.ch/",
-        "latency_ms": 269.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 244.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "unil_serval": {
@@ -4153,8 +4286,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.unil.ch/",
-        "latency_ms": 318.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 471.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "hsg_alexandria": {
@@ -4185,8 +4318,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.alexandria.unisg.ch/",
-        "latency_ms": 218.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 242.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "rian_ireland": {
@@ -4218,8 +4351,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.irel.ie/",
-        "latency_ms": 4224.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 3113.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "tcd_tara": {
@@ -4250,8 +4383,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.tcd.ie/",
-        "latency_ms": 103.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 120.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ucd_repo": {
@@ -4282,8 +4415,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.ucd.ie/",
-        "latency_ms": 111.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 92.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "rcsi_repo": {
@@ -4314,8 +4447,8 @@
         "status": "OK",
         "http_status": 202,
         "verified_url": "https://repository.rcsi.com/oai/request?verb=Identify",
-        "latency_ms": 120.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 135.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ucc_cora": {
@@ -4346,8 +4479,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://cora.ucc.ie/oai/request?verb=Identify",
-        "latency_ms": 373.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 368.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "galway_aran": {
@@ -4378,8 +4511,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.universityofgalway.ie/",
-        "latency_ms": 163.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 122.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "dcu_doras": {
@@ -4410,8 +4543,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://doras.dcu.ie/cgi/oai2?verb=Identify",
-        "latency_ms": 291.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 328.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ul_research_repo": {
@@ -4442,8 +4575,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://researchrepository.ul.ie/oai/request?verb=Identify",
-        "latency_ms": 231.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 206.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "world_bank": {
@@ -4475,8 +4608,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.worldbank.org/v2/country?format=json",
-        "latency_ms": 80.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 72.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "imf_sdmx": {
@@ -4508,8 +4641,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.imf.org/external/sdmx/3.0/structure/dataflow",
-        "latency_ms": 740.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 716.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ecb_sdmx": {
@@ -4540,8 +4673,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://data-api.ecb.europa.eu/service/dataflow/ECB?detail=allstubs",
-        "latency_ms": 282.7,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 284.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "bis_stats": {
@@ -4572,8 +4705,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://stats.bis.org/api/v1/dataflow/BIS",
-        "latency_ms": 142.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1189.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "oecd_sdmx": {
@@ -4604,8 +4737,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://sdmx.oecd.org/public/rest/dataflow/all/all/latest",
-        "latency_ms": 81.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 79.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "fred_stlouisfed": {
@@ -4637,8 +4770,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://fred.stlouisfed.org/docs/api/fred/",
-        "latency_ms": 123.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 305.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "sec_edgar": {
@@ -4671,8 +4804,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://data.sec.gov/",
-        "latency_ms": 286.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 242.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "bundesbank_sdmx": {
@@ -4704,8 +4837,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.bundesbank.de/en",
-        "latency_ms": 124.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 174.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "gleif_lei": {
@@ -4737,8 +4870,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://api.gleif.org/api/v1/lei-records?page[size]=1",
-        "latency_ms": 378.1,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 183.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "adb_kidb": {
@@ -4770,8 +4903,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://kidb.adb.org/",
-        "latency_ms": 883.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 933.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "eib_open_data": {
@@ -4802,8 +4935,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://data.europa.eu/api/hub/search/",
-        "latency_ms": 91.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 118.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "eurostat": {
@@ -4835,8 +4968,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://ec.europa.eu/eurostat/api/dissemination/sdmx/2.1/dataflow/ESTAT?detail=allstubs",
-        "latency_ms": 101.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 102.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "un_comtrade": {
@@ -4868,8 +5001,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://comtradeapi.un.org/public/v1/preview/C/A/HS",
-        "latency_ms": 2379.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 3122.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "un_data": {
@@ -4900,8 +5033,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://data.un.org/ws/rest/dataflow/all/all/latest",
-        "latency_ms": 425.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 927.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "eia_energy": {
@@ -4933,8 +5066,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.eia.gov/opendata/",
-        "latency_ms": 218.8,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 3494.5,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "itu_datahub": {
@@ -4965,8 +5098,8 @@
         "status": "OK",
         "http_status": 202,
         "verified_url": "https://datahub.itu.int/",
-        "latency_ms": 101.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 124.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "osm_overpass": {
@@ -4997,8 +5130,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://wiki.openstreetmap.org/wiki/Overpass_API",
-        "latency_ms": 447.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 449.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "swift_network": {
@@ -5029,8 +5162,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.iso20022.org/",
-        "latency_ms": 145.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 276.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "dtcc": {
@@ -5060,8 +5193,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.dtcc.com/",
-        "latency_ms": 137.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 146.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "euroclear": {
@@ -5090,8 +5223,8 @@
         "status": "AUTH_REQUIRED",
         "http_status": 403,
         "verified_url": "https://www.euroclear.com/",
-        "latency_ms": 96.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 121.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "clearstream_t2s": {
@@ -5120,8 +5253,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.clearstream.com/",
-        "latency_ms": 209.9,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 744.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "cls_group": {
@@ -5150,8 +5283,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.cls-group.com/",
-        "latency_ms": 220.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 204.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "peeringdb": {
@@ -5185,8 +5318,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.peeringdb.com/api/",
-        "latency_ms": 386.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 425.6,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "ripe_stat": {
@@ -5215,9 +5348,9 @@
       "verified_connection": {
         "status": "OK",
         "http_status": 200,
-        "verified_url": "https://stat.ripe.net/docs/02.data-api/",
-        "latency_ms": 291.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "verified_url": "https://stat.ripe.net/data/",
+        "latency_ms": 578.7,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "iana_icann": {
@@ -5247,8 +5380,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.iana.org/",
-        "latency_ms": 77.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 64.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "equinix_fabric": {
@@ -5281,8 +5414,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://developer.equinix.com/",
-        "latency_ms": 463.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1388.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "cloudflare_radar": {
@@ -5315,8 +5448,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://developers.cloudflare.com/radar/",
-        "latency_ms": 92.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 112.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "itu_telecom": {
@@ -5346,8 +5479,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.itu.int/",
-        "latency_ms": 751.6,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1777.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "esa_copernicus": {
@@ -5380,8 +5513,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://catalogue.dataspace.copernicus.eu/stac",
-        "latency_ms": 693.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 262.3,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "nasa_earthdata_cmr": {
@@ -5414,8 +5547,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://cmr.earthdata.nasa.gov/search/",
-        "latency_ms": 218.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 243.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "usap_dc": {
@@ -5445,8 +5578,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.usap-dc.org/oai?verb=Identify",
-        "latency_ms": 338.0,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 505.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "iea_energy": {
@@ -5475,8 +5608,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.iea.org/",
-        "latency_ms": 107.5,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 121.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "entso_e": {
@@ -5507,8 +5640,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://transparency.entsoe.eu/",
-        "latency_ms": 127.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 166.8,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "submarine_cable_map": {
@@ -5538,8 +5671,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.submarinecablemap.com/api/v3/",
-        "latency_ms": 492.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 494.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "gs1_global": {
@@ -5569,8 +5702,8 @@
         "status": "AUTH_REQUIRED",
         "http_status": 403,
         "verified_url": "https://www.gs1.org/standards/get-started",
-        "latency_ms": 53.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 66.1,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "icao_aviation": {
@@ -5600,8 +5733,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx",
-        "latency_ms": 195.3,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 659.0,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "imo_maritime": {
@@ -5630,8 +5763,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://gisis.imo.org/",
-        "latency_ms": 506.4,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 540.9,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "open_infrastructure_map": {
@@ -5661,8 +5794,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://openinframap.org/",
-        "latency_ms": 79.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 87.4,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     },
     "iso_standards": {
@@ -5692,8 +5825,8 @@
         "status": "OK",
         "http_status": 200,
         "verified_url": "https://www.etsi.org/standards",
-        "latency_ms": 1862.2,
-        "verified_at_utc": "2026-11-27T02:46:00Z"
+        "latency_ms": 1873.2,
+        "verified_at_utc": "2026-11-27T03:01:16Z"
       }
     }
   }

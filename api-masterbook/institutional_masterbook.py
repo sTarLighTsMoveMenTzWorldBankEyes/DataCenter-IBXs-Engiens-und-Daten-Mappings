@@ -773,6 +773,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Persist verified connection URLs and probe statuses back into the registry JSON.",
     )
     parser.add_argument(
+        "--query",
+        metavar="INSTITUTION_KEY",
+        help="Query a registered institution's verified/read endpoint and print the response.",
+    )
+    parser.add_argument(
         "--output",
         type=Path,
         default=Path("publication_certificate.json"),
@@ -1014,12 +1019,7 @@ def probe_registry_endpoints(
     if selected_institutions:
         targets = [(k, institutions[k]) for k in selected_institutions if k in institutions]
     else:
-        targets = [
-            (k, cfg)
-            for k, cfg in institutions.items()
-            if cfg.get("auth", {}).get("type") in ("none", "bearer_token_optional")
-            or cfg.get("role") == "query_verify"
-        ]
+        targets = list(institutions.items())
 
     results: list[dict[str, Any]] = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as pool:
@@ -1064,6 +1064,33 @@ def persist_verified_probes(registry_path: Path, report: dict[str, Any]) -> int:
     return updated
 
 
+def query_institution_endpoint(registry_path: Path, key: str) -> dict[str, Any]:
+    """Query a registered institution's verified/primary GET endpoint and return parsed output."""
+    registry = json.loads(registry_path.read_text(encoding="utf-8"))
+    institutions: dict[str, Any] = registry.get("institutions", {})
+    if key not in institutions:
+        raise KeyError(f"Unknown institution key: {key}")
+    cfg = institutions[key]
+    verified_url = cfg.get("verified_connection", {}).get("verified_url", "")
+    urls = [verified_url] if verified_url else candidate_probe_urls(cfg)
+    if not urls or not urls[0].startswith("http"):
+        raise ValueError(f"No queryable HTTP URL found for {key}")
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (compatible; InstitutionalMasterbook/2.4)",
+        "Accept": "application/json, application/xml, text/plain;q=0.9, */*;q=0.8",
+        **get_auth_headers(cfg, required=False),
+    }
+    resp = http_request("GET", urls[0], headers=headers, timeout=15)
+    return {
+        "key": key,
+        "institution": cfg.get("name", key),
+        "url": urls[0],
+        "http_status": resp.status,
+        "data": resp.body if isinstance(resp.body, dict) else str(resp.body)[:1000],
+    }
+
+
 def main(argv: list[str] | None = None) -> int:
     """CLI entrypoint."""
     load_dotenv_if_present(Path(".env"))
@@ -1090,6 +1117,10 @@ def main(argv: list[str] | None = None) -> int:
             updated = persist_verified_probes(args.registry, report)
             msg += f" | persisted {updated} verified connections into {args.registry}"
         print(msg)
+        return 0
+    if args.query:
+        result = query_institution_endpoint(args.registry, args.query)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
         return 0
     if not args.metadata:
         print(

@@ -1,0 +1,24 @@
+{
+  "masterbook_version": "2.4.0",
+  "project_title": "Institutional API-Masterbook & Multi-Repository Architecture",
+  "author_orcid": "https://orcid.org/0009-0000-0152-1535",
+  "timestamp_utc": "2026-11-27T02:58:28Z",
+  "sandbox_mode": false,
+  "dry_run": false,
+  "local_artifact_sha256": "d3d7dbafe75a395896a84d9ec13e7bfed5b740a8b98f095e1b51688ea13a4d97",
+  "artifact_files": [
+    "endpoints_registry.json",
+    "MASTERBOOK.md",
+    "CITATION.cff"
+  ],
+  "certifications": [
+    {
+      "institution": "Software Heritage (UNESCO)",
+      "status": "ARCHIVAL_REQUESTED",
+      "origin_url": "https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings",
+      "save_request_status": "accepted",
+      "save_task_status": "pending",
+      "api_receipt_endpoint": "https://archive.softwareheritage.org/api/1/origin/save/git/url/https://github.com/sTarLighTsMoveMenTzWorldBankEyes/DataCenter-IBXs-Engiens-und-Daten-Mappings/"
+    }
+  ]
+}
